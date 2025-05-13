@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Animated Navbar</title>
+  <title>Shree Engineering Works</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @keyframes driveIn {
@@ -37,17 +37,28 @@
   </style>
 </head>
 <body class="bg-gray-100">
-  <nav class="flex items-center justify-between px-6 py-4 bg-white shadow-md">
-    <!-- Logo (like a car driving in) -->
-    <img src="images/logo/shree logo.png" alt="Logo" class="drive-in w-15 h-12" id="logo" />
+  <nav class="bg-white shadow-md px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo (car animation) -->
+      <img src="images/logo/shree logo.png" alt="Logo" class="drive-in w-15 h-12" id="logo" />
 
-    <!-- Navbar links (start hidden, animated in JS after car passes) -->
-    <ul class="flex space-x-6 text-lg font-medium text-gray-700" id="nav-links">
-      <li class="nav-item" style="animation-delay: 2.2s"> <a href="#" class="hover:text-blue-600">Home</a></li>
-      <li class="nav-item" style="animation-delay: 2.4s"> <a href="#" class="hover:text-blue-600">About</a></li>
-      <li class="nav-item" style="animation-delay: 2.6s"> <a href="#" class="hover:text-blue-600">Services</a></li>
-      <li class="nav-item" style="animation-delay: 2.8s"> <a href="#" class="hover:text-blue-600">Contact</a></li>
-    </ul>
+      <!-- Hamburger button (mobile only) -->
+      <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Nav links (inline for desktop) -->
+      <ul id="nav-links"
+          class="hidden flex-col mt-4 space-y-2 text-lg font-medium text-gray-700 md:flex md:flex-row md:space-x-6 md:space-y-0 md:mt-0 md:items-center md:ml-auto">
+        <li class="nav-item" style="animation-delay: 2.2s"><a href="#" class="hover:text-blue-600">Home</a></li>
+        <li class="nav-item" style="animation-delay: 2.4s"><a href="#" class="hover:text-blue-600">About</a></li>
+        <li class="nav-item" style="animation-delay: 2.6s"><a href="#" class="hover:text-blue-600">Services</a></li>
+        <li class="nav-item" style="animation-delay: 2.8s"><a href="#" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <script>
@@ -56,6 +67,14 @@
       const items = document.querySelectorAll('.nav-item');
       items.forEach(item => {
         item.style.animationPlayState = 'running';
+      });
+
+      // Hamburger menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const navLinks = document.getElementById('nav-links');
+
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('hidden');
       });
     });
   </script>
