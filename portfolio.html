@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Engineering Works – Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Portfolio Section -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <h2 class="text-3xl font-bold text-center mb-10">Our Portfolio</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <!-- Project 1 Card -->
+      <div onclick="openPortfolioModal(1)"
+           class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg cursor-pointer transition">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg"
+             class="w-full h-48 sm:h-56 object-cover" alt="Project Image 1" />
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2">Heavy Duty Fabrication</h3>
+          <p class="text-sm text-gray-600">Steel fabrication for logistics and heavy transport systems.</p>
+        </div>
+      </div>
+
+      <!-- Project 2 Card -->
+      <div onclick="openPortfolioModal(2)"
+           class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg cursor-pointer transition">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYD5UL1GXpvNSYNEcIHC5--qpwVN6MolRg8A&s"
+             class="w-full h-48 sm:h-56 object-cover" alt="Project Image 2" />
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2">Custom Metal Fabrication</h3>
+          <p class="text-sm text-gray-600">Custom metal works for specialized industrial equipment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Modal -->
+  <div id="portfolioModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 hidden px-4 sm:px-6">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-5xl max-h-[90vh] overflow-y-auto p-5 relative">
+      <!-- Close Button -->
+      <button id="closeModal" class="absolute top-3 right-4 text-2xl font-bold text-gray-600 hover:text-red-500">&times;</button>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Left: Image Section -->
+        <div>
+          <img id="mainImage" src="" class="w-full h-64 sm:h-80 object-cover rounded-md border mb-4" alt="Main Project" />
+
+          <div id="thumbs" class="grid grid-cols-4 gap-2"></div>
+        </div>
+
+        <!-- Right: Description -->
+        <div>
+          <h3 id="projectTitle" class="text-2xl font-bold mb-3"></h3>
+          <p id="projectDesc" class="text-gray-700 mb-4"></p>
+          <ul id="projectDetails" class="list-disc list-inside text-gray-600 text-sm space-y-1"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Script -->
+  <script>
+    const projects = {
+      1: {
+        title: "Heavy Duty Fabrication Project",
+        mainImage: "https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg",
+        thumbs: [
+          "https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg",
+          "https://images.unsplash.com/photo-1581092334313-d6f1ccfa3d9b?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1532634726-7f4ec02fda27?auto=format&fit=crop&w=600&q=80"
+        ],
+        desc: "This project involved precision fabrication and installation of a heavy-duty steel framework for transportation logistics infrastructure. The equipment shown is a Freightliner M2 truck, which played a crucial role in project logistics.",
+        details: [
+          "Steel structure welding and fitting",
+          "Heavy transportation coordination",
+          "Custom design and safety integration",
+          "Delivered on time and under budget"
+        ]
+      },
+      2: {
+        title: "Custom Metal Fabrication Project",
+        mainImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYD5UL1GXpvNSYNEcIHC5--qpwVN6MolRg8A&s",
+        thumbs: [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYD5UL1GXpvNSYNEcIHC5--qpwVN6MolRg8A&s",
+          "https://images.unsplash.com/photo-1566106280631-1eaa7d68a093?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80",
+          "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80"
+        ],
+        desc: "Custom fabrication of metal components for industrial machinery, focusing on durability and precision. This work supports specialized equipment manufacturing.",
+        details: [
+          "Precision metal cutting and shaping",
+          "Welding and finishing with quality checks",
+          "Custom design for client specifications",
+          "Timely delivery and installation"
+        ]
+      }
+    };
+
+    function openPortfolioModal(id) {
+      const modal = document.getElementById('portfolioModal');
+      const project = projects[id];
+      if (!project) return;
+
+      document.getElementById('mainImage').src = project.mainImage;
+      document.getElementById('projectTitle').textContent = project.title;
+      document.getElementById('projectDesc').textContent = project.desc;
+
+      // Clear and add thumbs
+      const thumbsContainer = document.getElementById('thumbs');
+      thumbsContainer.innerHTML = '';
+      project.thumbs.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.className = 'w-full h-16 object-cover rounded cursor-pointer border hover:border-black';
+        img.onclick = () => {
+          document.getElementById('mainImage').src = src;
+        };
+        thumbsContainer.appendChild(img);
+      });
+
+      // Add details list
+      const detailsList = document.getElementById('projectDetails');
+      detailsList.innerHTML = '';
+      project.details.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        detailsList.appendChild(li);
+      });
+
+      modal.classList.remove('hidden');
+    }
+
+    document.getElementById('closeModal').addEventListener('click', () => {
+      document.getElementById('portfolioModal').classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
