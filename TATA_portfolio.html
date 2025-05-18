@@ -17,6 +17,36 @@
       border-color: #4f46e5; /* indigo-600 */
     }
   </style>
+  <style>
+    @keyframes driveIn {
+      0% {
+        transform: translateX(100vw);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInNavItem {
+      0% {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .drive-in {
+      animation: driveIn 3s ease-out forwards;
+    }
+
+    .nav-item {
+      opacity: 0;
+      animation: fadeInNavItem 0.6s ease forwards;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <header class="bg-white shadow-md px-6 py-4">
@@ -29,7 +59,7 @@
         <a href="#home" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3s">Home</a>
         <a href="#about" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.2s">About</a>
         <a href="#services" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.4s">Services</a>
-        <a href="portfolio.html" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
+        <a href="#portfolio" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
         <a href="#testimonial" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.8s">Testimonial</a>
         <a href="#how-it-works" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Certifications</a>
         <a href="#team" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>
