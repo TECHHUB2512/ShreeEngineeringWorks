@@ -15,12 +15,12 @@
 
 
 //  image slider
-  const images = [
-    "https://images.unsplash.com/photo-1590080877777-cb6a0f1b7f61?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1581091012184-7c73c6dc54bc?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1618221089261-cd3f52d4b4c2?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1567532939604-b6a02b8e0a6d?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1608315398420-bd4e05a60230?auto=format&fit=crop&w=800&q=80"
+ const images = [
+    "https://media.wired.com/photos/59371bdcbef1fc4e58f947fc/3:2/w_2560%2Cc_limit/walmart-advanced-vehicle-experience-wave-concept-truck.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnHrZSaaf_m_EeH8IpZWDQ39HnzJAWhISoCw&s",
+    "https://5.imimg.com/data5/SELLER/Default/2021/9/WB/ES/GW/27295013/tata-t-11-ultra-truck-500x500.png",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaDTGiFktkLLIHFTPLouVxuUmonGMjE1Ii0w&s",
+    "https://truckcdn.cardekho.com/in/tata/407-gold-sfc/tata-407-gold-sfc-15836.jpg?impolicy=resize&imwidth"
   ];
 
   let current = 0;
@@ -41,5 +41,5 @@
       img2.classList.remove('opacity-100');
       img2.classList.add('opacity-0');
       current = next;
-    }, 1000);
-  }, 5000); // Change every 5 seconds
+    }, 1000); // match transition duration
+  }, 5000); // change every 5 seconds
