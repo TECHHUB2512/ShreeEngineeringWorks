@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TATA Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-dTL0wR1fKkAqZcVbkQoZz9ZTgJK9W8qGLt9pHkgoHU5ZZqjPcrJpVYcSlRDRz1cfkuXWTOFQly2onqvRfAcW2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Shree Engineering Works</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Your Custom JS file -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+   <!-- Your Custom JS file -->
 <script src="script.js"></script>
   <style>
     #thumbs img {
@@ -296,6 +297,16 @@
 
     document.getElementById('closeModal').addEventListener('click', () => {
       document.getElementById('portfolioModal').classList.add('hidden');
+    });
+  </script>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
     });
   </script>
 </body>
