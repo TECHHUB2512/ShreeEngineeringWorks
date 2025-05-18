@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
    <!-- Your Custom JS file -->
 <script src="script.js"></script>
 
@@ -38,6 +40,14 @@
     .nav-item {
       opacity: 0;
       animation: fadeInNavItem 0.6s ease forwards;
+    }
+  </style>
+  <style>
+    .fade-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 1s ease-in-out;
     }
   </style>
 </head>
@@ -109,55 +119,36 @@
   </div>
 </section>
 
-<!-- About Section with Image and Company Info -->
-<section id="about" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12">
-  <h2 class="text-3xl font-montserrat font-bold mb-10 text-center text-gray-800">About Shree Engineering Works</h2>
+<!-- About Section -->
+<section id="about" class="max-w-6xl mx-auto px-6 py-20 bg-white rounded-lg shadow-md mt-12 relative">
+  <!-- Heading -->
+  <h2 class="text-4xl font-bold text-center text-gray-800 uppercase mb-14">About</h2>
 
-  <div class="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto mb-12">
-    <!-- Image -->
-    <div class="w-full md:w-1/2 rounded overflow-hidden shadow-lg">
-      <img src="https://images.unsplash.com/photo-1590080877777-cb6a0f1b7f61?auto=format&fit=crop&w=800&q=80" alt="Fabrication Work" class="w-full h-auto object-cover" />
+  <!-- Image and Text Block -->
+  <div class="flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Image Slider with Fade -->
+    <div class="w-full md:w-1/2 relative h-80 overflow-hidden rounded shadow-lg">
+      <img id="image1" class="fade-image w-full h-full object-cover opacity-100" src="https://images.unsplash.com/photo-1590080877777-cb6a0f1b7f61?auto=format&fit=crop&w=800&q=80" />
+      <img id="image2" class="fade-image w-full h-full object-cover opacity-0" src="" />
     </div>
 
-    <!-- Brief Info Text -->
-    <div class="w-full md:w-1/2 text-gray-700 font-poppins text-lg leading-relaxed">
+    <!-- About Text -->
+    <div class="w-full md:w-1/2 text-lg space-y-5">
+      <h3 class="text-3xl font-bold text-gray-800">Shree Engineering Works</h3>
+      <p class="text-sm text-gray-500 uppercase tracking-wide">Precision. Quality. Experience.</p>
       <p>
-        Shree Engineering Works is a leading fabrication company based in Wardha, Maharashtra, delivering high-quality engineering and metal fabrication solutions since 1995. With decades of experience and a skilled workforce, we cater to a wide range of industries including manufacturing, infrastructure, and industrial plants.
+        With over 25 years of experience, Shree Engineering Works provides top-tier fabrication and engineering services from Wardha, Maharashtra. Our expertise spans across custom fabrication, industrial structures, and specialized components.
       </p>
-      <p class="mt-4">
-        Our commitment to precision, quality, and timely delivery has made us a trusted partner for clients across India.
+      <p>
+        We combine skilled craftsmanship with precision equipment to deliver results that are durable, reliable, and on time.
       </p>
-    </div>
-  </div>
 
-  <div class="max-w-4xl mx-auto text-gray-700 font-poppins text-lg leading-relaxed">
-    <p>
-      Our core expertise lies in:
-      <ul class="list-disc list-inside mt-4 space-y-2">
-        <li>Custom metal fabrication including steel, stainless steel, and aluminum</li>
-        <li>Structural fabrication for industrial plants and infrastructure projects</li>
-        <li>Precision welding, cutting, bending, and assembly</li>
-        <li>Manufacture of bespoke components and machinery parts</li>
-      </ul>
-    </p>
-
-    <p class="mt-6">
-      We emphasize quality control and safety in all processes, ensuring each project meets the highest standards. Whether small batch or large scale, our team supports you from design consultation to delivery.
-    </p>
-
-    <!-- Contact info block -->
-    <div class="mt-10 border-t pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-gray-600 text-sm">
-      <div>
-        <p><strong>Address:</strong> 123 Industrial Area, Wardha, Maharashtra, India</p>
-        <p><strong>Phone:</strong> +91 98765 43210</p>
-        <p><strong>Email:</strong> info@shreeengineeringworks.com</p>
-      </div>
-
-      <!-- Social Links -->
-      <div class="flex space-x-6 mt-4 md:mt-0 text-2xl">
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+      <!-- Social Media Icons -->
+      <div class="flex space-x-6 text-2xl pt-2 text-gray-600">
+        <a href="https://www.facebook.com/" target="_blank" class="hover:text-blue-600"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" target="_blank" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </div>
