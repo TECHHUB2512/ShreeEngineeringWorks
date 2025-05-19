@@ -11,6 +11,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
    <!-- Your Custom JS file -->
 <script src="script.js"></script>
@@ -55,6 +57,24 @@
       object-fit: cover;
       transition: opacity 1s ease-in-out;
       border-radius: 0.5rem; /* Rounded corners */
+    }
+
+    @keyframes kenburns {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    .kenburns {
+      animation: kenburns 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes slideDuration {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+
+    .animate-slideDuration {
+      animation: slideDuration 3s linear forwards;
     }
   </style>
 </head>
@@ -442,35 +462,66 @@ x
   </section>
 
 <!-- Team Section -->
-<section id="team" class="max-w-6xl mx-auto px-6 py-16 bg-gray-50 rounded-lg shadow-md mt-12">
-  <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">Meet Our Team</h2>
+<section class="text-center py-12">
+    <h2 class="text-3xl font-bold text-white">Team Members</h2>
+  </section>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-5xl mx-auto font-poppins text-gray-700">
-    <!-- Team Member 1 -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rajesh Patel" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" />
-      <h3 class="text-xl font-semibold text-gray-900">Rajesh Patel</h3>
-      <p class="text-indigo-600 mb-2">Founder & CEO</p>
-      <p class="text-sm">With 20+ years of experience, Rajesh leads the company’s vision and strategic growth in fabrication and engineering.</p>
-    </div>
+  <!-- Slideshow Section -->
+  <section class="w-full py-4 flex justify-center">
+    <div class="swiper mySwiper w-full max-w-3xl">
+      <div class="swiper-wrapper">
 
-    <!-- Team Member 2 -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-      <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Sneha Joshi" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" />
-      <h3 class="text-xl font-semibold text-gray-900">Sneha Joshi</h3>
-      <p class="text-indigo-600 mb-2">Head of Operations</p>
-      <p class="text-sm">Sneha ensures smooth daily operations and quality control, overseeing projects from start to finish.</p>
-    </div>
+        <!-- Slide 1 -->
+        <div class="swiper-slide group relative">
+          <div class="rounded-xl shadow-xl overflow-hidden relative">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg"
+                 alt="Rajesh Patel"
+                 class="w-full h-[500px] object-cover transform transition-transform duration-500 group-hover:scale-105 kenburns" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h3 class="text-lg font-bold">Rajesh Patel</h3>
+                <p class="text-sm">Founder & CEO</p>
+              </div>
+            </div>
+            <div class="absolute top-0 left-0 h-1 bg-indigo-500 w-full animate-slideDuration"></div>
+          </div>
+        </div>
 
-    <!-- Team Member 3 -->
-    <div class="bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 p-6 text-center">
-      <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Vikram Singh" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" />
-      <h3 class="text-xl font-semibold text-gray-900">Vikram Singh</h3>
-      <p class="text-indigo-600 mb-2">Lead Engineer</p>
-      <p class="text-sm">Vikram specializes in structural design and custom fabrication solutions tailored to client needs.</p>
+        <!-- Slide 2 -->
+        <div class="swiper-slide group relative">
+          <div class="rounded-xl shadow-xl overflow-hidden relative">
+            <img src="https://randomuser.me/api/portraits/women/55.jpg"
+                 alt="Sneha Joshi"
+                 class="w-full h-[500px] object-cover transform transition-transform duration-500 group-hover:scale-105 kenburns" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h3 class="text-lg font-bold">Sneha Joshi</h3>
+                <p class="text-sm">Head of Operations</p>
+              </div>
+            </div>
+            <div class="absolute top-0 left-0 h-1 bg-indigo-500 w-full animate-slideDuration"></div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide group relative">
+          <div class="rounded-xl shadow-xl overflow-hidden relative">
+            <img src="https://randomuser.me/api/portraits/men/52.jpg"
+                 alt="Vikram Singh"
+                 class="w-full h-[500px] object-cover transform transition-transform duration-500 group-hover:scale-105 kenburns" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-4">
+              <div>
+                <h3 class="text-lg font-bold">Vikram Singh</h3>
+                <p class="text-sm">Lead Engineer</p>
+              </div>
+            </div>
+            <div class="absolute top-0 left-0 h-1 bg-indigo-500 w-full animate-slideDuration"></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- Contact Section -->
 <section id="contact" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12 font-poppins">
@@ -637,6 +688,22 @@ x
       duration: 800,
       easing: 'ease-in-out',
       once: true,
+    });
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Swiper Init -->
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 1,
+      spaceBetween: 30,
     });
   </script>
 
