@@ -3,35 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shree Engineering Works – Portfolio</title>
-
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-
-  <!-- Google Font for cleaner typography -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- AOS (Animate on Scroll) -->
+  <title>Shree Engineering Works</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
+   <!-- Your Custom JS file -->
+<script src="script.js"></script>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    #thumbs img {
+      border: 2px solid transparent;
     }
-    .modal-enter {
-      animation: fadeIn 0.3s ease-in-out;
+    #thumbs img:hover {
+      border-color: #4f46e5; /* indigo-600 */
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
+  </style>
+  <style>
+    @keyframes driveIn {
+      0% {
+        transform: translateX(100vw);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInNavItem {
+      0% {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .drive-in {
+      animation: driveIn 3s ease-out forwards;
+    }
+
+    .nav-item {
+      opacity: 0;
+      animation: fadeInNavItem 0.6s ease forwards;
     }
   </style>
 </head>
-
-<body class="bg-gray-100">
+<body class="bg-gray-50 text-gray-800">
   <header class="bg-white shadow-md px-6 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo (car animation) -->
@@ -42,10 +66,10 @@
         <a href="#home" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3s">Home</a>
         <a href="#about" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.2s">About</a>
         <a href="#services" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.4s">Services</a>
-        <a href="portfolio.html" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
+        <a href="#portfolio" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
         <a href="#testimonial" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.8s">Testimonial</a>
         <a href="#how-it-works" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Certifications</a>
-        <a href="#how-it-works" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>
+        <a href="#team" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>
         <a href="#contact" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4.2s">Contact</a>
         <a href="#quote" class="nav-item bg-black text-white px-4 py-1 rounded hover:bg-gray-800 no-underline" style="animation-delay: 4.4s">Get Quote</a>
       </nav>
@@ -70,81 +94,84 @@
     </nav>
   </header>
 
-  <!-- Portfolio Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <h2 class="text-2xl font-semibold text-gray-700 mb-10 text-center">Selected Projects</h2>
+
+<section id="ashokleyland_portfolio">
+  <!-- ASHOK LEYLAND Logo -->
+  <div class="flex justify-center my-10">
+    <img src="asset/Company_Logo/tata-logo.svg" alt="TATA Project" class="w-40 h-auto">
+  </div>
+
+  <!-- ASHOK LEYLAND Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    
 
     <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- Portfolio Card Example -->
+      <!-- Card 1 -->
       <div onclick="openPortfolioModal(1)" data-aos="fade-up" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300">
         <div class="overflow-hidden rounded-t-xl">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg"
+          <img src="asset/Truck_Images/Ashok_Leyland/truck1/1.jpeg"
                alt="Project 1"
-               class="w-full h-60 object-cover transform group-hover:scale-105 transition duration-300" />
+               class="w-full h-[420px] object-cover transform group-hover:scale-105 transition duration-300" />
         </div>
-        <div class="p-5">
+        <div class="p-5 text-center">
           <h3 class="text-lg font-semibold mb-1">Heavy Duty Fabrication</h3>
           <p class="text-sm text-gray-600">Steel fabrication for logistics and heavy transport systems.</p>
         </div>
       </div>
-      
+
+      <!-- Card 2 -->
       <div onclick="openPortfolioModal(2)" data-aos="fade-up" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300">
         <div class="overflow-hidden rounded-t-xl">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg"
-               alt="Project 1"
-               class="w-full h-60 object-cover transform group-hover:scale-105 transition duration-300" />
+          <img src="asset/Truck_Images/Ashok_Leyland/truck2/1.jpeg"
+               alt="Project 2"
+               class="w-full h-[420px]  object-cover transform group-hover:scale-105 transition duration-300" />
         </div>
-        <div class="p-5">
-          <h3 class="text-lg font-semibold mb-1">Heavy Duty Fabrication</h3>
-          <p class="text-sm text-gray-600">Steel fabrication for logistics and heavy transport systems.</p>
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-semibold mb-1">Welding Assembly</h3>
+          <p class="text-sm text-gray-600">Automated and manual welding of subassemblies for TATA logistics vehicles.</p>
         </div>
       </div>
-      
+
+      <!-- Card 3 -->
       <div onclick="openPortfolioModal(3)" data-aos="fade-up" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300">
         <div class="overflow-hidden rounded-t-xl">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg"
-               alt="Project 1"
-               class="w-full h-60 object-cover transform group-hover:scale-105 transition duration-300" />
+          <img src="asset/mahindra/Mahin_jito/4.jpeg"
+               alt="Project 3"
+               class="w-full h-[420px] object-cover transform group-hover:scale-105 transition duration-300" />
         </div>
-        <div class="p-5">
-          <h3 class="text-lg font-semibold mb-1">Heavy Duty Fabrication</h3>
-          <p class="text-sm text-gray-600">Steel fabrication for logistics and heavy transport systems.</p>
+        <div class="p-5 text-center">
+          <h3 class="text-lg font-semibold mb-1">Chassis Line Work</h3>
+          <p class="text-sm text-gray-600">Assembly line support for chassis welding and inspections.</p>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- Modal -->
+  <div id="portfolioModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 hidden px-4 sm:px-6">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-5xl max-h-[80vh] overflow-y-auto p-4 relative">
+      <!-- Close Button -->
+      <button id="closeModal" class="absolute top-2 right-3 text-2xl font-bold text-gray-600 hover:text-red-500 z-10">&times;</button>
 
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Image Area -->
+        <div>
+          <img id="mainImage" src="" alt="Main" class="w-full h-[400px] x object-cover rounded-md border mb-4" />
+          <div id="thumbs" class="grid grid-cols-4 gap-2"></div>
+        </div>
 
-      <!-- You can replicate this structure for Project 2 and Project 3 -->
-
-
- <!-- Portfolio Modal -->
-<div id="portfolioModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 hidden px-4 sm:px-6">
-  <div class="bg-white rounded-lg shadow-xl w-full max-w-5xl max-h-[60vh] sm:max-h-[80vh] overflow-y-auto p-4 sm:p-5 relative">
-    <!-- Close Button -->
-    <button id="closeModal" class="absolute top-2 right-3 text-xl sm:text-2xl font-bold text-gray-600 hover:text-red-500 z-10">
-      &times;
-    </button>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-      <!-- Left: Image Section -->
-      <div>
-        <img id="mainImage" src="" class="w-full h-40 sm:h-72 object-cover rounded-md border mb-3 sm:mb-4" alt="Main Project" />
-
-        <div id="thumbs" class="grid grid-cols-4 gap-1 sm:gap-2"></div>
-      </div>
-
-      <!-- Right: Description -->
-      <div>
-        <h3 id="projectTitle" class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3"></h3>
-        <p id="projectDesc" class="text-gray-700 mb-3 sm:mb-4 text-sm sm:text-base"></p>
-        <ul id="projectDetails" class="list-disc list-inside text-gray-600 text-xs sm:text-sm space-y-1"></ul>
+        <!-- Info Area -->
+        <div>
+          <h3 id="projectTitle" class="text-xl font-bold mb-2"></h3>
+          <p id="projectDesc" class="text-gray-700 mb-3 text-sm"></p>
+          <ul id="projectDetails" class="list-disc list-inside text-gray-600 text-sm space-y-1"></ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</section>
+  </section>
 
-<!-- Compact Footer -->
+  <!-- Compact Footer -->
 <footer class="bg-gray-900 text-gray-300 py-6 font-poppins">
   <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
     <!-- Company Info -->
@@ -196,118 +223,85 @@
   </div>
 </footer>
 
- <!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  // Animate on Scroll init
-  AOS.init({ duration: 800 });
 
-  // Typed.js for header text
-  new Typed("#typedText", {
-    strings: ["Welcome to Shree Engineering Works", "Explore Our Industrial Projects", "Precision. Power. Performance."],
-    typeSpeed: 40,
-    backSpeed: 20,
-    loop: true,
-  });
+  <!-- Scripts -->
+  <script>
+    AOS.init();
 
-  // Project data
-  const projects = {
-    1: {
-      title: "Heavy Duty Fabrication Project",
-      mainImage: "https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg",
-      thumbs: [
-        "https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg",
-        "https://images.unsplash.com/photo-1581092334313-d6f1ccfa3d9b?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1532634726-7f4ec02fda27?auto=format&fit=crop&w=600&q=80"
-      ],
-      desc: "Precision fabrication of steel frameworks for logistics and transportation infrastructure.",
-      details: [
-        "Heavy-duty steel welding and fitting",
-        "Freightliner M2 support integration",
-        "Delivered on schedule",
-        "Safety-checked installations"
-      ]
-    },
-    
-    2: {
-      title: "Heavy Duty Fabrication Project",
-      mainImage: "https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg",
-      thumbs: [
-        "https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg",
-        "https://images.unsplash.com/photo-1581092334313-d6f1ccfa3d9b?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1532634726-7f4ec02fda27?auto=format&fit=crop&w=600&q=80"
-      ],
-      desc: "Precision fabrication of steel frameworks for logistics and transportation infrastructure.",
-      details: [
-        "Heavy-duty steel welding and fitting",
-        "Freightliner M2 support integration",
-        "Delivered on schedule",
-        "Safety-checked installations"
-      ]
-    },
-    
-    3: {
-      title: "Heavy Duty Fabrication Project",
-      mainImage: "https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg",
-      thumbs: [
-        "https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg",
-        "https://images.unsplash.com/photo-1581092334313-d6f1ccfa3d9b?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1532634726-7f4ec02fda27?auto=format&fit=crop&w=600&q=80"
-      ],
-      desc: "Precision fabrication of steel frameworks for logistics and transportation infrastructure.",
-      details: [
-        "Heavy-duty steel welding and fitting",
-        "Freightliner M2 support integration",
-        "Delivered on schedule",
-        "Safety-checked installations"
-      ]
-    },
-    // Add Project 2 and 3 here like before
-  };
+    const projectData = {
+      1: {
+        title: "Heavy Duty Fabrication",
+        desc: "Complete structural steel fabrication for heavy-duty trucks.",
+        images: [
+          "asset/Truck_Images/Ashok_Leyland/truck1/1.jpeg",
+          "asset/Truck_Images/Ashok_Leyland/truck1/2.jpeg",
+          "asset/Truck_Images/Ashok_Leyland/truck1/3.jpeg",
+          "asset/Truck_Images/Ashok_Leyland/truck1/4.jpeg"
+        ],
+        details: ["MIG welding", "Robotic fabrication", "Surface treatment"]
+      },
+      2: {
+        title: "Welding Assembly",
+        desc: "Automated and manual welding of subassemblies for TATA logistics vehicles.",
+        images: [
+          "asset/Truck_Images/Ashok_Leyland/truck2/1.jpeg",
+          "asset/Truck_Images/Ashok_Leyland/truck2/2.jpeg",
+          "asset/Truck_Images/Ashok_Leyland/truck2/2.jpeg",
+          "asset/Truck_Images/Ashok_Leyland/truck2/1.jpeg"
+        ],
+        details: ["Custom jigs", "Safety tested", "Precision tolerance"]
+      },
+      3: {
+        title: "Chassis Line Work",
+        desc: "Assembly line support for chassis welding and inspections.",
+        images: [
+          "https://upload.wikimedia.org/wikipedia/commons/9/9e/Freightliner_M2_106_Dump_Truck.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/1/11/Freightliner_M2_106_6x4_2014_%2814240376744%29.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/2/2f/2012_Freightliner_M2_106_Box_Truck.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/6/61/Freightliner_M2_Business_Class.jpg"
+        ],
+        details: ["Laser cut frames", "Load-tested", "ISO certified"]
+      }
+    };
 
-  function openPortfolioModal(id) {
-    const project = projects[id];
-    if (!project) return;
+    function openPortfolioModal(id) {
+      const modal = document.getElementById('portfolioModal');
+      const mainImage = document.getElementById('mainImage');
+      const projectTitle = document.getElementById('projectTitle');
+      const projectDesc = document.getElementById('projectDesc');
+      const projectDetails = document.getElementById('projectDetails');
+      const thumbs = document.getElementById('thumbs');
 
-    const modal = document.getElementById("portfolioModal");
-    document.getElementById("mainImage").src = project.mainImage;
-    document.getElementById("projectTitle").textContent = project.title;
-    document.getElementById("projectDesc").textContent = project.desc;
+      const project = projectData[id];
 
-    // Thumbnails
-    const thumbs = document.getElementById("thumbs");
-    thumbs.innerHTML = "";
-    project.thumbs.forEach(src => {
-      const img = document.createElement("img");
-      img.src = src;
-      img.className = "w-full h-16 object-cover rounded-lg border hover:border-black cursor-pointer";
-      img.onclick = () => {
-        document.getElementById("mainImage").src = src;
-      };
-      thumbs.appendChild(img);
+      mainImage.src = project.images[0];
+      projectTitle.textContent = project.title;
+      projectDesc.textContent = project.desc;
+      projectDetails.innerHTML = '';
+      thumbs.innerHTML = '';
+
+      project.details.forEach(detail => {
+        const li = document.createElement('li');
+        li.textContent = detail;
+        projectDetails.appendChild(li);
+      });
+
+      project.images.forEach((imgSrc) => {
+        const thumb = document.createElement('img');
+        thumb.src = imgSrc;
+        thumb.className = "w-full h-16 object-cover rounded-md border cursor-pointer hover:scale-105 transition";
+        thumb.onclick = () => mainImage.src = imgSrc;
+        thumbs.appendChild(thumb);
+      });
+
+      modal.classList.remove('hidden');
+    }
+
+    document.getElementById('closeModal').addEventListener('click', () => {
+      document.getElementById('portfolioModal').classList.add('hidden');
     });
+  </script>
 
-    // Details
-    const details = document.getElementById("projectDetails");
-    details.innerHTML = "";
-    project.details.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      details.appendChild(li);
-    });
-
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-  }
-
-  document.getElementById("closeModal").addEventListener("click", () => {
-    const modal = document.getElementById("portfolioModal");
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-  });
-</script>
+  
 </body>
 </html>
