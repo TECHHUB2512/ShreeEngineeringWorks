@@ -113,23 +113,27 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         <!-- Card 1 -->
-        <div onclick="openPortfolioModal(1)" data-aos="fade-up" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300">
-          <div class="overflow-hidden rounded-t-xl">
-            <picture>
-              <source srcset="images/Truck_images/Ashok_Leyland/14FT/2-sm.webp" media="(max-width: 640px)">
-              <source srcset="images/Truck_images/Ashok_Leyland/14FT/2-md.webp" media="(max-width: 1024px)">
-              <img src="images/Truck_images/Ashok_Leyland/14FT/2.webp" 
-                   alt="Project 1" 
-                   class="w-full h-[420px] object-cover transform group-hover:scale-105 transition duration-300 img-loading"
-                   loading="lazy" width="400" height="420"
-                   onload="this.classList.remove('img-loading')">
-            </picture>
-          </div>
-          <div class="p-5 text-center">
-            <h3 class="text-lg font-semibold mb-1">Ashok Leyland 14 F</h3>
-            <p class="text-sm text-gray-600">Steel fabrication for logistics and heavy transport systems.</p>
-          </div>
-        </div>
+        <div onclick="openPortfolioModal(1)" data-aos="fade-up" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full max-w-sm mx-auto">
+  <div class="overflow-hidden rounded-t-xl">
+    <picture>
+      <source srcset="images/Truck_images/Ashok_Leyland/14FT/2-sm.webp" media="(max-width: 640px)">
+      <source srcset="images/Truck_images/Ashok_Leyland/14FT/2-md.webp" media="(max-width: 1024px)">
+      <img 
+        src="images/Truck_images/Ashok_Leyland/14FT/2.webp" 
+        alt="Project 1" 
+        class="w-full h-48 object-contain group-hover:scale-105 transition duration-300 img-loading" 
+        loading="lazy" 
+        width="400" 
+        height="240"
+        onload="this.classList.remove('img-loading')">
+    </picture>
+  </div>
+  <div class="p-4 text-center">
+    <h3 class="text-base font-semibold mb-1">Ashok Leyland 14 F</h3>
+    <p class="text-sm text-gray-600">Steel fabrication for logistics and heavy transport systems.</p>
+  </div>
+</div>
+
 
         <!-- Card 2 -->
         <div onclick="openPortfolioModal(2)" data-aos="fade-up" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300">
