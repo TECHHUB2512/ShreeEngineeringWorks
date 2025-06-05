@@ -116,17 +116,17 @@
         <div 
   onclick="openPortfolioModal(1)" 
   data-aos="fade-up"
-  class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full max-w-xs mx-auto"
+  class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full max-w-sm mx-auto"
 >
-  <!-- Image -->
-  <div class="w-full aspect-[4/3] bg-gray-100 rounded-t-xl overflow-hidden">
+  <!-- Image (auto height based on aspect ratio) -->
+  <div class="w-full bg-white rounded-t-xl overflow-hidden">
     <picture>
       <source srcset="images/Truck_images/Ashok_Leyland/14FT/2-sm.webp" media="(max-width: 640px)">
       <source srcset="images/Truck_images/Ashok_Leyland/14FT/2-md.webp" media="(max-width: 1024px)">
       <img 
         src="images/Truck_images/Ashok_Leyland/14FT/2.webp" 
         alt="Ashok Leyland 14 F" 
-        class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105 img-loading"
+        class="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-105 img-loading"
         loading="lazy"
         onload="this.classList.remove('img-loading')"
       >
