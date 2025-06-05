@@ -17,42 +17,43 @@
   
   <!-- Inline critical CSS -->
   <style>
-    /* Critical CSS */
-    #logo, .nav-item, #mobile-menu-btn {
-      display: block;
+    #thumbs img {
+      border: 2px solid transparent;
     }
-    
-    /* Image loading placeholders */
-    .img-loading {
-      background: #f6f7f8;
-      background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
-      background-size: 800px 104px;
-      animation: placeholderShimmer 1s linear infinite forwards;
+    #thumbs img:hover {
+      border-color: #4f46e5; /* indigo-600 */
     }
-    
-    @keyframes placeholderShimmer {
-      0% { background-position: -468px 0 }
-      100% { background-position: 468px 0 }
-    }
-    
-    /* Animation styles */
-    @keyframes driveIn {
-      0% { transform: translateX(100vw); }
-      100% { transform: translateX(0); }
-    }
-    
-    @keyframes fadeInNavItem {
-      0% { opacity: 0; transform: translateX(30px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-    
-    .drive-in { animation: driveIn 3s ease-out forwards; }
-    .nav-item { opacity: 0; animation: fadeInNavItem 0.6s ease forwards; }
-    
-    #thumbs img { border: 2px solid transparent; }
-    #thumbs img:hover { border-color: #4f46e5; }
   </style>
-  
+  <style>
+    @keyframes driveIn {
+      0% {
+        transform: translateX(100vw);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInNavItem {
+      0% {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .drive-in {
+      animation: driveIn 3s ease-out forwards;
+    }
+
+    .nav-item {
+      opacity: 0;
+      animation: fadeInNavItem 0.6s ease forwards;
+    }
+  </style>
   <!-- Non-critical CSS -->
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -61,10 +62,10 @@
   </noscript>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <header class="bg-white shadow-md px-6 py-4">
+ <header class="bg-white shadow-md px-6 py-4">
     <div class="flex items-center justify-between">
-      <!-- Optimized Logo -->
-       <img src="images/logo/shree logo.png" alt="Logo" class="drive-in w-15 h-12" id="logo" />
+      <!-- Logo (car animation) -->
+      <img src="images/logo/shree logo.png" alt="Logo" class="drive-in w-15 h-12" id="logo" />
 
       <!-- Desktop Navbar -->
       <nav class="hidden md:flex gap-6 text-sm text-black font-medium ml-auto" id="nav-links">
