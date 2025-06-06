@@ -2,115 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shree Engineering Works</title>
-  
-  <!-- Preload critical resources -->
-  <link rel="preload" href="images/logo/shree logo.png" as="image">
-  <link rel="preload" href="asset/Company_Logo/ashok-leyland-logo-2.svg" as="image">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
-  
-  <!-- CSS with loading optimization -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-  
-  <!-- Inline critical CSS -->
-  <style>
-    #thumbs img {
-      border: 2px solid transparent;
-    }
-    #thumbs img:hover {
-      border-color: #4f46e5; /* indigo-600 */
-    }
-  </style>
-  <style>
-    @keyframes driveIn {
-      0% {
-        transform: translateX(100vw);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes fadeInNavItem {
-      0% {
-        opacity: 0;
-        transform: translateX(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .drive-in {
-      animation: driveIn 3s ease-out forwards;
-    }
-
-    .nav-item {
-      opacity: 0;
-      animation: fadeInNavItem 0.6s ease forwards;
-    }
-  </style>
-  <!-- Non-critical CSS -->
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  </noscript>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Truck Gallery Card Modal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
- <header class="bg-white shadow-md px-6 py-4">
-    <div class="flex items-center justify-between">
-      <!-- Logo (car animation) -->
-      <img src="images/logo/shree logo.png" alt="Logo" class="drive-in w-15 h-12" id="logo" />
+<body class="bg-gray-100">
 
-      <!-- Desktop Navbar -->
-      <nav class="hidden md:flex gap-6 text-sm text-black font-medium ml-auto" id="nav-links">
-        <a href="#home" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3s">Home</a>
-        <a href="#about" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.2s">About</a>
-        <a href="#services" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.4s">Services</a>
-        <a href="#portfolio" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
-        <a href="#testimonial" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.8s">Testimonial</a>
-        <a href="#how-it-works" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Certifications</a>
-        <a href="#team" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>
-        <a href="#contact" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4.2s">Contact</a>
-        <a href="#quote" class="nav-item bg-black text-white px-4 py-1 rounded hover:bg-gray-800 no-underline" style="animation-delay: 4.4s">Get Quote</a>
-      </nav>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
-      <!-- Mobile Nav Toggle -->
-      <button id="mobile-menu-btn" class="md:hidden text-black text-2xl">
-        ☰
-      </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <nav id="mobile-menu" class="md:hidden hidden flex-col bg-white px-6 py-4 space-y-4 text-sm font-medium shadow transition-all duration-300 ease-in-out">
-      <a href="#home" class="block text-black hover:text-gray-700 no-underline">Home</a>
-      <a href="#about" class="block text-black hover:text-gray-700 no-underline">About</a>
-      <a href="#services" class="block text-black hover:text-gray-700 no-underline">Services</a>
-      <a href="#projects" class="block text-black hover:text-gray-700 no-underline">Portfolio</a>
-      <a href="#testimonial" class="block text-black hover:text-gray-700 no-underline">Testimonial</a>
-      <a href="#how-it-works" class="block text-black hover:text-gray-700 no-underline">Certifications</a>
-      <a href="#how-it-works" class="block text-black hover:text-gray-700 no-underline">Team</a>
-      <a href="#contact" class="block text-black hover:text-gray-700 no-underline">Contact</a>
-      <a href="#quote" class="block bg-black text-white px-4 py-2 rounded text-center hover:bg-gray-800 no-underline">Get a Quote</a>
-    </nav>
-  </header>
-
-  <section id="ashokleyland_portfolio">
-    <!-- Optimized Company Logo -->
-    <div class="flex justify-center my-10">
-      <img src="asset/Company_Logo/ashok-leyland-logo-2.svg" alt="TATA Project" 
-           class="w-40 h-auto img-loading"
-           loading="lazy" width="160" height="40"
-           onload="this.classList.remove('img-loading')">
-    </div>
-
-    <!-- Portfolio Section with Optimized Images -->
- <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
   <!-- Single Card -->
   <div 
     onclick="openGallery()" 
@@ -129,40 +28,40 @@
     </div>
   </div>
 
-  <!-- Card-style Gallery Modal -->
-  <div id="galleryModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 hidden px-4">
-    <div class="bg-white rounded-xl shadow-2xl w-full max-w-3xl overflow-hidden">
-      <!-- Close Button -->
-      <button onclick="closeGallery()" class="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl z-50 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow">
-        &times;
-      </button>
-      
-      <!-- Main Image Container -->
-      <div class="relative w-full h-64 sm:h-80 md:h-96">
-        <img id="galleryImage" src="" 
-             class="w-full h-full object-contain p-4"
-             loading="lazy">
-      </div>
-      
-      <!-- Thumbnail Navigation -->
-      <div class="border-t border-gray-200 p-4">
-        <div class="flex overflow-x-auto space-x-2">
-          <img src="images/Truck_images/Ashok_Leyland/14FT/1.webp" 
-               onclick="changeImage(this.src)" 
-               class="h-16 w-auto object-cover border-2 border-transparent hover:border-blue-500 cursor-pointer rounded">
-          <img src="images/Truck_images/Ashok_Leyland/14FT/2.webp" 
-               onclick="changeImage(this.src)" 
-               class="h-16 w-auto object-cover border-2 border-transparent hover:border-blue-500 cursor-pointer rounded">
-          <img src="images/Truck_images/Ashok_Leyland/14FT/3.webp" 
-               onclick="changeImage(this.src)" 
-               class="h-16 w-auto object-cover border-2 border-transparent hover:border-blue-500 cursor-pointer rounded">
-          <img src="images/Truck_images/Ashok_Leyland/14FT/4.webp" 
-               onclick="changeImage(this.src)" 
-               class="h-16 w-auto object-cover border-2 border-transparent hover:border-blue-500 cursor-pointer rounded">
-        </div>
+  <!-- Gallery Modal as Card -->
+  <div id="galleryModal" 
+       class="absolute top-20 left-1/2 transform -translate-x-1/2 z-50 bg-white rounded-xl shadow-lg border max-w-3xl w-full hidden">
+
+    <!-- Close Button -->
+    <button onclick="closeGallery()" 
+            class="absolute top-2 right-2 text-black text-2xl z-50">&times;</button>
+    
+    <!-- Main Image Container -->
+    <div class="relative w-full h-96 flex items-center justify-center p-4">
+      <img id="galleryImage" src="" 
+           class="max-h-full max-w-full object-contain rounded-lg"
+           loading="lazy">
+    </div>
+    
+    <!-- Thumbnail Navigation -->
+    <div class="border-t px-4 py-2">
+      <div class="flex overflow-x-auto space-x-2 justify-center py-2">
+        <img src="images/Truck_images/Ashok_Leyland/14FT/1.webp" 
+             onclick="changeImage(this.src)" 
+             class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
+        <img src="images/Truck_images/Ashok_Leyland/14FT/2.webp" 
+             onclick="changeImage(this.src)" 
+             class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
+        <img src="images/Truck_images/Ashok_Leyland/14FT/3.webp" 
+             onclick="changeImage(this.src)" 
+             class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
+        <img src="images/Truck_images/Ashok_Leyland/14FT/4.webp" 
+             onclick="changeImage(this.src)" 
+             class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
       </div>
     </div>
   </div>
+
 </section>
 
 <script>
@@ -174,41 +73,21 @@
     // Set first image as default
     mainImage.src = "images/Truck_images/Ashok_Leyland/14FT/1.webp";
     
-    // Show modal and disable scrolling
+    // Show modal
     modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
   }
 
   // Change the main gallery image
   function changeImage(src) {
-    const mainImage = document.getElementById('galleryImage');
-    mainImage.src = src;
-    mainImage.classList.add('opacity-0');
-    setTimeout(() => {
-      mainImage.classList.remove('opacity-0');
-    }, 100);
-    
-    // Highlight selected thumbnail
-    document.querySelectorAll('#galleryModal .border-blue-500').forEach(img => {
-      img.classList.remove('border-blue-500', 'border-2');
-    });
-    event.target.classList.add('border-blue-500', 'border-2');
+    document.getElementById('galleryImage').src = src;
   }
 
   // Close gallery
   function closeGallery() {
     document.getElementById('galleryModal').classList.add('hidden');
-    document.body.style.overflow = ''; // Re-enable scrolling
   }
 
-  // Close when clicking outside card
-  document.getElementById('galleryModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeGallery();
-    }
-  });
-
-  // Keyboard navigation
+  // Optional: Close modal when pressing Escape
   document.addEventListener('keydown', function(e) {
     const modal = document.getElementById('galleryModal');
     if (!modal.classList.contains('hidden')) {
@@ -218,199 +97,6 @@
     }
   });
 </script>
-        <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-6 font-poppins">
-      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div>
-          <h3 class="text-white text-lg font-semibold mb-2">Shree Engineering Works</h3>
-          <p class="text-gray-400 text-xs leading-tight">
-            Established 1990<br />
-            123 Industrial Road, Cityname, State, 123456<br />
-            Phone: +1 234 567 890<br />
-            Email: info@shreeengineering.com
-          </p>
-        </div>
-        <div>
-          <h3 class="text-white text-lg font-semibold mb-2">Quick Links</h3>
-          <ul class="space-y-1 text-xs">
-            <li><a href="#home" class="hover:text-indigo-500 transition-colors">Home</a></li>
-            <li><a href="#about" class="hover:text-indigo-500 transition-colors">About</a></li>
-            <li><a href="#services" class="hover:text-indigo-500 transition-colors">Services</a></li>
-            <li><a href="#projects" class="hover:text-indigo-500 transition-colors">Portfolio</a></li>
-            <li><a href="#testimonial" class="hover:text-indigo-500 transition-colors">Testimonials</a></li>
-            <li><a href="#contact" class="hover:text-indigo-500 transition-colors">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
-          <div class="flex space-x-4 text-xl">
-            <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-              <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="max-w-6xl mx-auto px-6 mt-6 border-t border-gray-700 text-center text-xs text-gray-500">
-        &copy; 1990 - <script>document.write(new Date().getFullYear())</script> Shree Engineering Works. All rights reserved.
-      </div>
-    </footer>
 
-    <!-- Deferred JavaScript -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous" defer></script>
-    
-    <!-- Lazy Loading and Modal Script -->
-    <script>
-      // Initialize AOS after DOM loads
-      document.addEventListener('DOMContentLoaded', function() {
-        AOS.init();
-        
-        // Lazy load images
-        if ('IntersectionObserver' in window) {
-          const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-          const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const img = entry.target;
-                if (img.dataset.src) {
-                  img.src = img.dataset.src;
-                }
-                if (img.dataset.srcset) {
-                  img.srcset = img.dataset.srcset;
-                }
-                imageObserver.unobserve(img);
-              }
-            });
-          });
-          
-          lazyImages.forEach((img) => {
-            imageObserver.observe(img);
-          });
-        }
-      });
-
-      const projectData = {
-        1: {
-         
-          images: [
-            "images/Truck_images/Ashok_Leyland/14FT/1.webp",
-            "images/Truck_images/Ashok_Leyland/14FT/2.webp",
-            "images/Truck_images/Ashok_Leyland/14FT/3.webp",
-            "images/Truck_images/Ashok_Leyland/14FT/2.webp",
-          ]
-          
-        },
-        2: {
-        title: "Welding Assembly",
-        desc: "Automated and manual welding of subassemblies for TATA logistics vehicles.",
-        images: [
-          "images/Truck_images/Ashok_Leyland/20FT/1.webp",
-          "images/Truck_images/Ashok_Leyland/20FT/2.webp",
-          "images/Truck_images/Ashok_Leyland/20FT/3.webp",
-          "images/Truck_images/Ashok_Leyland/20FT/1.webp"
-          
-        ],
-        details: ["Custom jigs", "Safety tested", "Precision tolerance"]
-      },
-      3: {
-        title: "Chassis Line Work",
-        desc: "Assembly line support for chassis welding and inspections.",
-        images: [
-         "images/Truck_images/Ashok_Leyland/BOSS/1.webp",
-         "images/Truck_images/Ashok_Leyland/BOSS/2.webp",
-         "images/Truck_images/Ashok_Leyland/BOSS/3.webp",
-         "images/Truck_images/Ashok_Leyland/BOSS/4.webp"
-        ],
-        details: ["Laser cut frames", "Load-tested", "ISO certified"]
-      },
-      4: {
-        title: "Chassis Line Work",
-        desc: "Assembly line support for chassis welding and inspections.",
-        images: [
-         "images/Truck_images/Ashok_Leyland/DOST/1.webp",
-         "images/Truck_images/Ashok_Leyland/DOST/2.webp",
-         "images/Truck_images/Ashok_Leyland/DOST/3.webp",
-         "images/Truck_images/Ashok_Leyland/DOST/4.webp"
-        ],
-        details: ["Laser cut frames", "Load-tested", "ISO certified"]
-      },
-      5: {
-        title: "Chassis Line Work",
-        desc: "Assembly line support for chassis welding and inspections.",
-        images: [
-          "images/Truck_images/Ashok_Leyland/DOST_GHANTA_GADI/2.webp",
-          "images/Truck_images/Ashok_Leyland/DOST_GHANTA_GADI/3.webp",
-          "images/Truck_images/Ashok_Leyland/DOST_GHANTA_GADI/4.webp",
-          "images/Truck_images/Ashok_Leyland/DOST_GHANTA_GADI/5.webp"
-        ],
-        details: ["Laser cut frames", "Load-tested", "ISO certified"]
-      },
-      6: {
-        title: "Chassis Line Work",
-        desc: "Assembly line support for chassis welding and inspections.",
-        images: [
-          "images/Truck_images/Ashok_Leyland/ECOMET_HYTECH/1.webp",
-          "images/Truck_images/Ashok_Leyland/ECOMET_HYTECH/2.webp",
-          "images/Truck_images/Ashok_Leyland/ECOMET_HYTECH/3.webp",
-          "images/Truck_images/Ashok_Leyland/ECOMET_HYTECH/4.webp"
-        ],
-        details: ["Laser cut frames", "Load-tested", "ISO certified"]
-      }
-      
-        // ... (rest of your projectData object remains the same)
-      };
-
-      function openPortfolioModal(id) {
-        const modal = document.getElementById('portfolioModal');
-        const mainImage = document.getElementById('mainImage');
-        const projectTitle = document.getElementById('projectTitle');
-        const projectDesc = document.getElementById('projectDesc');
-        const projectDetails = document.getElementById('projectDetails');
-        const thumbs = document.getElementById('thumbs');
-
-        const project = projectData[id];
-
-        mainImage.src = project.images[0];
-        projectTitle.textContent = project.title;
-        projectDesc.textContent = project.desc;
-        projectDetails.innerHTML = '';
-        thumbs.innerHTML = '';
-
-        project.details.forEach(detail => {
-          const li = document.createElement('li');
-          li.textContent = detail;
-          projectDetails.appendChild(li);
-        });
-
-        project.images.forEach((imgSrc) => {
-          const thumb = document.createElement('img');
-          thumb.src = imgSrc;
-          thumb.className = "w-full h-16 object-cover rounded-md border cursor-pointer hover:scale-105 transition";
-          thumb.loading = "lazy";
-          thumb.onclick = () => {
-            mainImage.src = imgSrc;
-            mainImage.classList.add('img-loading');
-            mainImage.onload = () => mainImage.classList.remove('img-loading');
-          };
-          thumbs.appendChild(thumb);
-        });
-
-        modal.classList.remove('hidden');
-      }
-
-      document.getElementById('closeModal').addEventListener('click', () => {
-        document.getElementById('portfolioModal').classList.add('hidden');
-      });
-    </script>
-  </body>
+</body>
 </html>
