@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Truck Gallery Card Modal with Blur</title>
+  <title>Truck Gallery 6 Cards with Blur Popup</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 relative">
 
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-  <!-- Single Card -->
+  <!-- CARD TEMPLATE -->
+  <!-- Just duplicate this block and change cardNumber + images for each card -->
+
+  <!-- Card 1 -->
   <div 
-    onclick="openGallery()" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full max-w-sm mx-auto"
+    onclick="openGallery(1, 'images/Truck_images/Ashok_Leyland/14FT/1.webp')" 
+    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
   >
     <div class="w-full bg-white rounded-t-xl overflow-hidden">
       <img 
@@ -28,86 +31,208 @@
     </div>
   </div>
 
-  <!-- Gallery Modal with Blur Background -->
-  <div id="galleryBackdrop" 
-       class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-40"></div>
-
-  <div id="galleryModal" 
-       class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-white rounded-xl shadow-lg border max-w-3xl w-full hidden">
-
-    <!-- Close Button -->
-    <button onclick="closeGallery()" 
-            class="absolute top-2 right-2 text-black text-2xl z-50">&times;</button>
-    
-    <!-- Main Image Container -->
-    <div class="relative w-full h-96 flex items-center justify-center p-4">
-      <img id="galleryImage" src="" 
-           class="max-h-full max-w-full object-contain rounded-lg"
-           loading="lazy">
+  <!-- Card 2 -->
+  <div 
+    onclick="openGallery(2, 'images/Truck_images/Ashok_Leyland/20FT/1.webp')" 
+    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+  >
+    <div class="w-full bg-white rounded-t-xl overflow-hidden">
+      <img 
+        src="images/Truck_images/Ashok_Leyland/20FT/2.webp" 
+        alt="Truck Image" 
+        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      >
     </div>
-    
-    <!-- Thumbnail Navigation -->
-    <div class="border-t px-4 py-2">
-      <div class="flex overflow-x-auto space-x-2 justify-center py-2">
-        <img src="images/Truck_images/Ashok_Leyland/14FT/1.webp" 
-             onclick="changeImage(this.src)" 
-             class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
-        <img src="images/Truck_images/Ashok_Leyland/14FT/2.webp" 
-             onclick="changeImage(this.src)" 
-             class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
-        <img src="images/Truck_images/Ashok_Leyland/14FT/3.webp" 
-             onclick="changeImage(this.src)" 
-             class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
-        <img src="images/Truck_images/Ashok_Leyland/14FT/1.webp" 
-             onclick="changeImage(this.src)" 
-             class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
-      </div>
+    <div class="p-4 text-center">
+      <h3 class="text-base font-semibold">Ashok Leyland 20 F</h3>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div 
+    onclick="openGallery(3, 'images/Truck_images/Tata/14FT/1.webp')" 
+    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+  >
+    <div class="w-full bg-white rounded-t-xl overflow-hidden">
+      <img 
+        src="images/Truck_images/Tata/14FT/2.webp" 
+        alt="Truck Image" 
+        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      >
+    </div>
+    <div class="p-4 text-center">
+      <h3 class="text-base font-semibold">Tata 14 F</h3>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div 
+    onclick="openGallery(4, 'images/Truck_images/Tata/20FT/1.webp')" 
+    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+  >
+    <div class="w-full bg-white rounded-t-xl overflow-hidden">
+      <img 
+        src="images/Truck_images/Tata/20FT/2.webp" 
+        alt="Truck Image" 
+        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      >
+    </div>
+    <div class="p-4 text-center">
+      <h3 class="text-base font-semibold">Tata 20 F</h3>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div 
+    onclick="openGallery(5, 'images/Truck_images/Eicher/14FT/1.webp')" 
+    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+  >
+    <div class="w-full bg-white rounded-t-xl overflow-hidden">
+      <img 
+        src="images/Truck_images/Eicher/14FT/2.webp" 
+        alt="Truck Image" 
+        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      >
+    </div>
+    <div class="p-4 text-center">
+      <h3 class="text-base font-semibold">Eicher 14 F</h3>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div 
+    onclick="openGallery(6, 'images/Truck_images/Eicher/20FT/1.webp')" 
+    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+  >
+    <div class="w-full bg-white rounded-t-xl overflow-hidden">
+      <img 
+        src="images/Truck_images/Eicher/20FT/2.webp" 
+        alt="Truck Image" 
+        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      >
+    </div>
+    <div class="p-4 text-center">
+      <h3 class="text-base font-semibold">Eicher 20 F</h3>
     </div>
   </div>
 
 </section>
 
+<!-- Common Backdrop -->
+<div id="galleryBackdrop" 
+     class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-40"></div>
+
+<!-- Common Gallery Modal -->
+<div id="galleryModal" 
+     class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-white rounded-xl shadow-lg border max-w-3xl w-full hidden">
+
+  <!-- Close Button -->
+  <button onclick="closeGallery()" 
+          class="absolute top-2 right-2 text-black text-2xl z-50">&times;</button>
+  
+  <!-- Main Image Container -->
+  <div class="relative w-full h-96 flex items-center justify-center p-4">
+    <img id="galleryImage" src="" 
+         class="max-h-full max-w-full object-contain rounded-lg"
+         loading="lazy">
+  </div>
+  
+  <!-- Thumbnail Navigation -->
+  <div id="galleryThumbnails" class="border-t px-4 py-2">
+    <!-- Thumbnails will be injected here dynamically -->
+  </div>
+</div>
+
 <script>
-  // Open gallery with first image
-  function openGallery() {
+  const galleryData = {
+    1: [
+      'images/Truck_images/Ashok_Leyland/14FT/1.webp',
+      'images/Truck_images/Ashok_Leyland/14FT/2.webp',
+      'images/Truck_images/Ashok_Leyland/14FT/3.webp',
+      'images/Truck_images/Ashok_Leyland/14FT/4.webp',
+    ],
+    2: [
+      'images/Truck_images/Ashok_Leyland/20FT/1.webp',
+      'images/Truck_images/Ashok_Leyland/20FT/2.webp',
+      'images/Truck_images/Ashok_Leyland/20FT/3.webp',
+      'images/Truck_images/Ashok_Leyland/20FT/4.webp',
+    ],
+    3: [
+      'images/Truck_images/Tata/14FT/1.webp',
+      'images/Truck_images/Tata/14FT/2.webp',
+      'images/Truck_images/Tata/14FT/3.webp',
+      'images/Truck_images/Tata/14FT/4.webp',
+    ],
+    4: [
+      'images/Truck_images/Tata/20FT/1.webp',
+      'images/Truck_images/Tata/20FT/2.webp',
+      'images/Truck_images/Tata/20FT/3.webp',
+      'images/Truck_images/Tata/20FT/4.webp',
+    ],
+    5: [
+      'images/Truck_images/Eicher/14FT/1.webp',
+      'images/Truck_images/Eicher/14FT/2.webp',
+      'images/Truck_images/Eicher/14FT/3.webp',
+      'images/Truck_images/Eicher/14FT/4.webp',
+    ],
+    6: [
+      'images/Truck_images/Eicher/20FT/1.webp',
+      'images/Truck_images/Eicher/20FT/2.webp',
+      'images/Truck_images/Eicher/20FT/3.webp',
+      'images/Truck_images/Eicher/20FT/4.webp',
+    ],
+  };
+
+  function openGallery(cardNumber, firstImageSrc) {
     const modal = document.getElementById('galleryModal');
     const backdrop = document.getElementById('galleryBackdrop');
     const mainImage = document.getElementById('galleryImage');
-    
-    // Set first image as default
-    mainImage.src = "images/Truck_images/Ashok_Leyland/14FT/1.webp";
-    
+    const thumbnailsContainer = document.getElementById('galleryThumbnails');
+
+    // Set first image
+    mainImage.src = firstImageSrc;
+
+    // Populate thumbnails dynamically
+    thumbnailsContainer.innerHTML = `
+      <div class="flex overflow-x-auto space-x-2 justify-center py-2">
+        ${galleryData[cardNumber].map(src => `
+          <img src="${src}" 
+               onclick="changeImage('${src}')" 
+               class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
+        `).join('')}
+      </div>
+    `;
+
     // Show modal and backdrop
     modal.classList.remove('hidden');
     backdrop.classList.remove('hidden');
   }
 
-  // Change the main gallery image
   function changeImage(src) {
     document.getElementById('galleryImage').src = src;
   }
 
-  // Close gallery
   function closeGallery() {
     document.getElementById('galleryModal').classList.add('hidden');
     document.getElementById('galleryBackdrop').classList.add('hidden');
   }
 
-  // Optional: Close modal when pressing Escape
+  // Close modal on Escape key
   document.addEventListener('keydown', function(e) {
     const modal = document.getElementById('galleryModal');
     const backdrop = document.getElementById('galleryBackdrop');
-    if (!modal.classList.contains('hidden')) {
-      if (e.key === 'Escape') {
-        closeGallery();
-      }
+    if (!modal.classList.contains('hidden') && e.key === 'Escape') {
+      closeGallery();
     }
   });
 
-  // Optional: Click on backdrop closes gallery
-  document.getElementById('galleryBackdrop').addEventListener('click', function() {
-    closeGallery();
-  });
+  // Close on backdrop click
+  document.getElementById('galleryBackdrop').addEventListener('click', closeGallery);
 </script>
 
 </body>
