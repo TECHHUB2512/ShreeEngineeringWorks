@@ -110,7 +110,7 @@
     </div>
 
     <!-- Portfolio Section with Optimized Images -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+ <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
   <!-- Single Card -->
   <div 
     onclick="openGallery()" 
@@ -129,33 +129,37 @@
     </div>
   </div>
 
-  <!-- Full-screen Gallery Modal -->
-  <div id="galleryModal" class="fixed inset-0 z-50 bg-black bg-opacity-90 hidden">
-    <!-- Close Button -->
-    <button onclick="closeGallery()" class="absolute top-4 right-4 text-white text-3xl z-50">&times;</button>
-    
-    <!-- Main Image Container -->
-    <div class="relative w-full h-full flex items-center justify-center p-4">
-      <img id="galleryImage" src="" 
-           class="max-w-full max-h-full object-contain"
-           loading="lazy">
-    </div>
-    
-    <!-- Thumbnail Navigation -->
-    <div class="absolute bottom-4 left-0 right-0 px-4">
-      <div class="flex overflow-x-auto space-x-2 justify-center py-2">
-        <img src="images/Truck_images/Ashok_Leyland/14FT/1.webp" 
-             onclick="changeImage(this.src)" 
-             class="h-16 w-auto object-cover border-2 border-transparent hover:border-white cursor-pointer">
-        <img src="images/Truck_images/Ashok_Leyland/14FT/2.webp" 
-             onclick="changeImage(this.src)" 
-             class="h-16 w-auto object-cover border-2 border-transparent hover:border-white cursor-pointer">
-        <img src="images/Truck_images/Ashok_Leyland/14FT/3.webp" 
-             onclick="changeImage(this.src)" 
-             class="h-16 w-auto object-cover border-2 border-transparent hover:border-white cursor-pointer">
-        <img src="images/Truck_images/Ashok_Leyland/14FT/4.webp" 
-             onclick="changeImage(this.src)" 
-             class="h-16 w-auto object-cover border-2 border-transparent hover:border-white cursor-pointer">
+  <!-- Card-style Gallery Modal -->
+  <div id="galleryModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 hidden px-4">
+    <div class="bg-white rounded-xl shadow-2xl w-full max-w-3xl overflow-hidden">
+      <!-- Close Button -->
+      <button onclick="closeGallery()" class="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl z-50 bg-white rounded-full w-8 h-8 flex items-center justify-center shadow">
+        &times;
+      </button>
+      
+      <!-- Main Image Container -->
+      <div class="relative w-full h-64 sm:h-80 md:h-96">
+        <img id="galleryImage" src="" 
+             class="w-full h-full object-contain p-4"
+             loading="lazy">
+      </div>
+      
+      <!-- Thumbnail Navigation -->
+      <div class="border-t border-gray-200 p-4">
+        <div class="flex overflow-x-auto space-x-2">
+          <img src="images/Truck_images/Ashok_Leyland/14FT/1.webp" 
+               onclick="changeImage(this.src)" 
+               class="h-16 w-auto object-cover border-2 border-transparent hover:border-blue-500 cursor-pointer rounded">
+          <img src="images/Truck_images/Ashok_Leyland/14FT/2.webp" 
+               onclick="changeImage(this.src)" 
+               class="h-16 w-auto object-cover border-2 border-transparent hover:border-blue-500 cursor-pointer rounded">
+          <img src="images/Truck_images/Ashok_Leyland/14FT/3.webp" 
+               onclick="changeImage(this.src)" 
+               class="h-16 w-auto object-cover border-2 border-transparent hover:border-blue-500 cursor-pointer rounded">
+          <img src="images/Truck_images/Ashok_Leyland/14FT/4.webp" 
+               onclick="changeImage(this.src)" 
+               class="h-16 w-auto object-cover border-2 border-transparent hover:border-blue-500 cursor-pointer rounded">
+        </div>
       </div>
     </div>
   </div>
@@ -177,7 +181,18 @@
 
   // Change the main gallery image
   function changeImage(src) {
-    document.getElementById('galleryImage').src = src;
+    const mainImage = document.getElementById('galleryImage');
+    mainImage.src = src;
+    mainImage.classList.add('opacity-0');
+    setTimeout(() => {
+      mainImage.classList.remove('opacity-0');
+    }, 100);
+    
+    // Highlight selected thumbnail
+    document.querySelectorAll('#galleryModal .border-blue-500').forEach(img => {
+      img.classList.remove('border-blue-500', 'border-2');
+    });
+    event.target.classList.add('border-blue-500', 'border-2');
   }
 
   // Close gallery
@@ -186,7 +201,7 @@
     document.body.style.overflow = ''; // Re-enable scrolling
   }
 
-  // Close when clicking outside image
+  // Close when clicking outside card
   document.getElementById('galleryModal').addEventListener('click', function(e) {
     if (e.target === this) {
       closeGallery();
