@@ -2,11 +2,104 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Truck Gallery 6 Cards with Blur Popup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Engineering Works</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+   <!-- Your Custom JS file -->
+<script src="script.js"></script>
+  <style>
+    #thumbs img {
+      border: 2px solid transparent;
+    }
+    #thumbs img:hover {
+      border-color: #4f46e5; /* indigo-600 */
+    }
+  </style>
+  <style>
+    @keyframes driveIn {
+      0% {
+        transform: translateX(100vw);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInNavItem {
+      0% {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .drive-in {
+      animation: driveIn 3s ease-out forwards;
+    }
+
+    .nav-item {
+      opacity: 0;
+      animation: fadeInNavItem 0.6s ease forwards;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 relative">
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow-md px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo (car animation) -->
+      <img src="images/logo/shree logo.png" alt="Logo" class="drive-in w-15 h-12" id="logo" />
+
+      <!-- Desktop Navbar -->
+      <nav class="hidden md:flex gap-6 text-sm text-black font-medium ml-auto" id="nav-links">
+        <a href="#home" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3s">Home</a>
+        <a href="#about" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.2s">About</a>
+        <a href="#services" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.4s">Services</a>
+        <a href="#portfolio" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
+        <a href="#testimonial" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.8s">Testimonial</a>
+        <a href="#how-it-works" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Certifications</a>
+        <a href="#team" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>
+        <a href="#contact" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4.2s">Contact</a>
+        <a href="#quote" class="nav-item bg-black text-white px-4 py-1 rounded hover:bg-gray-800 no-underline" style="animation-delay: 4.4s">Get Quote</a>
+      </nav>
+
+      <!-- Mobile Nav Toggle -->
+      <button id="mobile-menu-btn" class="md:hidden text-black text-2xl">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="md:hidden hidden flex-col bg-white px-6 py-4 space-y-4 text-sm font-medium shadow transition-all duration-300 ease-in-out">
+      <a href="#home" class="block text-black hover:text-gray-700 no-underline">Home</a>
+      <a href="#about" class="block text-black hover:text-gray-700 no-underline">About</a>
+      <a href="#services" class="block text-black hover:text-gray-700 no-underline">Services</a>
+      <a href="#projects" class="block text-black hover:text-gray-700 no-underline">Portfolio</a>
+      <a href="#testimonial" class="block text-black hover:text-gray-700 no-underline">Testimonial</a>
+      <a href="#how-it-works" class="block text-black hover:text-gray-700 no-underline">Certifications</a>
+      <a href="#how-it-works" class="block text-black hover:text-gray-700 no-underline">Team</a>
+      <a href="#contact" class="block text-black hover:text-gray-700 no-underline">Contact</a>
+      <a href="#quote" class="block bg-black text-white px-4 py-2 rounded text-center hover:bg-gray-800 no-underline">Get a Quote</a>
+    </nav>
+  </header>
+
+
+<section id="ashokleyland_portfolio">
+  <!-- ASHOK LEYLAND Logo -->
+  <div class="flex justify-center my-10">
+    <img src="asset/Company_Logo/ashok-leyland-logo-2.svg" alt="TATA Project" class="w-40 h-auto">
+  </div>
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -234,6 +327,58 @@
   // Close on backdrop click
   document.getElementById('galleryBackdrop').addEventListener('click', closeGallery);
 </script>
+
+<!-- Compact Footer -->
+<footer class="bg-gray-900 text-gray-300 py-6 font-poppins">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Company Info -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2">Shree Engineering Works</h3>
+      <p class="text-gray-400 text-xs leading-tight">
+        Established 1990<br />
+        123 Industrial Road, Cityname, State, 123456<br />
+        Phone: +1 234 567 890<br />
+        Email: info@shreeengineering.com
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2">Quick Links</h3>
+      <ul class="space-y-1 text-xs">
+        <li><a href="#home" class="hover:text-indigo-500 transition-colors">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-500 transition-colors">About</a></li>
+        <li><a href="#services" class="hover:text-indigo-500 transition-colors">Services</a></li>
+        <li><a href="#projects" class="hover:text-indigo-500 transition-colors">Portfolio</a></li>
+        <li><a href="#testimonial" class="hover:text-indigo-500 transition-colors">Testimonials</a></li>
+        <li><a href="#contact" class="hover:text-indigo-500 transition-colors">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
+      <div class="flex space-x-4 text-xl">
+        <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 mt-6 border-t border-gray-700 text-center text-xs text-gray-500">
+    &copy; 1990 - <script>document.write(new Date().getFullYear())</script> Shree Engineering Works. All rights reserved.
+  </div>
+</footer>
 
 </body>
 </html>
