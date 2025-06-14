@@ -3,77 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Animated Logo Carousel</title>
+  <title>Tailwind Static Logo Carousel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      font-family: sans-serif;
-    }
-
-    .carousel {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      transition: transform 0.4s ease;
-    }
-
-    .carousel.rotate {
-      transform: rotateY(5deg);
-    }
-
-    .logo-container {
-      transition: all 0.5s ease;
-      flex-shrink: 0;
-      cursor: pointer;
-      opacity: 0.8;
-      background-color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .logo-container.active {
-      opacity: 1;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-      animation: bounce 0.4s ease-in-out;
-      width: 10rem;
-      height: auto;
-    }
-
-    .logo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 5px;
-    }
-
-    @keyframes bounce {
+    @keyframes bounce-center {
       0%   { transform: scale(1); }
       50%  { transform: scale(1.15); }
       100% { transform: scale(1); }
     }
 
-    /* Size presets for non-center logos */
-    .size-1 { width: 60px; height: 60px; }
-    .size-2 { width: 70px; height: 70px; }
-    .size-3 { width: 100px; height: 100px; }
+    .bounce-center {
+      animation: bounce-center 0.4s ease-in-out;
+    }
 
+    .rotate-effect {
+      transform: rotateY(5deg);
+      transition: transform 0.4s ease;
+    }
   </style>
 </head>
-<body>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
-  <div class="carousel" id="carousel"></div>
+  <div id="carousel" class="flex items-center justify-center gap-2 sm:gap-4 md:gap-6 transition-transform duration-300"></div>
 
   <script>
     const carousel = document.getElementById('carousel');
 
-    // Local logo image paths
     const logos = [
       "asset/Company_Logo/ashok-leyland-logo-2.svg",
       "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
@@ -82,30 +37,30 @@
       "asset/Company_Logo/suzuki-7.svg",
       "asset/Company_Logo/tata-logo.svg",
       "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
-
-      
     ];
 
     function getSizeClass(index) {
       const center = 3;
       const distance = Math.abs(index - center);
-      if (distance === 0) return '';
-      if (distance === 1) return 'size-3';
-      if (distance === 2) return 'size-2';
-      return 'size-1';
+      if (distance === 0) return 'w-28 sm:w-36';
+      if (distance === 1) return 'w-20 sm:w-28';
+      if (distance === 2) return 'w-16 sm:w-20';
+      return 'w-12 sm:w-16';
     }
 
     function render() {
       carousel.innerHTML = '';
       logos.forEach((logoURL, index) => {
-        const container = document.createElement('div');
         const sizeClass = getSizeClass(index);
-        container.className = `logo-container ${sizeClass}`;
-        if (index === 3) container.classList.add('active');
+        const isActive = index === 3;
+
+        const container = document.createElement('div');
+        container.className = `transition-all duration-500 ease-in-out cursor-pointer bg-white rounded-lg p-1 sm:p-2 flex justify-center items-center opacity-80 hover:opacity-100 shadow-md ${sizeClass} ${isActive ? 'opacity-100 shadow-xl bounce-center' : ''}`;
 
         const img = document.createElement('img');
         img.src = logoURL;
         img.alt = `Logo ${index + 1}`;
+        img.className = "object-contain w-full h-full";
 
         container.appendChild(img);
         container.onclick = () => moveToCenter(index);
@@ -123,8 +78,8 @@
         for (let i = 0; i < -shift; i++) logos.unshift(logos.pop());
       }
 
-      carousel.classList.add('rotate');
-      setTimeout(() => carousel.classList.remove('rotate'), 300);
+      carousel.classList.add('rotate-effect');
+      setTimeout(() => carousel.classList.remove('rotate-effect'), 300);
 
       render();
     }
