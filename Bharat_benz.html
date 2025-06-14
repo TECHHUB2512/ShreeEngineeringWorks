@@ -211,11 +211,15 @@
     "tata-logo.svg": "TATA_portfolio.html"
   };
 
-  function getSizeClass(index) {
-    if (index === 3) return 'w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64';
-    return 'w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48';
-  }
-
+ 
+    function getSizeClass(index) {
+      const center = 3;
+      const distance = Math.abs(index - center);
+      if (distance === 0) return 'w-28 sm:w-36';
+      if (distance === 1) return 'w-20 sm:w-28';
+      if (distance === 2) return 'w-16 sm:w-20';
+      return 'w-12 sm:w-16';
+    }
   function render() {
     carousel.innerHTML = '';
     logos.forEach((logoURL, index) => {
