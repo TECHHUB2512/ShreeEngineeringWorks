@@ -89,3 +89,83 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uniform Logo Carousel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes bounce-center {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .bounce-center {
+      animation: bounce-center 0.4s ease-in-out;
+    }
+
+    .rotate-effect {
+      transform: rotateY(5deg);
+      transition: transform 0.4s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div id="carousel" class="flex items-center justify-center gap-4 flex-wrap transition-transform duration-300"></div>
+
+  <script>
+    const carousel = document.getElementById('carousel');
+
+    const logos = [
+      "asset/Company_Logo/ashok-leyland-logo-2.svg",
+      "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
+      "asset/Company_Logo/eicher-logo.svg",
+      "asset/Company_Logo/mahindra-mahindra-logo.svg",
+      "asset/Company_Logo/suzuki-7.svg",
+      "asset/Company_Logo/tata-logo.svg",
+      "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
+    ];
+
+    function render() {
+      carousel.innerHTML = '';
+      logos.forEach((logoURL, index) => {
+        const isCenter = index === 3;
+
+        const container = document.createElement('div');
+        container.className = `w-20 sm:w-24 md:w-28 h-20 sm:h-24 md:h-28 flex justify-center items-center cursor-pointer transition-transform duration-300 ${isCenter ? 'bounce-center' : ''}`;
+
+        const img = document.createElement('img');
+        img.src = logoURL;
+        img.alt = `Logo ${index + 1}`;
+        img.className = "object-contain w-full h-full";
+
+        container.appendChild(img);
+        container.onclick = () => moveToCenter(index);
+        carousel.appendChild(container);
+      });
+    }
+
+    function moveToCenter(clickedIndex) {
+      const center = 3;
+      const shift = clickedIndex - center;
+
+      if (shift > 0) {
+        for (let i = 0; i < shift; i++) logos.push(logos.shift());
+      } else {
+        for (let i = 0; i < -shift; i++) logos.unshift(logos.pop());
+      }
+
+      carousel.classList.add('rotate-effect');
+      setTimeout(() => carousel.classList.remove('rotate-effect'), 300);
+
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
