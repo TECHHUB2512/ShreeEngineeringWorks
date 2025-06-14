@@ -131,6 +131,268 @@
 
     render();
   </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Engineering Works</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <style>
+    #thumbs img { border: 2px solid transparent; }
+    #thumbs img:hover { border-color: #4f46e5; }
+
+    @keyframes driveIn {
+      0% { transform: translateX(100vw); }
+      100% { transform: translateX(0); }
+    }
+    .drive-in { animation: driveIn 3s ease-out forwards; }
+
+    @keyframes fadeInNavItem {
+      0% { opacity: 0; transform: translateX(30px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    .nav-item {
+      opacity: 0;
+      animation: fadeInNavItem 0.6s ease forwards;
+    }
+
+    /* Carousel Styles */
+    .carousel { display: flex; align-items: center; gap: 20px; transition: transform 0.4s ease; }
+    .carousel.rotate { transform: rotateY(5deg); }
+
+    .logo-container {
+      transition: all 0.5s ease;
+      flex-shrink: 0;
+      cursor: pointer;
+      opacity: 0.8;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo-container.active {
+      opacity: 1;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+      animation: bounce 0.4s ease-in-out;
+      width: 10rem;
+      height: auto;
+    }
+    .logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 5px;
+    }
+    @keyframes bounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    .size-1 { width: 40px; height: 40px; }
+    .size-2 { width: 60px; height: 60px; }
+    .size-3 { width: 80px; height: 80px; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-md px-6 py-4">
+    <div class="flex items-center justify-between">
+      <a href="index.html">
+        <img src="images/logo/shree logo.png" alt="Logo" class="drive-in w-15 h-12" />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex gap-6 text-sm text-black font-medium ml-auto" id="nav-links">
+        <a href="#home" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3s">Home</a>
+        <a href="#about" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.2s">About</a>
+        <a href="#services" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.4s">Services</a>
+        <a href="#portfolio" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
+        <a href="#testimonial" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.8s">Testimonial</a>
+        <a href="#certification" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Certifications</a>
+        <a href="#team" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>
+        <a href="#contact" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4.2s">Contact</a>
+        <a href="#quote" class="nav-item bg-black text-white px-4 py-1 rounded hover:bg-gray-800 no-underline" style="animation-delay: 4.4s">Get Quote</a>
+      </nav>
+
+      <button id="mobile-menu-btn" class="md:hidden text-black text-2xl">☰</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="md:hidden hidden flex-col bg-white px-6 py-4 space-y-4 text-sm font-medium shadow transition-all duration-300 ease-in-out">
+      <a href="#home" class="block text-black hover:text-gray-700">Home</a>
+      <a href="#about" class="block text-black hover:text-gray-700">About</a>
+      <a href="#services" class="block text-black hover:text-gray-700">Services</a>
+      <a href="#portfolio" class="block text-black hover:text-gray-700">Portfolio</a>
+      <a href="#testimonial" class="block text-black hover:text-gray-700">Testimonial</a>
+      <a href="#certification" class="block text-black hover:text-gray-700">Certifications</a>
+      <a href="#team" class="block text-black hover:text-gray-700">Team</a>
+      <a href="#contact" class="block text-black hover:text-gray-700">Contact</a>
+      <a href="#quote" class="block bg-black text-white px-4 py-2 rounded text-center hover:bg-gray-800">Get a Quote</a>
+    </nav>
+  </header>
+
+  <!-- LOGO CAROUSEL -->
+  <div id="carousel" class="carousel my-10" data-aos="fade-up" data-aos-duration="1000"></div>
+
+  <!-- GALLERY SECTION -->
+  <section id="portfolio" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-duration="1200">
+    <!-- Card 1 -->
+    <div onclick="openGallery(1, 'images/Truck_images/Eicher/truck_1/3.webp')" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full" data-aos="zoom-in" data-aos-delay="200">
+      <div class="w-full bg-white rounded-t-xl overflow-hidden">
+        <img src="images/Truck_images/Eicher/truck_1/3.webp" alt="Tata 1212 LPT truck" class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-base font-semibold">Tata 1212 LPT</h3>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div onclick="openGallery(2, 'images/Truck_images/Eicher/truck_2/2.webp')" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full" data-aos="zoom-in" data-aos-delay="300">
+      <div class="w-full bg-white rounded-t-xl overflow-hidden">
+        <img src="images/Truck_images/Eicher/truck_2/2.webp" alt="Tata 407 Gold SFC truck" class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy" />
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-base font-semibold">Tata 407 Gold SFC</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY MODAL -->
+  <div id="galleryBackdrop" class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-40"></div>
+  <div id="galleryModal" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-white rounded-xl shadow-lg border max-w-3xl w-full hidden">
+    <button onclick="closeGallery()" class="absolute top-2 right-2 text-black text-2xl z-50">&times;</button>
+    <div class="relative w-full h-96 flex items-center justify-center p-4">
+      <img id="galleryImage" src="" class="max-h-full max-w-full object-contain rounded-lg" loading="lazy">
+    </div>
+    <div id="galleryThumbnails" class="border-t px-4 py-2"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-300 py-6">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-2">Shree Engineering Works</h3>
+        <p class="text-gray-400 text-xs leading-tight">Established 1990<br />123 Industrial Road, Cityname<br />Phone: +1 234 567 890<br />Email: info@shreeengineering.com</p>
+      </div>
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-2">Quick Links</h3>
+        <ul class="space-y-1 text-xs">
+          <li><a href="#home" class="hover:text-indigo-500 transition-colors">Home</a></li>
+          <li><a href="#about" class="hover:text-indigo-500 transition-colors">About</a></li>
+          <li><a href="#services" class="hover:text-indigo-500 transition-colors">Services</a></li>
+          <li><a href="#portfolio" class="hover:text-indigo-500 transition-colors">Portfolio</a></li>
+          <li><a href="#testimonial" class="hover:text-indigo-500 transition-colors">Testimonials</a></li>
+          <li><a href="#contact" class="hover:text-indigo-500 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
+        <div class="flex space-x-4 text-xl">
+          <a href="#" class="hover:text-indigo-500"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-indigo-500"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-indigo-500"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="hover:text-indigo-500"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-500 mt-4">&copy; 1990 - <script>document.write(new Date().getFullYear())</script> Shree Engineering Works. All rights reserved.</div>
+  </footer>
+
+  <!-- JS Section -->
+  <script>
+    AOS.init();
+
+    const carousel = document.getElementById('carousel');
+    const logos = [
+      "asset/Company_Logo/ashok-leyland-logo-2.svg",
+      "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
+      "asset/Company_Logo/eicher-logo.svg",
+      "asset/Company_Logo/mahindra-mahindra-logo.svg",
+      "asset/Company_Logo/suzuki-7.svg",
+      "asset/Company_Logo/tata-logo.svg"
+    ];
+
+    function getSizeClass(index) {
+      const center = 3;
+      const distance = Math.abs(index - center);
+      if (distance === 0) return '';
+      if (distance === 1) return 'size-3';
+      if (distance === 2) return 'size-2';
+      return 'size-1';
+    }
+
+    function renderCarousel() {
+      carousel.innerHTML = '';
+      logos.forEach((logoURL, index) => {
+        const container = document.createElement('div');
+        container.className = `logo-container ${getSizeClass(index)} ${index === 3 ? 'active' : ''}`;
+        container.onclick = () => moveToCenter(index);
+
+        const img = document.createElement('img');
+        img.src = logoURL;
+        img.alt = `Logo ${index + 1}`;
+        container.appendChild(img);
+        carousel.appendChild(container);
+      });
+    }
+
+    function moveToCenter(index) {
+      const center = 3;
+      const shift = index - center;
+      if (shift > 0) for (let i = 0; i < shift; i++) logos.push(logos.shift());
+      else for (let i = 0; i < -shift; i++) logos.unshift(logos.pop());
+      carousel.classList.add('rotate');
+      setTimeout(() => carousel.classList.remove('rotate'), 300);
+      renderCarousel();
+    }
+
+    renderCarousel();
+
+    // Modal logic
+    const galleryData = {
+      1: ['images/Truck_images/Eicher/truck_1/3.webp', 'images/Truck_images/Eicher/truck_1/2.webp', 'images/Truck_images/Eicher/truck_1/4.webp', 'images/Truck_images/Eicher/truck_1/1.webp'],
+      2: ['images/Truck_images/Eicher/truck_2/2.webp', 'images/Truck_images/Eicher/truck_2/3.webp', 'images/Truck_images/Eicher/truck_2/4.webp', 'images/Truck_images/Eicher/truck_2/5.webp']
+    };
+
+    function openGallery(cardNumber, firstImage) {
+      document.getElementById('galleryImage').src = firstImage;
+      const thumbs = galleryData[cardNumber].map(src => `<img src="${src}" onclick="changeImage('${src}')" class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">`).join('');
+      document.getElementById('galleryThumbnails').innerHTML = `<div class="flex overflow-x-auto space-x-2 justify-center py-2">${thumbs}</div>`;
+      document.getElementById('galleryModal').classList.remove('hidden');
+      document.getElementById('galleryBackdrop').classList.remove('hidden');
+    }
+
+    function changeImage(src) {
+      document.getElementById('galleryImage').src = src;
+    }
+
+    function closeGallery() {
+      document.getElementById('galleryModal').classList.add('hidden');
+      document.getElementById('galleryBackdrop').classList.add('hidden');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeGallery();
+    });
+
+    document.getElementById('galleryBackdrop').addEventListener('click', closeGallery);
+  </script>
+</body>
+</html>
 
 </body>
 </html>
