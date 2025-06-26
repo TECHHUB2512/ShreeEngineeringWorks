@@ -100,8 +100,8 @@
 
 <section id="Tata_portfolio">
   <!-- ASHOK LEYLAND Logo -->
-   <div class="flex justify-center my-10">
-  <div id="carousel" class="flex items-center justify-center gap-2 sm:gap-4 md:gap-6 transition-transform duration-300"></div>
+    <div class="flex justify-center my-10">
+    <div id="carousel" class="flex items-center justify-center gap-2 sm:gap-4 md:gap-6 transition-transform duration-300"></div>
   </div>
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -384,20 +384,18 @@
   </div>
 </footer>
 <script>
-  // JavaScript for logo rendering
+  // Logo image URLs
   const logos = [
-     "asset/Company_Logo/ashok-leyland-logo-2.svg",
+    "asset/Company_Logo/ashok-leyland-logo-2.svg",
+    "asset/Company_Logo/mahindra-mahindra-logo.svg",
       "asset/Company_Logo/eicher-logo.svg",
-      "asset/Company_Logo/mahindra-mahindra-logo.svg",
       "asset/Company_Logo/tata-logo.svg",
-      "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
-      "asset/Company_Logo/suzuki-7.svg",
-          "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
+    "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
+    "asset/Company_Logo/suzuki-7.svg",
+    "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
   ];
 
-  const carousel = document.getElementById('carousel');
-
-  // Logo page mapping
+  // Logo -> Page mapping
   const logoLinks = {
     "ashok-leyland-logo-2.svg": "AshokLeyland_portfoilio.html",
     "BharatBenz-Logo-PNG1.png": "Bharat_benz.html",
@@ -407,52 +405,69 @@
     "tata-logo.svg": "TATA_portfolio.html"
   };
 
- 
-   function getSizeClass(index) {
-  const center = 3;
-  const distance = Math.abs(index - center);
-  if (distance === 0) return 'w-36 sm:w-48';  // Larger center logo
-  if (distance === 1) return 'w-28 sm:w-36';  // Slightly larger adjacent logos
-  if (distance === 2) return 'w-24 sm:w-28';  // A bit larger for second neighbors
-  return 'w-16 sm:w-20';  // Smallest logos for the farthest ones
-}
+  const carousel = document.getElementById('carousel');
 
+  // Assign logo size classes based on distance from center
+  function getSizeClass(index) {
+    const center = 3;
+    const distance = Math.abs(index - center);
+    if (distance === 0) return 'w-36 sm:w-48';   // Center
+    if (distance === 1) return 'w-28 sm:w-36';   // Adjacent
+    if (distance === 2) return 'w-24 sm:w-28';   // Second neighbors
+    return 'w-16 sm:w-20';                      // Others
+  }
+
+  // Main render function
   function render() {
     carousel.innerHTML = '';
+    const isMobile = window.innerWidth < 640; // Tailwind 'sm' breakpoint
+    const centerIndex = 3;
+
     logos.forEach((logoURL, index) => {
+      const isCenter = index === centerIndex;
+
+      // Only render the center logo on mobile
+      if (isMobile && !isCenter) return;
+
       const sizeClass = getSizeClass(index);
-      const isActive = index === 3;
       const container = document.createElement('div');
-      container.className = `transition-all duration-500 ease-in-out cursor-pointer bg-white rounded-lg p-1 sm:p-2 flex justify-center items-center opacity-80 hover:opacity-100 shadow-md ${sizeClass} ${isActive ? 'opacity-100 shadow-xl bounce-center' : ''}`;
-    
-      
+
+      container.className = `
+        transition-all duration-500 ease-in-out cursor-pointer 
+        bg-white rounded-lg p-1 sm:p-2 flex justify-center items-center 
+        opacity-80 hover:opacity-100 shadow-md 
+        ${sizeClass} 
+        ${isCenter ? 'opacity-100 shadow-xl bounce-center' : ''}
+      `.trim();
+
       const img = document.createElement('img');
       img.src = logoURL;
       img.alt = `Logo ${index + 1}`;
       img.className = "object-contain w-full h-full";
 
-      // Extract the logo name and get the corresponding redirect URL
       const logoName = logoURL.split('/').pop();
       const redirectUrl = logoLinks[logoName];
-      
+
       if (redirectUrl) {
         container.onclick = () => {
           window.location.href = redirectUrl;
         };
       } else {
         container.onclick = () => {
-          moveToCenter(index);
+          moveToCenter(index); // Optional function (not included here)
         };
       }
-  
+
       container.appendChild(img);
       carousel.appendChild(container);
-    }); 
+    });
   }
 
-  // Call to  render function on page load
+  // Initial render on page load
   document.addEventListener('DOMContentLoaded', render);
 
+  // Re-render on screen resize
+  window.addEventListener('resize', render);
 </script>
 </body>
 </html>
