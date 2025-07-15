@@ -754,42 +754,38 @@
   </script>
 
   <script>
-  const images = [
-    'images/Truck_images/TATA/1212/2.webp',
-    'images/Truck_images/TATA/1212/3.webp',
-    'images/Truck_images/TATA/1212/4.webp',
-    'images/Truck_images/TATA/HYTECH/2.webp',
-    'images/Truck_images/TATA/HYTECH/1.webp',
-    'images/Truck_images/Ashok_Leyland/20FT/1.webp',
-    'images/Truck_images/Ashok_Leyland/20FT/2.webp',
-    'images/Truck_images/Ashok_Leyland/20FT/5.webp',
-    'images/Truck_images/Ashok_Leyland/20FT/6.webp',
-    'images/Truck_images/Ashok_Leyland/20FT/7.webp',
-    
-  ];
+  const images1 = [
+      'images/Truck_images/TATA/1212/2.webp',
+      'images/Truck_images/TATA/1212/3.webp',
+      'images/Truck_images/TATA/1212/4.webp',
+      'images/Truck_images/TATA/HYTECH/2.webp',
+      'images/Truck_images/TATA/HYTECH/1.webp',
+      'images/Truck_images/Ashok_Leyland/20FT/1.webp',
+      'images/Truck_images/Ashok_Leyland/20FT/2.webp',
+      'images/Truck_images/Ashok_Leyland/20FT/5.webp',
+      'images/Truck_images/Ashok_Leyland/20FT/6.webp',
+      'images/Truck_images/Ashok_Leyland/20FT/7.webp',
+    ];
 
   const gridImages = document.querySelectorAll('#imageGrid img');
-  const totalImages = images.length;
-  const gridSize = gridImages.length;
+  const totalImages = images1.length;
+let indices = Array.from({ length: gridSize }, (_, i) => i % totalImages);
 
-  let indices = Array.from({ length: gridSize }, (_, i) => i % totalImages);
-
-  function updateImagesWithFade() {
-    gridImages.forEach((img, i) => {
-      img.classList.add('fade-out');
-
-      setTimeout(() => {
-        img.src = images[indices[i]];
-        indices[i] = (indices[i] + 1) % totalImages;
-        img.classList.remove('fade-out');
-      }, 600); // Match fade duration
-    });
-  }
-
-  // Initial load
+function updateImagesWithFade() {
   gridImages.forEach((img, i) => {
-    img.src = images[i % totalImages];
+    img.classList.add('fade-out');
+
+    setTimeout(() => {
+      img.src = images1[indices[i]];
+      indices[i] = (indices[i] + 1) % totalImages;
+      img.classList.remove('fade-out');
+    }, 600);
   });
+}
+
+gridImages.forEach((img, i) => {
+  img.src = images1[i % totalImages];
+});
 
   // Update every 5 seconds
   setInterval(updateImagesWithFade, 5000);
