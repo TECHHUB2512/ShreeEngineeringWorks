@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Truck Gallery Test</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <style>
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .animate-marquee {
+      animation: marquee 10s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <section id="truck_gallary" class="w-full overflow-hidden py-16 bg-white mt-12">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-10">Truck Body Gallery</h1>
+
+    <div class="relative w-full overflow-hidden">
+      <div id="marqueeContainer" class="flex animate-marquee space-x-6 w-max"></div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const images1 = [
+        'images/Truck_images/truck/1.webp',
+        'images/Truck_images/truck/2.webp',
+        'images/Truck_images/truck/3.webp',
+        'images/Truck_images/truck/4.webp',
+        'images/Truck_images/truck/5.webp',
+        'images/Truck_images/truck/6.webp',
+        'images/Truck_images/truck/7.webp',
+        'images/Truck_images/truck/8.webp',
+        'images/Truck_images/truck/9.webp',
+        'images/Truck_images/truck/10.webp',
+        'images/Truck_images/truck/11.webp',
+        'images/Truck_images/truck/12.webp',
+        'images/Truck_images/truck/13.webp',
+        'images/Truck_images/truck/14.webp',
+        
+        
+         // Replace with a known working image path
+      ];
+
+      const marqueeContainer = document.getElementById('marqueeContainer');
+
+      images1.forEach((src) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Truck Image';
+        img.className = 'rounded-xl shadow-lg w-72 h-auto';
+        img.style.border = "2px solid red";
+        marqueeContainer.appendChild(img);
+      });
+    });
+  </script>
+
+</body>
+</html>
