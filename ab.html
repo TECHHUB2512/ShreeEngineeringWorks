@@ -1,70 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Truck Gallery Test</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+  <title>🚰 Water Tank Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    @keyframes marquee {
-      0% {
-        transform: translateX(100%);
-      }
-      100% {
-        transform: translateX(-100%);
-      }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f8fc;
+      color: #333;
+      text-align: center;
+      padding: 20px;
     }
 
-    .animate-marquee {
-      animation: marquee 10s linear infinite;
+    h1 {
+      color: #006699;
+    }
+
+    .tank-container {
+      width: 100px;
+      height: 300px;
+      border: 2px solid #006699;
+      border-radius: 10px;
+      margin: 20px auto;
+      position: relative;
+      background: #e0e0e0;
+    }
+
+    .tank-fill {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #00aaff;
+      transition: height 0.8s ease;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .status.on {
+      color: green;
+      font-weight: bold;
+    }
+
+    .status.off {
+      color: red;
+      font-weight: bold;
+    }
+
+    .updated {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
-<body class="bg-gray-100">
+<body>
+  <h1>🚰 Water Tank Monitor</h1>
 
-  <section id="truck_gallary" class="w-full overflow-hidden py-16 bg-white mt-12">
-    <h1 class="text-3xl font-bold text-center text-gray-800 mb-10">Truck Body Gallery</h1>
+  <div class="tank-container">
+    <div id="fill" class="tank-fill" style="height: 0%;"></div>
+  </div>
 
-    <div class="relative w-full overflow-hidden">
-      <div id="marqueeContainer" class="flex animate-marquee space-x-6 w-max"></div>
-    </div>
-  </section>
+  <div class="info">
+    <p><strong>Water Level:</strong> <span id="percent">--</span>%</p>
+    <p><strong>Volume:</strong> <span id="liters">--</span> liters</p>
+    <p><strong>Relay:</strong> <span id="relay" class="status">--</span></p>
+    <p class="updated">Last updated: <span id="updated">--</span>s ago</p>
+  </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const images1 = [
-        'images/Truck_images/truck/1.webp',
-        'images/Truck_images/truck/2.webp',
-        'images/Truck_images/truck/3.webp',
-        'images/Truck_images/truck/4.webp',
-        'images/Truck_images/truck/5.webp',
-        'images/Truck_images/truck/6.webp',
-        'images/Truck_images/truck/7.webp',
-        'images/Truck_images/truck/8.webp',
-        'images/Truck_images/truck/9.webp',
-        'images/Truck_images/truck/10.webp',
-        'images/Truck_images/truck/11.webp',
-        'images/Truck_images/truck/12.webp',
-        'images/Truck_images/truck/13.webp',
-        'images/Truck_images/truck/14.webp',
-        
-        
-         // Replace with a known working image path
-      ];
+    let lastUpdateTime = Date.now();
 
-      const marqueeContainer = document.getElementById('marqueeContainer');
+    function updateTimer() {
+      const seconds = Math.floor((Date.now() - lastUpdateTime) / 1000);
+      document.getElementById("updated").innerText = seconds;
+    }
 
-      images1.forEach((src) => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = 'Truck Image';
-        img.className = 'rounded-xl shadow-lg w-72 h-auto';
-        img.style.border = "2px solid red";
-        marqueeContainer.appendChild(img);
-      });
-    });
+    function fetchData() {
+      fetch("/")
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+
+          const waterText = doc.querySelector("p:nth-of-type(1)")?.innerText || "";
+          const volumeText = doc.querySelector("p:nth-of-type(2)")?.innerText || "";
+          const relayText = doc.querySelector("p:nth-of-type(3)")?.innerText || "";
+
+          const percentMatch = waterText.match(/([\d.]+)%/);
+          const litersMatch = volumeText.match(/([\d.]+)/);
+          const relayMatch = relayText.match(/ON|OFF/);
+
+          const percent = percentMatch ? parseFloat(percentMatch[1]) : 0;
+          const liters = litersMatch ? parseFloat(litersMatch[1]) : 0;
+          const relay = relayMatch ? relayMatch[0] : "OFF";
+
+          // Update UI
+          document.getElementById("percent").innerText = percent.toFixed(1);
+          document.getElementById("liters").innerText = liters.toFixed(0);
+          document.getElementById("relay").innerText = relay;
+          document.getElementById("relay").className = "status " + (relay === "ON" ? "on" : "off");
+          document.getElementById("fill").style.height = Math.min(percent, 100) + "%";
+
+          lastUpdateTime = Date.now();
+        })
+        .catch(err => {
+          console.error("Failed to fetch data:", err);
+        });
+    }
+
+    fetchData();
+    setInterval(fetchData, 2000);
+    setInterval(updateTimer, 1000);
   </script>
-
 </body>
 </html>
