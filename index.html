@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shree Engineering Works</title>
+  <meta name="description" content="Shree Engineering Works: Certified manufacturing specializing in industrial fabrication, load bodies, and auto body work in Maharashtra." />
+  <meta name="keywords" content="Shree Engineering Works, industrial fabrication, load body, auto body, commercial vehicles, Maharashtra, Satara" />
+  <title>Shree Engineering Works | Industrial Fabrication & Auto Body</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-   <!-- Your Custom JS file -->
-<script src="script.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-   
+    /* Global Styling */
+    html {
+      scroll-behavior: smooth;
+    }
 
+    /* Drive-In Logo Animation */
     @keyframes driveIn {
       0% {
         transform: translateX(100vw);
@@ -28,7 +27,11 @@
         transform: translateX(0);
       }
     }
+    .drive-in {
+      animation: driveIn 7s ease-out forwards;
+    }
 
+    /* Navbar Fade-In Animation */
     @keyframes fadeInNavItem {
       0% {
         opacity: 0;
@@ -39,74 +42,40 @@
         transform: translateX(0);
       }
     }
-
-    .drive-in {
-      animation: driveIn 7s ease-out forwards;
-    }
-
     .nav-item {
       opacity: 0;
       animation: fadeInNavItem 0.6s ease forwards;
     }
-  </style>
-   <style>
-    .fade-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 420px;        /* Fixed width */
-      height: 280px;       /* Adjust height for aspect ratio */
-      object-fit: cover;
-      transition: opacity 1s ease-in-out;
-      border-radius: 0.5rem; /* Rounded corners */
-    }
 
+    /* Kenburns Effect for Team Slideshow */
     @keyframes kenburns {
       0% { transform: scale(1); }
       100% { transform: scale(1.1); }
     }
-
     .kenburns {
       animation: kenburns 10s ease-in-out infinite alternate;
     }
-
+    
+    /* Swiper Slide Duration Bar Animation */
     @keyframes slideDuration {
       from { width: 0%; }
       to { width: 100%; }
     }
-
     .animate-slideDuration {
-      animation: slideDuration 3s linear forwards;
+      animation: slideDuration 10s linear forwards; /* Matches Swiper autoplay delay */
     }
-    html {
-  scroll-behavior: smooth;
-}
-
   </style>
 
-  <style>
-  .fade {
-    opacity: 1;
-    transition: opacity 0.6s ease-in-out;
-  }
-
-  .fade-out {
-    opacity: 0;
-  }
-</style>
-
+  <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body class="bg-gray-100" >
+<body class="bg-gray-100">
   <header class="fixed top-0 w-full z-50 bg-white shadow-md px-6 py-4">
     <div class="flex items-center justify-between">
-      <!-- Logo (car animation) -->
-    <a href="index.html">
-      <img src="images/logo/shree_logo.png" alt="Shree Engineering Works" style="height: 60px;" class="drive-in w-auto" id="logo" />
-    </a>
+      <a href="index.html">
+        <img src="images/logo/shree_logo.png" alt="Shree Engineering Works" style="height: 60px;" class="drive-in w-auto" id="logo" />
+      </a>
 
-
-      <!-- Desktop Navbar -->
       <nav class="hidden md:flex gap-6 text-sm text-black font-medium ml-auto" id="nav-links">
         <a href="#home" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3s">Home</a>
         <a href="#about" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.2s">About</a>
@@ -116,16 +85,13 @@
         <a href="#certification" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Certifications</a>
         <a href="#team" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>  
         <a href="#contact" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4.2s">Contact</a>
-       
       </nav>
 
-      <!-- Mobile Nav Toggle -->
-      <button id="mobile-menu-btn" class="md:hidden text-black text-2xl">
+      <button id="mobile-menu-btn" class="md:hidden text-black text-2xl" aria-label="Toggle navigation">
         ☰
       </button>
     </div>
 
-    <!-- Mobile Menu -->
     <nav id="mobile-menu" class="md:hidden hidden flex-col bg-white px-6 py-4 space-y-4 text-sm font-medium shadow transition-all duration-300 ease-in-out">
       <a href="#home" class="block text-black hover:text-gray-700 no-underline">Home</a>
       <a href="#about" class="block text-black hover:text-gray-700 no-underline">About</a>
@@ -135,585 +101,359 @@
       <a href="#certification" class="block text-black hover:text-gray-700 no-underline">Certifications</a>
       <a href="#team" class="block text-black hover:text-gray-700 no-underline">Team</a>
       <a href="#contact" class="block text-black hover:text-gray-700 no-underline">Contact</a>
-      
     </nav>
   </header>
   
-
-  <!-- Home Section -->
-<section id="home" class="relative bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center text-white" style="background-image: url('images/logo/Gemini_Generated_Image_j9p175j9p175j9p2.png');">
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black opacity-35"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 text-center px-6 md:px-20">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Shree Engineering Works</h1>
-    <p class="text-lg md:text-2xl mb-6">The World On Wheel</p>
-    
-    <!-- Call to Action
-    <a href="#quote" class="inline-block bg-white text-black font-semibold px-6 py-3 rounded shadow hover:bg-gray-200 transition duration-300">
-      Get a Quote
-    </a> -->
-
-    <!-- Social Media Links -->
-    <div class="mt-6 flex justify-center space-x-6 text-2xl">
-      <a href="https://www.facebook.com/" class="hover:text-blue-400" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/shree_engineering_works9/" class="hover:text-pink-500" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.youtube.com/" class="hover:text-red-500" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-youtube"></i>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="max-w-6xl mx-auto px-6 py-20 bg-gray-50 rounded-lg shadow-md mt-12 relative" data-aos="fade-up">
-  <!-- Heading -->
-  <h2 class="text-4xl font-bold text-center text-gray-800 uppercase mb-14">About</h2>
-
-  <!-- Image and Text Block -->
-  <div class="flex flex-col md:flex-row items-center gap-12"  data-aos="fade-up">
-    
-    <!-- Image Slider with Fade -->
-    <div class="w-full md:w-1/2 relative h-80 overflow-hidden rounded shadow-lg" >
-      <img id="image1" class=" w-full h-full object-cover opacity-100" src="images/Team/2.png" />
-      
-    </div>
-
-    <!-- About Text -->
-    <div class="w-full md:w-1/2 text-lg space-y-5" data-aos="fade-up">
-      <h3 class="text-3xl font-bold text-gray-800">Shree Engineering Works</h3>
-      <p class="text-sm text-gray-500 uppercase tracking-wide">Precision. Quality. Experience.</p>
-      <p>
-        We, M/s Shree Engineering Works, are a certified manufacturing industry specializing in industrial fabrication and auto body work.
-      </p>
-      <p>
-        Over the last 12 years, we have worked with numerous engineering and bio-product manufacturing companies. Here’s a brief overview of our infrastructure and capabilities:
-      </p>
-      <ul class="list-disc list-inside ml-5 space-y-2 text-gray-700">
-        
-        <li>Equipped with skilled manpower.</li>
-        <li>Certified with GST, MSME, Udyam Aadhaar, ISO, and registered with Trade Certificate (Form 17).</li>
-      </ul>
-    </div>
-  </div>
-
-  
-</section>
-
-
-
-<!-- Services Section -->
-<section id="services" class="max-w-6xl mx-auto px-6 py-16 bg-gray-50 rounded-lg shadow-md mt-12" data-aos="fade-up">
-  <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">Our Fabrication & Manufacturing Services</h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto text-gray-700 font-poppins">
-    
-    <!-- Service Card -->
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group"  data-aos="fade-up">
-      <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
-        <i class="fas fa-truck-loading"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2 text-center">Load Body Fabrication</h3>
-      <p class="text-center text-sm">
-        Design and fabrication of load bodies for all types of heavy and light commercial vehicles.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group" data-aos="fade-up">
-      <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
-        <i class="fas fa-box-open"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2 text-center">Fabricated Container Bodies</h3>
-      <p class="text-center text-sm">
-        Custom-built container bodies tailored to transport and storage needs across industries.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group"  data-aos="fade-up">
-      <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
-       <i class="fa-solid fa-spray-can"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2 text-center">Powder Coating</h3>
-      <p class="text-center text-sm">
-        Fabrication of mild steel and stainless steel furniture for industrial, commercial, and custom use.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group" data-aos="fade-up">
-      <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
-        <i class="fas fa-fan"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2 text-center">Industrial Blowers</h3>
-      <p class="text-center text-sm">
-        Manufacturing of high-performance blowers as per designs by company.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group" data-aos="fade-up">
-      <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
-        <i class="fas fa-wind"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2 text-center">Air Suction Units</h3>
-      <p class="text-center text-sm">
-        Custom fabrication of air suction units and similar industrial applications.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group" data-aos="fade-up">
-      <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
-        <i class="fas fa-industry"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2 text-center">Fabrication for Machinery & Industry</h3>
-      <p class="text-center text-sm">
-        Manufacturing of machine structures and MS/SS works for companies.    </p>
-    </div>
-
-  </div>
-</section>
-
-   <!-- Portfolio Section -->
-  <section id="portfolio" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12"  data-aos="fade-up">
-    <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Our Portfolio</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-
-      <!-- Card 1 -->
-      <a href="TATA_portfolio.html" rel="noopener noreferrer" data-aos="fade-up"
-         class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
-        <div class="flex justify-center items-center h-40 bg-white">
-          <img src="asset/Company_Logo/tata-logo.svg" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" />
-        </div>
-        <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center">
-          <h3 class="font-semibold text-lg text-gray-800">TATA Motors</h3>
-        </div>
-      </a>
-
-      <!-- Card 2 -->
-      <a href="AshokLeyland_portfoilio.html"  rel="noopener noreferrer" data-aos="fade-up"
-         class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
-        <div class="flex justify-center items-center h-40 bg-white">
-          <img src="asset/Company_Logo/ashok-leyland-logo-2.svg" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" />
-        </div>
-        <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center">
-          <h3 class="font-semibold text-lg text-gray-800">Ashok Leyland</h3>
-        </div>
-      </a>
-
-      <!-- Card 3 -->
-      <a href="Mahindra_portfolio.html"  rel="noopener noreferrer" data-aos="fade-up"
-         class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
-        <div class="flex justify-center items-center h-40 bg-white">
-          <img src="asset/Company_Logo/mahindra-mahindra-logo.svg" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" />
-        </div>
-        <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center">
-          <h3 class="font-semibold text-lg text-gray-800">Mahindra & Mahindra</h3>
-        </div>
-      </a>
-
-      <!-- Card 4 -->
-      <a href="Maruti_portfolio.html"  rel="noopener noreferrer" data-aos="fade-up"
-         class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
-        <div class="flex justify-center items-center h-40 bg-white">
-          <img src="asset/Company_Logo/suzuki-7.svg" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" />
-        </div>
-        <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center">
-          <h3 class="font-semibold text-lg text-gray-800">Eicher Trucks & Buses</h3>
-        </div>
-      </a>
-
-      <!-- Card 5 -->
-      <a href="Eicher_portfolio.html"  rel="noopener noreferrer" data-aos="fade-up"
-         class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
-        <div class="flex justify-center items-center h-40 bg-white">
-          <img src="asset/Company_Logo/eicher-logo.svg" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" />
-        </div>
-        <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center">
-          <h3 class="font-semibold text-lg text-gray-800">Maruti Suzuki</h3>
-        </div>
-      </a>
-
-      <!-- Card 6 -->
-      <a href="Bharat_benz.html"  rel="noopener noreferrer" data-aos="fade-up"
-         class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
-        <div class="flex justify-center items-center h-40 bg-white">
-          <img src="asset/Company_Logo/BharatBenz-Logo-PNG1.png" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" />
-        </div>
-        <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center">
-          <h3 class="font-semibold text-lg text-gray-800">Bharat Benz</h3>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-<!-- Testimonials Section -->
-<section id="testimonial" class="max-w-6xl mx-auto px-6 py-16 bg-gray-50 rounded-lg shadow-md mt-12" data-aos="fade-up">
-  <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">What Our Clients Say</h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto text-gray-700 font-poppins">
-    <!-- Testimonial 1 -->
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300" data-aos="fade-up">
-      <div class="flex items-center mb-4">
-        <img src="images/Team/sohel.png" alt="Client 1" class="w-14 h-14 rounded-full object-cover mr-4" />
-        <div>
-          <p class="font-semibold text-gray-900">Sohel Ansari</p>
-          
-        </div>
-      </div>
-      <p class="text-sm italic text-gray-600">“Shree Engineering Works delivered exceptional quality and met all our deadlines. Their fabrication expertise was crucial for our plant expansion.”</p>
-    </div>
-
-    <!-- Testimonial 2 -->
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"  data-aos="fade-up">
-      <div class="flex items-center mb-4">
-        <img src="images/Team/parbad.png" alt="Client 2" class="w-14 h-14 rounded-full object-cover mr-4" />
-        <div>
-          <p class="font-semibold text-gray-900">Parbad Raut</p>
-          
-        </div>
-      </div>
-      <p class="text-sm italic text-gray-600">“Their custom metal fabrication services were exactly what we needed. The team is professional and responsive throughout the project.”</p>
-    </div>
-
-    <!-- Testimonial 3 -->
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300" data-aos="fade-up">
-      <div class="flex items-center mb-4">
-        <img src="images/Team/sushant.png" alt="Client 3" class="w-14 h-14 rounded-full object-cover mr-4" />
-        <div>
-          <p class="font-semibold text-gray-900">Sushant Dhanawade</p>
-          
-        </div>
-      </div>
-      <p class="text-sm italic text-gray-600">“Top-notch craftsmanship and excellent customer service. We highly recommend Shree Engineering Works for industrial fabrication.”</p>
-    </div>
-  </div>
-</section>
-
-<!-- Certifications & Achievements Section -->
-  <section id="certification" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12" data-aos="fade-up">
-    <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">Certifications & Achievements</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto text-gray-700" data-aos="fade-up">
-      <!-- Certifications List -->
-      <div>
-        <h3 class="text-xl font-semibold mb-6 text-indigo-600">Certifications</h3>
-        <ul class="space-y-4">
-          <li class="flex items-start space-x-3">
-            <svg class="w-6 h-6 text-green-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 12l2 2 4-4"></path>
-              <circle cx="12" cy="12" r="10"></circle>
-            </svg>
-            <div>
-              <p class="font-medium">ISO 9001:2015 Quality Management</p>
-              <a href="images/Certificates/ISO.png" target="_blank"
-                class="text-sm text-blue-600 underline hover:text-blue-800">View Certificate</a>
-            </div>
-          </li>
-          <li class="flex items-start space-x-3">
-            <svg class="w-6 h-6 text-green-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 12l2 2 4-4"></path>
-              <circle cx="12" cy="12" r="10"></circle>
-            </svg>
-            <div>
-              <p class="font-medium">Udyam Registration Certificat</p>
-              <a href="images/Certificates/Udyam.jpeg" target="_blank"
-                class="text-sm text-blue-600 underline hover:text-blue-800">View Certificate</a>
-            </div>
-          </li>
-          <li class="flex items-start space-x-3">
-            <svg class="w-6 h-6 text-green-500 mt-1" fill="none" stroke="currentColor" stroke-width="2"
-              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 12l2 2 4-4"></path>
-              <circle cx="12" cy="12" r="10"></circle>
-            </svg>
-            <div>
-              <p class="font-medium">Trade Certificate</p>
-              <a href="images/Certificates/17.webp" target="_blank"
-                class="text-sm text-blue-600 underline hover:text-blue-800">View Certificate</a>
-            </div>
-          </li>
-        </ul>
-
-        <!-- Certificate Images -->
-        <div class="mt-10">
-          <h4 class="text-lg font-semibold mb-4 text-indigo-600">Certificate Previews</h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <img src="images/Certificates/ISO.png" alt="ISO 9001 Certificate"
-              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-            <img src="images/Certificates/Udyam.jpeg" alt="Udyam Registration Certificate"
-              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-            <img src="images/Certificates/17.webp" alt="Trade Certificate"
-              class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-          </div>
-        </div>
-      </div>
-
-      <!-- Achievements Timeline -->
-      <div>
-        <h3 class="text-xl font-semibold mb-6 text-indigo-600">Achievements</h3>
-        <ol class="relative border-l border-gray-300 ml-4 space-y-6">
-          <li class="ml-6">
-            <span class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-2.5 border-2 border-white"></span>
-            <time class="text-sm text-gray-500">2024</time>
-            <p class="font-semibold">Awarded “Best Fabrication Company” by Industry Council</p>
-          </li>
-          <li class="ml-6">
-            <span class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-2.5 border-2 border-white"></span>
-            <time class="text-sm text-gray-500">2023</time>
-            <p class="font-semibold">Completed 100+ industrial projects on time</p>
-          </li>
-          <li class="ml-6">
-            <span class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-2.5 border-2 border-white"></span>
-            <time class="text-sm text-gray-500">2022</time>
-            <p class="font-semibold">Developed custom heavy machinery parts for major clients</p>
-          </li>
-          <li class="ml-6">
-            <span class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-2.5 border-2 border-white"></span>
-            <time class="text-sm text-gray-500">2021</time>
-            <p class="font-semibold">Expanded production facility with state-of-the-art equipment</p>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-<!-- Team Section -->
-<section id="team" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12 font-poppins" data-aos="fade-up">
-    <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">Team Members</h2>
- 
-
- 
-<!-- Slideshow Section -->
-<section class="w-full py-4 flex justify-center">
-  <div class="swiper mySwiper w-full max-w-5xl">
-    <div class="swiper-wrapper">
-
-      <!-- Slide -->
-      <div class="swiper-slide group relative">
-        <div class="rounded-xl shadow-xl overflow-hidden relative">
-          <img 
-            src="images/Team/1.webp"
-            alt="Team photos"
-            loading="lazy"
-            class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain sm:object-cover transform transition-transform duration-500 group-hover:scale-105 kenburns"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-4"></div>
-          <div class="absolute top-0 left-0 h-1 bg-indigo-500 w-full animate-slideDuration"></div>
-        </div>
-      </div>
-
-      <!-- Repeat for Slide 2 and 3 -->
-      <div class="swiper-slide group relative">
-        <div class="rounded-xl shadow-xl overflow-hidden relative">
-          <img 
-            src="images/Team/2.webp"
-            alt="Team photos"
-            loading="lazy"
-            class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain sm:object-cover transform transition-transform duration-500 group-hover:scale-105 kenburns"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-4"></div>
-          <div class="absolute top-0 left-0 h-1 bg-indigo-500 w-full animate-slideDuration"></div>
-        </div>
-      </div>
-
-      <div class="swiper-slide group relative">
-        <div class="rounded-xl shadow-xl overflow-hidden relative">
-          <img 
-            src="images/Team/3.webp"
-            alt="Team photos"
-            loading="lazy"
-            class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain sm:object-cover transform transition-transform duration-500 group-hover:scale-105 kenburns"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-4"></div>
-          <div class="absolute top-0 left-0 h-1 bg-indigo-500 w-full animate-slideDuration"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-    </section>
-<!-- Contact Section -->
-<section id="contact" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12 font-poppins" data-aos="fade-up">
-  <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">Contact Us</h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-    <!-- Contact Form -->
-    <form action="#" method="POST" class="space-y-6">
-  <div>
-    <label for="name" class="block text-sm font-semibold mb-1">Name</label>
-    <input type="text" id="name" name="name" required
-      placeholder="Enter your name"
-      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-  </div>
-
-  <div>
-    <label for="email" class="block text-sm font-semibold mb-1">Email</label>
-    <input type="email" id="email" name="email" required
-      placeholder="Enter your email"
-      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-  </div>
-
-  <div>
-    <label for="phone" class="block text-sm font-semibold mb-1">Phone Number</label>
-    <input type="tel" id="phone" name="phone" required
-      placeholder="Enter 10-digit phone number"
-      pattern="[0-9]{10}"
-      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-  </div>
-
-  <div>
-    <label for="message" class="block text-sm font-semibold mb-1">Message</label>
-    <textarea id="message" name="message" rows="5" required
-      placeholder="Write your message here..."
-      class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"></textarea>
-  </div>
-
-  <button type="submit"
-    class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-indigo-700 transition-colors duration-300">
-    Send Message
-  </button>
-</form>
-
-
-    <!-- Contact Info & Map -->
-    <div class="space-y-8">
-      <div>
-        <h3 class="text-xl font-semibold mb-4 text-gray-800">Get in Touch</h3>
-        <p class="mb-2"><strong>Company:</strong> Shree Engineering Works</p>
-        <p class="mb-2"><strong>Address:</strong> Gat no. 326, Opp. Star City, Pandharpur Phata, Shirwal, TAL. Khandala, DIST. Satara, Maharashtra, 412801</p>
-        <p class="mb-2"><strong>Phone:</strong> 
-          <a href="tel:+919922948303" class="text-indigo-600 hover:underline">+91 99229 48303</a> / 
-          <a href="tel:+917028807361" class="text-indigo-600 hover:underline">70288 07361</a>
-        </p>
-        <p class="mb-2"><strong>Email:</strong> 
-          <a href="mailto:info@shreeengineering.com" class="text-indigo-600 hover:underline">info@shreeengineering.com</a>
-        </p>
-        <p class="mb-2"><strong>GST No.:</strong> 27ALBPG8597Q1Z6</p>
-      </div>
-
-      <!-- Social Links -->
-      <div>
-        <h3 class="text-xl font-semibold mb-4 text-gray-800">Follow Us</h3>
-        <div class="flex space-x-6 text-2xl text-gray-600">
-          <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600">
-            <i class="fab fa-facebook-f"></i>
+  <main>
+    <section id="home" class="relative bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center text-white pt-24" style="background-image: url('images/logo/Gemini_Generated_Image_j9p175j9p175j9p2.png');">
+      <div class="absolute inset-0 bg-black opacity-35"></div>
+      <div class="relative z-10 text-center px-6 md:px-20">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Shree Engineering Works</h1>
+        <p class="text-lg md:text-2xl mb-6">The World On Wheel</p>
+        <div class="mt-6 flex justify-center space-x-6 text-2xl">
+          <a href="https://www.facebook.com/" class="hover:text-blue-400" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
           </a>
-          <a href="https://www.instagram.com/shree_engineering_works9/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600">
+          <a href="https://www.instagram.com/shree_engineering_works9/" class="hover:text-pink-500" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600">
+          <a href="https://www.youtube.com/" class="hover:text-red-500" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
             <i class="fab fa-youtube"></i>
           </a>
         </div>
       </div>
+    </section>
 
-      <!-- Google Map Embed -->
-      <div class="w-full h-64 rounded-md overflow-hidden shadow">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.6666977165236!2d73.98454171479575!3d18.140476487646447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc25f8b5cde3e45%3A0x3c6b78c5419d0a6c!2sShree%20Engineering%20Works!5e0!3m2!1sen!2sin!4v1626623147254!5m2!1sen!2sin"
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section id="about" class="max-w-6xl mx-auto px-6 py-20 bg-gray-50 rounded-lg shadow-md mt-12 relative" data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-center text-gray-800 uppercase mb-14">About</h2>
+      <div class="flex flex-col md:flex-row items-center gap-12"  data-aos="fade-up">
+        <div class="w-full md:w-1/2 relative h-80 overflow-hidden rounded shadow-lg">
+          <img id="image1" loading="lazy" class="w-full h-full object-cover" src="images/Team/2.png" alt="Shree Engineering Works Facility" />
+        </div>
+        <div class="w-full md:w-1/2 text-lg space-y-5" data-aos="fade-up">
+          <h3 class="text-3xl font-bold text-gray-800">Shree Engineering Works</h3>
+          <p class="text-sm text-gray-500 uppercase tracking-wide">Precision. Quality. Experience.</p>
+          <p>
+            We, M/s Shree Engineering Works, are a certified manufacturing industry specializing in **industrial fabrication and auto body work**.
+          </p>
+          <p>
+            Over the last **12 years**, we have worked with numerous engineering and bio-product manufacturing companies. Here’s a brief overview of our infrastructure and capabilities:
+          </p>
+          <ul class="list-disc list-inside ml-5 space-y-2 text-gray-700">
+            <li>✅ Equipped with skilled manpower.</li>
+            <li>✅ Certified with GST, MSME, Udyam Aadhaar, ISO, and registered with Trade Certificate (Form 17).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="max-w-6xl mx-auto px-6 py-16 bg-gray-50 rounded-lg shadow-md mt-12" data-aos="fade-up">
+      <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">Our Fabrication & Manufacturing Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto text-gray-700 font-poppins">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group"  data-aos="fade-up">
+          <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
+            <i class="fas fa-truck-loading"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Load Body Fabrication</h3>
+          <p class="text-center text-sm">Design and fabrication of load bodies for all types of heavy and light commercial vehicles.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group" data-aos="fade-up">
+          <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
+            <i class="fas fa-box-open"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Fabricated Container Bodies</h3>
+          <p class="text-center text-sm">Custom-built container bodies tailored to transport and storage needs across industries.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group"  data-aos="fade-up">
+          <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
+            <i class="fa-solid fa-spray-can"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Powder Coating</h3>
+          <p class="text-center text-sm">Fabrication of mild steel and stainless steel furniture for industrial, commercial, and custom use.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group" data-aos="fade-up">
+          <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
+            <i class="fas fa-fan"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Industrial Blowers</h3>
+          <p class="text-center text-sm">Manufacturing of high-performance blowers as per designs by company.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group" data-aos="fade-up">
+          <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
+            <i class="fas fa-wind"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Air Suction Units</h3>
+          <p class="text-center text-sm">Custom fabrication of air suction units and similar industrial applications.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 group" data-aos="fade-up">
+          <div class="text-4xl text-indigo-600 mb-4 flex justify-center transform transition-transform duration-300 group-hover:-translate-y-2">
+            <i class="fas fa-industry"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-center">Fabrication for Machinery & Industry</h3>
+          <p class="text-center text-sm">Manufacturing of machine structures and MS/SS works for companies.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12"  data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Our Portfolio</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <a href="TATA_portfolio.html" rel="noopener noreferrer" data-aos="fade-up" class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
+          <div class="flex justify-center items-center h-40 bg-white"><img src="asset/Company_Logo/tata-logo.svg" alt="TATA Motors Logo" loading="lazy" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" /></div>
+          <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center"><h3 class="font-semibold text-lg text-gray-800">TATA Motors</h3></div>
+        </a>
+        <a href="AshokLeyland_portfoilio.html"  rel="noopener noreferrer" data-aos="fade-up" class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
+          <div class="flex justify-center items-center h-40 bg-white"><img src="asset/Company_Logo/ashok-leyland-logo-2.svg" alt="Ashok Leyland Logo" loading="lazy" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" /></div>
+          <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center"><h3 class="font-semibold text-lg text-gray-800">Ashok Leyland</h3></div>
+        </a>
+        <a href="Mahindra_portfolio.html"  rel="noopener noreferrer" data-aos="fade-up" class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
+          <div class="flex justify-center items-center h-40 bg-white"><img src="asset/Company_Logo/mahindra-mahindra-logo.svg" alt="Mahindra & Mahindra Logo" loading="lazy" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" /></div>
+          <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center"><h3 class="font-semibold text-lg text-gray-800">Mahindra & Mahindra</h3></div>
+        </a>
+        <a href="Maruti_portfolio.html"  rel="noopener noreferrer" data-aos="fade-up" class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
+          <div class="flex justify-center items-center h-40 bg-white"><img src="asset/Company_Logo/suzuki-7.svg" alt="Eicher Trucks & Buses Logo" loading="lazy" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" /></div>
+          <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center"><h3 class="font-semibold text-lg text-gray-800">Eicher Trucks & Buses</h3></div>
+        </a>
+        <a href="Eicher_portfolio.html"  rel="noopener noreferrer" data-aos="fade-up" class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
+          <div class="flex justify-center items-center h-40 bg-white"><img src="asset/Company_Logo/eicher-logo.svg" alt="Maruti Suzuki Logo" loading="lazy" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" /></div>
+          <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center"><h3 class="font-semibold text-lg text-gray-800">Maruti Suzuki</h3></div>
+        </a>
+        <a href="Bharat_benz.html"  rel="noopener noreferrer" data-aos="fade-up" class="overflow-hidden rounded-lg shadow-md group hover:shadow-2xl hover:-translate-y-1 transition-transform duration-300 ease-in-out cursor-pointer block">
+          <div class="flex justify-center items-center h-40 bg-white"><img src="asset/Company_Logo/BharatBenz-Logo-PNG1.png" alt="Bharat Benz Logo" loading="lazy" class="h-24 w-40 object-contain transition-transform duration-300 group-hover:scale-105" /></div>
+          <div class="p-6 bg-gray-50 group-hover:bg-gray-100 transition-colors duration-300 text-center"><h3 class="font-semibold text-lg text-gray-800">Bharat Benz</h3></div>
+        </a>
+      </div>
+    </section>
+
+    <section id="testimonial" class="max-w-6xl mx-auto px-6 py-16 bg-gray-50 rounded-lg shadow-md mt-12" data-aos="fade-up">
+      <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">What Our Clients Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto text-gray-700 font-poppins">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300" data-aos="fade-up">
+          <div class="flex items-center mb-4">
+            <img src="images/Team/sohel.png" alt="Client Sohel Ansari" loading="lazy" class="w-14 h-14 rounded-full object-cover mr-4" />
+            <p class="font-semibold text-gray-900">Sohel Ansari</p>
+          </div>
+          <p class="text-sm italic text-gray-600">“Shree Engineering Works delivered exceptional quality and met all our deadlines. Their fabrication expertise was crucial for our plant expansion.”</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300"  data-aos="fade-up">
+          <div class="flex items-center mb-4">
+            <img src="images/Team/parbad.png" alt="Client Parbad Raut" loading="lazy" class="w-14 h-14 rounded-full object-cover mr-4" />
+            <p class="font-semibold text-gray-900">Parbad Raut</p>
+          </div>
+          <p class="text-sm italic text-gray-600">“Their custom metal fabrication services were exactly what we needed. The team is professional and responsive throughout the project.”</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow duration-300" data-aos="fade-up">
+          <div class="flex items-center mb-4">
+            <img src="images/Team/sushant.png" alt="Client Sushant Dhanawade" loading="lazy" class="w-14 h-14 rounded-full object-cover mr-4" />
+            <p class="font-semibold text-gray-900">Sushant Dhanawade</p>
+          </div>
+          <p class="text-sm italic text-gray-600">“Top-notch craftsmanship and excellent customer service. We highly recommend Shree Engineering Works for industrial fabrication.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certification" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12" data-aos="fade-up">
+      <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">Certifications & Achievements</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto text-gray-700" data-aos="fade-up">
+        <div>
+          <h3 class="text-xl font-semibold mb-6 text-indigo-600">Certifications</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-green-500 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+              <div>
+                <p class="font-medium">ISO 9001:2015 Quality Management</p>
+                <a href="images/Certificates/ISO.png" target="_blank" class="text-sm text-blue-600 underline hover:text-blue-800">View Certificate</a>
+              </div>
+            </li>
+            <li class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-green-500 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+              <div>
+                <p class="font-medium">Udyam Registration Certificat</p>
+                <a href="images/Certificates/Udyam.jpeg" target="_blank" class="text-sm text-blue-600 underline hover:text-blue-800">View Certificate</a>
+              </div>
+            </li>
+            <li class="flex items-start space-x-3">
+              <svg class="w-6 h-6 text-green-500 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"></path><circle cx="12" cy="12" r="10"></circle></svg>
+              <div>
+                <p class="font-medium">Trade Certificate</p>
+                <a href="images/Certificates/17.webp" target="_blank" class="text-sm text-blue-600 underline hover:text-blue-800">View Certificate</a>
+              </div>
+            </li>
+          </ul>
+          <div class="mt-10">
+            <h4 class="text-lg font-semibold mb-4 text-indigo-600">Certificate Previews</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <img src="images/Certificates/ISO.png" alt="ISO 9001 Certificate" loading="lazy" class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+              <img src="images/Certificates/Udyam.jpeg" alt="Udyam Registration Certificate" loading="lazy" class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+              <img src="images/Certificates/17.webp" alt="Trade Certificate" loading="lazy" class="rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-6 text-indigo-600">Achievements</h3>
+          <ol class="relative border-l border-gray-300 ml-4 space-y-6">
+            <li class="ml-6">
+              <span class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-2.5 border-2 border-white"></span>
+              <time class="text-sm text-gray-500">2024</time>
+              <p class="font-semibold">Awarded “Best Fabrication Company” by Industry Council</p>
+            </li>
+            <li class="ml-6">
+              <span class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-2.5 border-2 border-white"></span>
+              <time class="text-sm text-gray-500">2023</time>
+              <p class="font-semibold">Completed 100+ industrial projects on time</p>
+            </li>
+            <li class="ml-6">
+              <span class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-2.5 border-2 border-white"></span>
+              <time class="text-sm text-gray-500">2022</time>
+              <p class="font-semibold">Developed custom heavy machinery parts for major clients</p>
+            </li>
+            <li class="ml-6">
+              <span class="absolute w-4 h-4 bg-indigo-600 rounded-full -left-2.5 border-2 border-white"></span>
+              <time class="text-sm text-gray-500">2021</time>
+              <p class="font-semibold">Expanded production facility with state-of-the-art equipment</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12 font-poppins" data-aos="fade-up">
+      <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">Team Members</h2>
+      <div class="swiper mySwiper w-full max-w-5xl">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide group relative">
+            <div class="rounded-xl shadow-xl overflow-hidden relative">
+              <img src="images/Team/1.webp" alt="Team photo 1" loading="lazy" class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain sm:object-cover transform transition-transform duration-500 group-hover:scale-105 kenburns"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-4"></div>
+              <div class="absolute top-0 left-0 h-1 bg-indigo-500 w-full animate-slideDuration"></div>
+            </div>
+          </div>
+          <div class="swiper-slide group relative">
+            <div class="rounded-xl shadow-xl overflow-hidden relative">
+              <img src="images/Team/2.webp" alt="Team photo 2" loading="lazy" class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain sm:object-cover transform transition-transform duration-500 group-hover:scale-105 kenburns"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-4"></div>
+              <div class="absolute top-0 left-0 h-1 bg-indigo-500 w-full animate-slideDuration"></div>
+            </div>
+          </div>
+          <div class="swiper-slide group relative">
+            <div class="rounded-xl shadow-xl overflow-hidden relative">
+              <img src="images/Team/3.webp" alt="Team photo 3" loading="lazy" class="w-full h-[300px] sm:h-[400px] md:h-[500px] object-contain sm:object-cover transform transition-transform duration-500 group-hover:scale-105 kenburns"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex items-end p-4"></div>
+              <div class="absolute top-0 left-0 h-1 bg-indigo-500 w-full animate-slideDuration"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="max-w-6xl mx-auto px-6 py-16 bg-white rounded-lg shadow-md mt-12 font-poppins" data-aos="fade-up">
+      <h2 class="text-3xl font-montserrat font-bold mb-12 text-center text-gray-800">Contact Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <form action="#" method="POST" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-semibold mb-1">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label for="phone" class="block text-sm font-semibold mb-1">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter 10-digit phone number" pattern="[0-9]{10}" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-semibold mb-1">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Write your message here..." class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"></textarea>
+          </div>
+          <button type="submit" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-indigo-700 transition-colors duration-300">Send Message</button>
+        </form>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">Get in Touch</h3>
+            <p class="mb-2"><strong>Company:</strong> Shree Engineering Works</p>
+            <p class="mb-2"><strong>Address:</strong> Gat no. 326, Opp. Star City, Pandharpur Phata, Shirwal, TAL. Khandala, DIST. Satara, Maharashtra, 412801</p>
+            <p class="mb-2"><strong>Phone:</strong> <a href="tel:+919922948303" class="text-indigo-600 hover:underline">+91 99229 48303</a> / <a href="tel:+917028807361" class="text-indigo-600 hover:underline">70288 07361</a></p>
+            <p class="mb-2"><strong>Email:</strong> <a href="mailto:info@shreeengineering.com" class="text-indigo-600 hover:underline">info@shreeengineering.com</a></p>
+            <p class="mb-2"><strong>GST No.:</strong> 27ALBPG8597Q1Z6</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-gray-800">Follow Us</h3>
+            <div class="flex space-x-6 text-2xl text-gray-600">
+              <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/shree_engineering_works9/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="w-full h-64 rounded-md overflow-hidden shadow">
+            <iframe
+              src="https://maps.google.com/maps?q=Shree%20Engineering%20Works%20Shirwal&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="Shree Engineering Works Location Map"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-300 py-6 font-poppins">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-2">Shree Engineering Works</h3>
+        <p class="text-gray-400 text-xs leading-tight">
+          Gat no. 326, Opp. Star City, Pandharpur Phata, Shirwal, TAL. Khandala, DIST. Satara, Maharashtra, 412801<br />
+          Phone:  +91 99229 48303 / 70288 07361 <br />
+          Email: info@shreeengineering.com
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-2">Quick Links</h3>
+        <ul class="space-y-1 text-xs">
+          <li><a href="#home" class="hover:text-indigo-500 transition-colors">Home</a></li>
+          <li><a href="#about" class="hover:text-indigo-500 transition-colors">About</a></li>
+          <li><a href="#services" class="hover:text-indigo-500 transition-colors">Services</a></li>
+          <li><a href="#portfolio" class="hover:text-indigo-500 transition-colors">Portfolio</a></li>
+          <li><a href="#testimonial" class="hover:text-indigo-500 transition-colors">Testimonials</a></li>
+          <li><a href="#contact" class="hover:text-indigo-500 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
+        <div class="flex space-x-4 text-xl">
+          <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/shree_engineering_works9/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/company/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-
-
-
-<!-- Compact Footer -->
-<footer class="bg-gray-900 text-gray-300 py-6 font-poppins">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Company Info -->
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-2">Shree Engineering Works</h3>
-      <p class="text-gray-400 text-xs leading-tight">
-        Gat no. 326, Opp. Star City, Pandharpur Phata, Shirwal, TAL. Khandala, DIST. Satara, Maharashtra, 412801<br />
-        Phone:  +91 99229 48303 / 70288 07361 <br />
-        Email: info@shreeengineering.com
-      </p>
+    <div class="max-w-6xl mx-auto px-6 mt-6 border-t border-gray-700 text-center text-xs text-gray-500">
+      © 1990 - <script>document.write(new Date().getFullYear())</script> Shree Engineering Works. All rights reserved.
     </div>
+  </footer>
 
-    <!-- Quick Links -->
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-2">Quick Links</h3>
-      <ul class="space-y-1 text-xs">
-        <li><a href="#home" class="hover:text-indigo-500 transition-colors">Home</a></li>
-        <li><a href="#about" class="hover:text-indigo-500 transition-colors">About</a></li>
-        <li><a href="#services" class="hover:text-indigo-500 transition-colors">Services</a></li>
-        <li><a href="#projects" class="hover:text-indigo-500 transition-colors">Portfolio</a></li>
-        <li><a href="#testimonial" class="hover:text-indigo-500 transition-colors">Testimonials</a></li>
-        <li><a href="#contact" class="hover:text-indigo-500 transition-colors">Contact</a></li>
-      </ul>
-    </div>
+  <script src="script.js" defer></script>
 
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
-      <div class="flex space-x-4 text-xl">
-        <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/shree_engineering_works9/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  <div class="max-w-6xl mx-auto px-6 mt-6 border-t border-gray-700 text-center text-xs text-gray-500">
-    &copy; 1990 - <script>document.write(new Date().getFullYear())</script> Shree Engineering Works. All rights reserved.
-  </div>
-</footer>
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-<script>
-  const images = [
-      
-  "images/Team/2.png",
-  "images/Team/22.png"
+    // Hide menu on link click
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
 
-  ];
-
-  let current = 0;
-  const img1 = document.getElementById('image1');
-  const img2 = document.getElementById('image2');
-
-  setInterval(() => {
-    const next = (current + 1) % images.length;
-    img2.src = images[next];
-    img2.classList.add('opacity-100');
-    img1.classList.remove('opacity-100');
-    img1.classList.add('opacity-0');
-
-    setTimeout(() => {
-      img1.src = images[next];
-      img1.classList.add('opacity-100');
-      img1.classList.remove('opacity-0');
-      img2.classList.remove('opacity-100');
-      img2.classList.add('opacity-0');
-      current = next;
-    }, 1000); // match transition duration
-  }, 5000); // change every 5 seconds
-</script>
-
-
-<!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -723,10 +463,7 @@
     });
   </script>
 
-  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Swiper Init -->
   <script>
     const swiper = new Swiper('.mySwiper', {
       loop: true,
@@ -738,12 +475,6 @@
       spaceBetween: 30,
     });
   </script>
-
-
-
-
-
-
 
 </body>
 </html>
