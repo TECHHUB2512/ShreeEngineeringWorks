@@ -84,34 +84,20 @@
       </div>
     </div>
 
-    <div onclick="openGallery(2, 'Dost Sathi')" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 overflow-hidden">
-      <img src="images/Truck_images/Ashok_Leyland/dost _sathi/1.webp" alt="Mahindra PICKUP COURIER 1.7 truck image" class="w-full h-32 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+    <div onclick="openGallery(2, 'Container')" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 overflow-hidden">
+      <img src="images/Truck_images/Eicher/container/1.webp" alt="Mahindra PICKUP COURIER 1.7 truck image" class="w-full h-32 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
       <div class="p-3 text-center">
-        <h3 class="text-sm sm:text-base font-semibold text-gray-800">Dost Sathi</h3>
+        <h3 class="text-sm sm:text-base font-semibold text-gray-800">Container</h3>
       </div>
     </div>
 
-    <div onclick="openGallery(3, 'Dost Ghanta Gadi')" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 overflow-hidden">
-      <img src="images/Truck_images/Ashok_Leyland/DOST_GANT_AGADI_dumper/1.webp" alt="Mahindra PICKUP COURIER BODY 1.3 truck image" class="w-full h-32 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
+    <div onclick="openGallery(3, 'Eicher Eutech 6')" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 overflow-hidden">
+      <img src="images/Truck_images/Eicher/hyteh_body/1.webp" alt="Mahindra PICKUP COURIER BODY 1.3 truck image" class="w-full h-32 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
       <div class="p-3 text-center">
-        <h3 class="text-sm sm:text-base font-semibold text-gray-800">Dost Ghanta Gadi</h3>
+        <h3 class="text-sm sm:text-base font-semibold text-gray-800">Eicher Eutech 6</h3>
       </div>
     </div>
-
-    <div onclick="openGallery(4, 'Hytech Body')" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 overflow-hidden">
-      <img src="images/Truck_images/Ashok_Leyland/HYTEC_BODY/1.webp" alt="Mahindra PICKUP REGULAR BODY 1.3 truck image" class="w-full h-32 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
-      <div class="p-3 text-center">
-        <h3 class="text-sm sm:text-base font-semibold text-gray-800">Hytech Body</h3>
-      </div>
-    </div>
-
-    <div onclick="openGallery(5, 'Regular Body HCV')" class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 overflow-hidden">
-      <img src="images/Truck_images/Ashok_Leyland/REGULAR_BODY_HCV/1.webp" alt="Mahindra PICKUP REGULAR BODY 1.5 truck image" class="w-full h-32 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy">
-      <div class="p-3 text-center">
-        <h3 class="text-sm sm:text-base font-semibold text-gray-800">Regular Body HCV</h3>
-      </div>
-    </div>
-
+    
   </section>
 
   <div id="galleryBackdrop" class="fixed inset-0 bg-black/50 hidden z-40 transition-opacity duration-300"></div>
@@ -282,11 +268,8 @@
     // 3. Image Gallery Modal Logic (Cleaned up and optimized)
     const galleryData = {
       1: ["images/Truck_images/Eicher/chassi_HYTECH_BODY/1.webp", "images/Truck_images/Eicher/chassi_HYTECH_BODY/2.webp","images/Truck_images/Eicher/chassi_HYTECH_BODY/3.webp","images/Truck_images/Eicher/chassi_HYTECH_BODY/4.webp","images/Truck_images/Eicher/chassi_HYTECH_BODY/5.webp","images/Truck_images/Eicher/chassi_HYTECH_BODY/6.webp","images/Truck_images/Eicher/chassi_HYTECH_BODY/7.webp",],
-      2: ["images/Truck_images/Ashok_Leyland/dost _sathi/1.webp", "images/Truck_images/Ashok_Leyland/dost _sathi/2.webp","images/Truck_images/Ashok_Leyland/dost _sathi/3.webp","images/Truck_images/Ashok_Leyland/dost _sathi/4.webp","images/Truck_images/Ashok_Leyland/dost _sathi/5.webp","images/Truck_images/Ashok_Leyland/dost _sathi/6.webp","images/Truck_images/Ashok_Leyland/dost _sathi/7.webp","images/Truck_images/Ashok_Leyland/dost _sathi/8.webp"],
-      3: ["images/Truck_images/Ashok_Leyland/DOST_GANT_AGADI_dumper/1.webp", "images/Truck_images/Ashok_Leyland/DOST_GANT_AGADI_dumper/2.webp","images/Truck_images/Ashok_Leyland/DOST_GANT_AGADI_dumper/3.webp"],
-      4: ["images/Truck_images/Ashok_Leyland/HYTEC_BODY/1.webp","images/Truck_images/Ashok_Leyland/HYTEC_BODY/2.webp","images/Truck_images/Ashok_Leyland/HYTEC_BODY/3.webp"],
-      5: ["images/Truck_images/Ashok_Leyland/REGULAR_BODY_HCV/1.webp","images/Truck_images/Ashok_Leyland/REGULAR_BODY_HCV/2.webp","images/Truck_images/Ashok_Leyland/REGULAR_BODY_HCV/3.webp","images/Truck_images/Ashok_Leyland/REGULAR_BODY_HCV/4.webp",],
-      
+      2: ["images/Truck_images/Eicher/container/1.webp","images/Truck_images/Eicher/container/2.webp","images/Truck_images/Eicher/container/3.webp","images/Truck_images/Eicher/container/4.webp","images/Truck_images/Eicher/container/5.webp","images/Truck_images/Eicher/container/6.webp","images/Truck_images/Eicher/container/7.webp",],
+      3: ["images/Truck_images/Eicher/hyteh_body/1.webp","images/Truck_images/Eicher/hyteh_body/2.webp","images/Truck_images/Eicher/hyteh_body/3.webp","images/Truck_images/Eicher/hyteh_body/4.webp","images/Truck_images/Eicher/hyteh_body/5.webp"],     
     };
 
     const modal = document.getElementById('galleryModal');
