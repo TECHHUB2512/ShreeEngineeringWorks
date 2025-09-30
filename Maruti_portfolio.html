@@ -3,417 +3,394 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shree Engineering Works</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <title>Maruti Portfolio - Shree Engineering Works</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-   <!-- Your Custom JS file -->
-<script src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
   <style>
-    #thumbs img {
-      border: 2px solid transparent;
-    }
-    #thumbs img:hover {
-      border-color: #4f46e5; /* indigo-600 */
-    }
-  </style>
-  <style>
+    /* Cleaned up and simplified custom styles */
     @keyframes driveIn {
-      0% {
-        transform: translateX(100vw);
-      }
-      100% {
-        transform: translateX(0);
-      }
+      0% { transform: translateX(100vw); }
+      100% { transform: translateX(0); }
     }
+    .drive-in { animation: driveIn 1s ease-out forwards; } /* Reduced animation time for quick load */
+    
+    /* Utility for smoother transition on mobile menu toggle */
+    .mobile-menu-open { max-height: 500px; opacity: 1; padding-top: 1rem; padding-bottom: 1rem; }
+    .mobile-menu-closed { max-height: 0; opacity: 0; padding-top: 0; padding-bottom: 0; }
 
-    @keyframes fadeInNavItem {
-      0% {
-        opacity: 0;
-        transform: translateX(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .drive-in {
-      animation: driveIn 7s ease-out forwards;
-    }
-
-    .nav-item {
-      opacity: 0;
-      animation: fadeInNavItem 0.6s ease forwards;
-    }
+    /* Custom hover for gallery thumbnails */
+    .thumbnail-img:hover { border-color: #4f46e5; } /* indigo-600 */
+    .thumbnail-img.active { border-color: #4f46e5; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <header class="bg-white shadow-md px-6 py-4">
-    <div class="flex items-center justify-between">
-      <!-- Logo (car animation) -->
-     <a href="index.html">
-      <img src="images/logo/shree_logo.png" alt="Logo" style="height: 60px;" class="drive-in w-auto" id="logo" />
-    </a>
+  <header class="bg-white shadow-md px-6 py-4 sticky top-0 z-30">
+    <div class="flex items-center justify-between max-w-7xl mx-auto">
+      <a href="index.html">
+        <img src="images/logo/shree_logo.png" alt="Logo" style="height: 60px;" class="drive-in w-auto" />
+      </a>
 
-      <!-- Desktop Navbar -->
-<nav class="hidden md:flex gap-6 text-sm text-black font-medium ml-auto" id="nav-links">
-  <a href="index.html#home" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3s">Home</a>
-  <a href="index.html#about" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.2s">About</a>
-  <a href="index.html#services" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.4s">Services</a>
-  <a href="index.html#portfolio" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
-  <a href="index.html#testimonial" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.8s">Testimonial</a>
-  <a href="index.html#certification" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Certifications</a>
-  <a href="index.html#team" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>
-  <a href="index.html#contact" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4.2s">Contact</a>
-  <a href="index.html#quote" class="nav-item bg-black text-white px-4 py-1 rounded hover:bg-gray-800 no-underline" style="animation-delay: 4.4s">Get Quote</a>
-</nav>
+      <nav class="hidden md:flex gap-6 text-sm text-black font-medium ml-auto">
+        <a href="index.html#home" class="hover:text-indigo-600 no-underline">Home</a>
+        <a href="index.html#about" class="hover:text-indigo-600 no-underline">About</a>
+        <a href="index.html#services" class="hover:text-indigo-600 no-underline">Services</a>
+        <a href="index.html#portfolio" class="hover:text-indigo-600 no-underline">Portfolio</a>
+        <a href="index.html#testimonial" class="hover:text-indigo-600 no-underline">Testimonial</a>
+        <a href="index.html#certification" class="hover:text-indigo-600 no-underline">Certifications</a>
+        <a href="index.html#team" class="hover:text-indigo-600 no-underline">Team</a>
+        <a href="index.html#contact" class="hover:text-indigo-600 no-underline">Contact</a>
+        <a href="index.html#quote" class="bg-black text-white px-4 py-1 rounded hover:bg-gray-800 no-underline">Get Quote</a>
+      </nav>
 
-
-      <!-- Mobile Nav Toggle -->
-      <button id="mobile-menu-btn" class="md:hidden text-black text-2xl">
-        ☰
+      <button id="mobile-menu-btn" class="md:hidden text-black text-2xl p-2 focus:outline-none">
+        <i class="fas fa-bars"></i>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
-  <nav id="mobile-menu" class="md:hidden hidden flex-col bg-white px-6 py-4 space-y-4 text-sm font-medium shadow transition-all duration-300 ease-in-out">
-  <a href="index.html#home" class="block text-black hover:text-gray-700 no-underline">Home</a>
-  <a href="index.html#about" class="block text-black hover:text-gray-700 no-underline">About</a>
-  <a href="index.html#services" class="block text-black hover:text-gray-700 no-underline">Services</a>
-  <a href="index.html#portfolio" class="block text-black hover:text-gray-700 no-underline">Portfolio</a>
-  <a href="index.html#testimonial" class="block text-black hover:text-gray-700 no-underline">Testimonial</a>
-  <a href="index.html#certification" class="block text-black hover:text-gray-700 no-underline">Certifications</a>
-  <a href="index.html#team" class="block text-black hover:text-gray-700 no-underline">Team</a>
-  <a href="index.html#contact" class="block text-black hover:text-gray-700 no-underline">Contact</a>
-  <a href="index.html#quote" class="block bg-black text-white px-4 py-2 rounded text-center hover:bg-gray-800 no-underline">Get a Quote</a>
-</nav>
-
+    <nav id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-300 ease-in-out mobile-menu-closed">
+      <div class="flex flex-col space-y-3 font-medium border-t pt-3">
+        <a href="index.html#home" class="block text-black hover:text-indigo-600 no-underline">Home</a>
+        <a href="index.html#about" class="block text-black hover:text-indigo-600 no-underline">About</a>
+        <a href="index.html#services" class="block text-black hover:text-indigo-600 no-underline">Services</a>
+        <a href="index.html#portfolio" class="block text-black hover:text-indigo-600 no-underline">Portfolio</a>
+        <a href="index.html#testimonial" class="block text-black hover:text-indigo-600 no-underline">Testimonial</a>
+        <a href="index.html#certification" class="block text-black hover:text-indigo-600 no-underline">Certifications</a>
+        <a href="index.html#team" class="block text-black hover:text-indigo-600 no-underline">Team</a>
+        <a href="index.html#contact" class="block text-black hover:text-indigo-600 no-underline">Contact</a>
+        <a href="index.html#quote" class="block bg-black text-white px-4 py-2 rounded text-center hover:bg-gray-800 no-underline mt-2">Get a Quote</a>
+      </div>
+    </nav>
   </header>
 
+  <section id="Maruti_portfolio" class="pt-10">
+    <div class="flex justify-center my-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="carousel" class="flex items-center justify-center gap-2 sm:gap-4 md:gap-6 w-full overflow-x-auto py-2">
+        </div>
+    </div>
 
-<section id="Maruti_portfolio">
-  <!-- ASHOK LEYLAND Logo -->
-    <div class="flex justify-center my-10">
-    <div id="carousel" class="flex items-center justify-center gap-2 sm:gap-4 md:gap-6 transition-transform duration-300"></div>
-  </div>
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-extrabold text-gray-900">Maruti Vehicle Portfolio</h2>
+      <p class="text-lg text-gray-500 mt-2">Explore our custom body solutions for Maruti vehicles.</p>
+    </div>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-  <!-- CARD TEMPLATE -->
-  <!-- Just duplicate this block and change cardNumber + images for each card -->
-
-  <!-- Card 1 -->
-  <div 
-    onclick="openGallery(1, 'images/Truck_images/Maruti/Regular_body_1/1.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/Maruti/Regular_bodY_1/1.webp" 
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div 
+        onclick="openGallery(1, 'images/Truck_images/Maruti/Regular_body_1/1.webp')" 
+        class="cursor-pointer group bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 w-full"
       >
-    </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">REGULAR BODY </h3>
-    </div>
-  </div>
+        <div class="w-full rounded-t-xl overflow-hidden">
+          <img 
+            src="images/Truck_images/Maruti/Regular_body_1/1.webp" 
+            alt="Maruti Regular Body Type 1" 
+            class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+          >
+        </div>
+        <div class="p-4 text-center">
+          <h3 class="text-lg font-semibold text-gray-900">REGULAR BODY (Type 1)</h3>
+        </div>
+      </div>
 
-  <!-- Card 2 -->
-  <div 
-    onclick="openGallery(2, 'images/Truck_images/Maruti/Regular_body_2/1.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/Maruti/Regular_body_2/1.webp" 
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
+      <div 
+        onclick="openGallery(2, 'images/Truck_images/Maruti/Regular_body_2/1.webp')" 
+        class="cursor-pointer group bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 w-full"
       >
-    </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">REGULAR BODY</h3>
-    </div>
-  </div>
+        <div class="w-full rounded-t-xl overflow-hidden">
+          <img 
+            src="images/Truck_images/Maruti/Regular_body_2/1.webp" 
+            alt="Maruti Regular Body Type 2" 
+            class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+          >
+        </div>
+        <div class="p-4 text-center">
+          <h3 class="text-lg font-semibold text-gray-900">REGULAR BODY (Type 2)</h3>
+        </div>
+      </div>
 
-  <!-- Card 3 -->
-  <div 
-    onclick="openGallery(3, 'images/Truck_images/Maruti/Courier/1.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/Maruti/Courier/1.webp" 
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
+      <div 
+        onclick="openGallery(3, 'images/Truck_images/Maruti/Courier/1.webp')" 
+        class="cursor-pointer group bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 w-full"
       >
+        <div class="w-full rounded-t-xl overflow-hidden">
+          <img 
+            src="images/Truck_images/Maruti/Courier/1.webp" 
+            alt="Maruti Courier Body" 
+            class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+          >
+        </div>
+        <div class="p-4 text-center">
+          <h3 class="text-lg font-semibold text-gray-900">COURIER BODY</h3>
+        </div>
+      </div>  
+    </section>
+
+    <div id="galleryBackdrop" 
+         class="fixed inset-0 bg-black/75 hidden z-40 transition-opacity duration-300 opacity-0"></div>
+
+    <div id="galleryModal" 
+         class="fixed inset-0 flex items-center justify-center p-4 z-50 transition-transform duration-300 scale-90 opacity-0 hidden">
+      <div class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col">
+
+        <button onclick="closeGallery()" 
+                class="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-white text-gray-800 rounded-full w-8 h-8 sm:w-10 sm:h-10 text-xl flex items-center justify-center shadow-lg hover:bg-gray-100 z-50 border">&times;</button>
+        
+        <div class="relative w-full flex-grow flex items-center justify-center p-4">
+          <img id="galleryImage" src="" 
+               class="max-h-[60vh] max-w-full object-contain rounded-lg"
+               loading="lazy">
+        </div>
+        
+        <div id="galleryThumbnails" class="border-t px-4 py-2 flex-shrink-0">
+          <div class="flex overflow-x-auto space-x-2 justify-start py-2">
+            </div>
+        </div>
+      </div>
     </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">COURIER</h3>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-300 py-8 font-sans">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="col-span-2 md:col-span-1">
+        <h3 class="text-white text-lg font-semibold mb-3">Shree Engineering Works</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          Gat no. 326, Opp. Star City, Pandharpur Phata, Shirwal, TAL. Khandala, DIST. Satara, Maharashtra, 412801
+        </p>
+      </div>
+
+      <div class="col-span-2 md:col-span-1">
+        <h3 class="text-white text-lg font-semibold mb-3">Contact</h3>
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-center"><i class="fas fa-phone mr-3 text-indigo-400"></i> +91 99229 48303 / 70288 07361</li>
+          <li class="flex items-center"><i class="fas fa-envelope mr-3 text-indigo-400"></i> info@shreeengineering.com</li>
+        </ul>
+      </div>
+
+      <div class="col-span-1">
+        <h3 class="text-white text-lg font-semibold mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html#home" class="hover:text-indigo-500 transition-colors">Home</a></li>
+          <li><a href="index.html#about" class="hover:text-indigo-500 transition-colors">About</a></li>
+          <li><a href="index.html#services" class="hover:text-indigo-500 transition-colors">Services</a></li>
+          <li><a href="index.html#portfolio" class="hover:text-indigo-500 transition-colors">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-1">
+        <h3 class="text-white text-lg font-semibold mb-3">Follow Us</h3>
+        <div class="flex space-x-4 text-xl">
+          <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>  
 
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+      &copy; 1990 - <span id="current-year"></span> Shree Engineering Works. All rights reserved.
+    </div>
+  </footer>
 
+  <script>
+    // Set current year in the footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 
-</section>
+    // 1. Mobile Menu Toggle - Simplified for better responsiveness
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-<!-- Common Backdrop -->
-<div id="galleryBackdrop" 
-     class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-40"></div>
+    mobileMenuBtn.addEventListener('click', () => {
+      const isClosed = mobileMenu.classList.contains('mobile-menu-closed');
+      mobileMenu.classList.toggle('mobile-menu-closed', !isClosed);
+      mobileMenu.classList.toggle('mobile-menu-open', isClosed);
+      mobileMenuBtn.innerHTML = isClosed ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
 
-<!-- Common Gallery Modal -->
-<div id="galleryModal" 
-     class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-white rounded-xl shadow-lg border max-w-3xl w-full hidden">
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('mobile-menu-closed');
+            mobileMenu.classList.remove('mobile-menu-open');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
 
-  <!-- Close Button -->
-  <button onclick="closeGallery()" 
-          class="absolute top-2 right-2 text-black text-2xl z-50">&times;</button>
-  
-  <!-- Main Image Container -->
-  <div class="relative w-full h-96 flex items-center justify-center p-4">
-    <img id="galleryImage" src="" 
-         class="max-h-full max-w-full object-contain rounded-lg"
-         loading="lazy">
-  </div>
-  
-  <!-- Thumbnail Navigation -->
-  <div id="galleryThumbnails" class="border-t px-4 py-2">
-    <!-- Thumbnails will be injected here dynamically -->
-  </div>
-</div>
+    // 2. Gallery Modal Logic - Cleaned up and added transition support
+    const galleryData = {
+      1: [
+        'images/Truck_images/Maruti/Regular_body_1/1.webp',
+        'images/Truck_images/Maruti/Regular_body_1/2.webp',
+        'images/Truck_images/Maruti/Regular_body_1/3.webp',
+        'images/Truck_images/Maruti/Regular_body_1/4.webp',
+        'images/Truck_images/Maruti/Regular_body_1/5.webp',
+        'images/Truck_images/Maruti/Regular_body_1/6.webp',
+        'images/Truck_images/Maruti/Regular_body_1/7.webp',
+        'images/Truck_images/Maruti/Regular_body_1/8.webp',
+      ],
+      2: [
+        'images/Truck_images/Maruti/Regular_body_2/1.webp',
+        'images/Truck_images/Maruti/Regular_body_2/2.webp',
+        'images/Truck_images/Maruti/Regular_body_2/3.webp',
+        'images/Truck_images/Maruti/Regular_body_2/4.webp',
+        'images/Truck_images/Maruti/Regular_body_2/5.webp',
+        'images/Truck_images/Maruti/Regular_body_2/6.webp',
+        'images/Truck_images/Maruti/Regular_body_2/7.webp',
+      ],
+      3: [
+        'images/Truck_images/Maruti/Courier/1.webp',
+        'images/Truck_images/Maruti/Courier/2.webp',
+        'images/Truck_images/Maruti/Courier/3.webp',
+      ],
+    };
 
-<script>
-  const galleryData = {
-    1: [
-      'images/Truck_images/Maruti/Regular_body_1/1.webp',
-      'images/Truck_images/Maruti/Regular_body_1/2.webp',
-      'images/Truck_images/Maruti/Regular_body_1/3.webp',
-      'images/Truck_images/Maruti/Regular_body_1/4.webp',
-      'images/Truck_images/Maruti/Regular_body_1/5.webp',
-      'images/Truck_images/Maruti/Regular_body_1/6.webp',
-      'images/Truck_images/Maruti/Regular_body_1/7.webp',
-      'images/Truck_images/Maruti/Regular_body_1/8.webp',
-      
-    ],
-    2: [
-      'images/Truck_images/Maruti/Regular_body_2/1.webp',
-     'images/Truck_images/Maruti/Regular_body_2/2.webp',
-     'images/Truck_images/Maruti/Regular_body_2/3.webp',
-     'images/Truck_images/Maruti/Regular_body_2/4.webp',
-     'images/Truck_images/Maruti/Regular_body_2/5.webp',
-     'images/Truck_images/Maruti/Regular_body_2/6.webp',
-     'images/Truck_images/Maruti/Regular_body_2/7.webp',
-    
-      
-    ],
-    3: [
-      'images/Truck_images/Maruti/Courier/1.webp',
-      'images/Truck_images/Maruti/Courier/2.webp',
-      'images/Truck_images/Maruti/Courier/3.webp',
-      
-    ],
-   
-  };
-
-  function openGallery(cardNumber, firstImageSrc) {
     const modal = document.getElementById('galleryModal');
     const backdrop = document.getElementById('galleryBackdrop');
     const mainImage = document.getElementById('galleryImage');
-    const thumbnailsContainer = document.getElementById('galleryThumbnails');
+    const thumbnailsContainer = document.getElementById('galleryThumbnails').querySelector('div');
 
-    // Set first image
-    mainImage.src = firstImageSrc;
-
-    // Populate thumbnails dynamically
-    thumbnailsContainer.innerHTML = `
-      <div class="flex overflow-x-auto space-x-2 justify-center py-2">
-        ${galleryData[cardNumber].map(src => `
-          <img src="${src}" 
-               onclick="changeImage('${src}')" 
-               class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
-        `).join('')}
-      </div>
-    `;
-
-    // Show modal and backdrop
-    modal.classList.remove('hidden');
-    backdrop.classList.remove('hidden');
-  }
-
-  function changeImage(src) {
-    document.getElementById('galleryImage').src = src;
-  }
-
-  function closeGallery() {
-    document.getElementById('galleryModal').classList.add('hidden');
-    document.getElementById('galleryBackdrop').classList.add('hidden');
-  }
-
-  // Close modal on Escape key
-  document.addEventListener('keydown', function(e) {
-    const modal = document.getElementById('galleryModal');
-    const backdrop = document.getElementById('galleryBackdrop');
-    if (!modal.classList.contains('hidden') && e.key === 'Escape') {
-      closeGallery();
+    function changeImage(src, targetElement) {
+        mainImage.src = src;
+        
+        // Update active class on thumbnails
+        thumbnailsContainer.querySelectorAll('img').forEach(img => {
+            img.classList.remove('active');
+        });
+        if (targetElement) {
+            targetElement.classList.add('active');
+        }
     }
-  });
 
-  // Close on backdrop click
-  document.getElementById('galleryBackdrop').addEventListener('click', closeGallery);
-</script>
+    function openGallery(cardNumber, firstImageSrc) {
+        // Populate thumbnails dynamically
+        thumbnailsContainer.innerHTML = galleryData[cardNumber].map(src => `
+            <img src="${src}" 
+                onclick="changeImage('${src}', this)" 
+                class="thumbnail-img h-16 w-auto object-cover border-2 border-transparent cursor-pointer rounded transition duration-200">
+        `).join('');
 
-<!-- Compact Footer -->
-<footer class="bg-gray-900 text-gray-300 py-6 font-poppins">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Company Info -->
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-2">Shree Engineering Works</h3>
-      <p class="text-gray-400 text-xs leading-tight">
-        Gat no. 326, Opp. Star City, Pandharpur Phata, Shirwal, TAL. Khandala, DIST. Satara, Maharashtra, 412801<br />
-        Phone:  +91 99229 48303 / 70288 07361 <br />
-        Email: info@shreeengineering.com
-      </p>
-    </div>
+        // Set first image and active thumbnail
+        mainImage.src = firstImageSrc;
+        // The first image is always the first one in the list when opened
+        requestAnimationFrame(() => {
+             const firstThumbnail = thumbnailsContainer.querySelector('img');
+             if (firstThumbnail) firstThumbnail.classList.add('active');
+        });
 
-    <!-- Quick Links -->
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-2">Quick Links</h3>
-      <ul class="space-y-1 text-xs">
-  <li><a href="index.html#home" class="hover:text-indigo-500 transition-colors">Home</a></li>
-  <li><a href="index.html#about" class="hover:text-indigo-500 transition-colors">About</a></li>
-  <li><a href="index.html#services" class="hover:text-indigo-500 transition-colors">Services</a></li>
-  <li><a href="index.html#portfolio" class="hover:text-indigo-500 transition-colors">Portfolio</a></li>
-  <li><a href="index.html#testimonial" class="hover:text-indigo-500 transition-colors">Testimonials</a></li>
-  <li><a href="index.html#contact" class="hover:text-indigo-500 transition-colors">Contact</a></li>
-</ul>
+        // Show modal and backdrop with transitions
+        backdrop.classList.remove('hidden');
+        modal.classList.remove('hidden');
+        
+        requestAnimationFrame(() => {
+            backdrop.classList.add('opacity-100');
+            modal.classList.remove('scale-90', 'opacity-0');
+        });
+        
+        document.body.style.overflow = 'hidden'; // Prevent scrolling background
+    }
 
-    </div>
+    function closeGallery() {
+        // Reverse transitions
+        backdrop.classList.remove('opacity-100');
+        modal.classList.add('scale-90', 'opacity-0');
 
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
-      <div class="flex space-x-4 text-xl">
-        <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+        // Hide after transition
+        setTimeout(() => {
+            backdrop.classList.add('hidden');
+            modal.classList.add('hidden');
+        }, 300);
 
-  <div class="max-w-6xl mx-auto px-6 mt-6 border-t border-gray-700 text-center text-xs text-gray-500">
-    &copy; 1990 - <script>document.write(new Date().getFullYear())</script> Shree Engineering Works. All rights reserved.
-  </div>
-</footer>
-<script>
-  // Logo image URLs
-  const logos = [
-    "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
-    "asset/Company_Logo/eicher-logo.svg",
-    "asset/Company_Logo/mahindra-mahindra-logo.svg",
-    "asset/Company_Logo/suzuki-7.svg",
-    "asset/Company_Logo/tata-logo.svg",
-    "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
-    "asset/Company_Logo/ashok-leyland-logo-2.svg",
-    
-    
-    
-    
-    
-  ];
+        document.body.style.overflow = ''; // Restore scrolling
+    }
 
-  // Logo -> Page mapping
-  const logoLinks = {
-    "ashok-leyland-logo-2.svg": "AshokLeyland_portfoilio.html",
-    "BharatBenz-Logo-PNG1.png": "Bharat_benz.html",
-    "eicher-logo.svg": "Eicher_portfolio.html",
-    "mahindra-mahindra-logo.svg": "Mahindra_portfolio.html",
-    "suzuki-7.svg": "Maruti_portfolio.html",
-    "tata-logo.svg": "TATA_portfolio.html"
-  };
-
-  const carousel = document.getElementById('carousel');
-
-  // Assign logo size classes based on distance from center
-  function getSizeClass(index) {
-    const center = 3;
-    const distance = Math.abs(index - center);
-    if (distance === 0) return 'w-36 sm:w-48';   // Center
-    if (distance === 1) return 'w-28 sm:w-36';   // Adjacent
-    if (distance === 2) return 'w-24 sm:w-28';   // Second neighbors
-    return 'w-16 sm:w-20';                      // Others
-  }
-
-  // Main render function
-  function render() {
-    carousel.innerHTML = '';
-    const isMobile = window.innerWidth < 640; // Tailwind 'sm' breakpoint
-    const centerIndex = 3;
-
-    logos.forEach((logoURL, index) => {
-      const isCenter = index === centerIndex;
-
-      // Only render the center logo on mobile
-      if (isMobile && !isCenter) return;
-
-      const sizeClass = getSizeClass(index);
-      const container = document.createElement('div');
-
-      container.className = `
-        transition-all duration-500 ease-in-out cursor-pointer 
-        bg-white rounded-lg p-1 sm:p-2 flex justify-center items-center 
-        opacity-80 hover:opacity-100 shadow-md 
-        ${sizeClass} 
-        ${isCenter ? 'opacity-100 shadow-xl bounce-center' : ''}
-      `.trim();
-
-      const img = document.createElement('img');
-      img.src = logoURL;
-      img.alt = `Logo ${index + 1}`;
-      img.className = "object-contain w-full h-full";
-
-      const logoName = logoURL.split('/').pop();
-      const redirectUrl = logoLinks[logoName];
-
-      if (redirectUrl) {
-        container.onclick = () => {
-          window.location.href = redirectUrl;
-        };
-      } else {
-        container.onclick = () => {
-          moveToCenter(index); // Optional function (not included here)
-        };
-      }
-
-      container.appendChild(img);
-      carousel.appendChild(container);
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (!modal.classList.contains('hidden') && e.key === 'Escape') {
+            closeGallery();
+        }
     });
-  }
 
-  // Initial render on page load
-  document.addEventListener('DOMContentLoaded', render);
+    // Close on backdrop click
+    document.getElementById('galleryBackdrop').addEventListener('click', closeGallery);
 
-  // Re-render on screen resize
-  window.addEventListener('resize', render);
-</script>
+
+    // 3. Carousel Logic - Simplified and optimized for responsiveness
+    const logos = [
+      "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
+      "asset/Company_Logo/eicher-logo.svg",
+      "asset/Company_Logo/mahindra-mahindra-logo.svg",
+      "asset/Company_Logo/suzuki-7.svg", // Maruti
+      "asset/Company_Logo/tata-logo.svg",
+      "asset/Company_Logo/ashok-leyland-logo-2.svg",
+    ];
+
+    const logoLinks = {
+      "ashok-leyland-logo-2.svg": "AshokLeyland_portfoilio.html",
+      "BharatBenz-Logo-PNG1.png": "Bharat_benz.html",
+      "eicher-logo.svg": "Eicher_portfolio.html",
+      "mahindra-mahindra-logo.svg": "Mahindra_portfolio.html",
+      "suzuki-7.svg": "Maruti_portfolio.html",
+      "tata-logo.svg": "TATA_portfolio.html"
+    };
+
+    const carousel = document.getElementById('carousel');
+    const currentLogoName = 'suzuki-7.svg'; // Name of the logo for the current page
+
+    function renderCarousel() {
+      carousel.innerHTML = '';
+      
+      logos.forEach(logoURL => {
+        const logoName = logoURL.split('/').pop();
+        const redirectUrl = logoLinks[logoName] || '#';
+        const isCurrent = logoName === currentLogoName;
+
+        const container = document.createElement('a'); // Use <a> for navigation
+        container.href = redirectUrl;
+        
+        container.className = `
+          transition-all duration-300 ease-in-out flex-shrink-0 cursor-pointer 
+          bg-white rounded-lg p-2 flex justify-center items-center 
+          opacity-75 hover:opacity-100 shadow-md 
+          ${isCurrent ? 'opacity-100 shadow-xl border-2 border-indigo-600 w-24 sm:w-32 md:w-40' : 'w-20 sm:w-28 md:w-36'}
+        `.trim();
+
+        const img = document.createElement('img');
+        img.src = logoURL;
+        img.alt = `OEM Logo for ${logoName}`;
+        img.className = "object-contain w-full h-auto max-h-16"; // Set a max height for uniformity
+        img.loading = "lazy";
+
+        container.appendChild(img);
+        carousel.appendChild(container);
+      });
+      
+      // Ensure the carousel is horizontally scrollable and focused on the current logo (Maruti)
+      if (isMobile()) {
+        const currentLogoElement = carousel.querySelector(`a[href="${logoLinks[currentLogoName]}"]`);
+        if (currentLogoElement) {
+             // Scroll the carousel to center the current logo (simplified approach)
+            carousel.scrollLeft = currentLogoElement.offsetLeft - (carousel.offsetWidth / 2) + (currentLogoElement.offsetWidth / 2);
+        }
+      }
+    }
+    
+    function isMobile() {
+         return window.innerWidth < 640; // Tailwind 'sm' breakpoint
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCarousel);
+    window.addEventListener('resize', renderCarousel); // Re-render on screen resize to adjust sizes
+  </script>
 </body>
 </html>

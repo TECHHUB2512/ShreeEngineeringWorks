@@ -3,28 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shree Engineering Works</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>Tata Portfolio | Shree Engineering Works</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-   <!-- Your Custom JS file -->
-<script src="script.js"></script>
   <style>
+    /* Retained from original */
     #thumbs img {
       border: 2px solid transparent;
     }
     #thumbs img:hover {
       border-color: #4f46e5; /* indigo-600 */
     }
-  </style>
-  <style>
+
+    /* Retained Animation Styles */
     @keyframes driveIn {
       0% {
         transform: translateX(100vw);
@@ -46,7 +41,7 @@
     }
 
     .drive-in {
-      animation: driveIn 7s ease-out forwards;
+      animation: driveIn 3s ease-out forwards; /* Reduced animation time for quicker initial load */
     }
 
     .nav-item {
@@ -56,213 +51,274 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-  <header class="bg-white shadow-md px-6 py-4">
+  <header class="bg-white shadow-md px-4 sm:px-6 lg:px-8 py-4 sticky top-0 z-40">
     <div class="flex items-center justify-between">
-      <!-- Logo (car animation) -->
       <a href="index.html">
-      <img src="images/logo/shree_logo.png" alt="Logo" style="height: 60px;" class="drive-in w-auto" id="logo" />
-    </a>
-      <!-- Desktop Navbar -->
-<nav class="hidden md:flex gap-6 text-sm text-black font-medium ml-auto" id="nav-links">
-  <a href="index.html#home" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3s">Home</a>
-  <a href="index.html#about" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.2s">About</a>
-  <a href="index.html#services" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.4s">Services</a>
-  <a href="index.html#portfolio" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
-  <a href="index.html#testimonial" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.8s">Testimonial</a>
-  <a href="index.html#certification" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Certifications</a>
-  <a href="index.html#team" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>
-  <a href="index.html#contact" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4.2s">Contact</a>
-  <a href="index.html#quote" class="nav-item bg-black text-white px-4 py-1 rounded hover:bg-gray-800 no-underline" style="animation-delay: 4.4s">Get Quote</a>
-</nav>
+        <img src="images/logo/shree_logo.png" alt="Logo" style="height: 60px;" class="drive-in w-auto" id="logo" />
+      </a>
+      
+      <nav class="hidden md:flex gap-4 lg:gap-6 text-sm text-black font-medium ml-auto" id="nav-links">
+        <a href="index.html#home" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3s">Home</a>
+        <a href="index.html#about" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.2s">About</a>
+        <a href="index.html#services" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.4s">Services</a>
+        <a href="index.html#portfolio" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.6s">Portfolio</a>
+        <a href="index.html#testimonial" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 3.8s">Testimonial</a>
+        <a href="index.html#certification" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Certifications</a>
+        <a href="index.html#team" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4s">Team</a>
+        <a href="index.html#contact" class="nav-item hover:text-gray-700 no-underline" style="animation-delay: 4.2s">Contact</a>
+        <a href="index.html#quote" class="nav-item bg-black text-white px-4 py-1 rounded hover:bg-gray-800 no-underline" style="animation-delay: 4.4s">Get Quote</a>
+      </nav>
 
-
-      <!-- Mobile Nav Toggle -->
-      <button id="mobile-menu-btn" class="md:hidden text-black text-2xl">
-        ☰
+      <button id="mobile-menu-btn" class="md:hidden text-black text-2xl p-2 focus:outline-none" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
-  <nav id="mobile-menu" class="md:hidden hidden flex-col bg-white px-6 py-4 space-y-4 text-sm font-medium shadow transition-all duration-300 ease-in-out">
-  <a href="index.html#home" class="block text-black hover:text-gray-700 no-underline">Home</a>
-  <a href="index.html#about" class="block text-black hover:text-gray-700 no-underline">About</a>
-  <a href="index.html#services" class="block text-black hover:text-gray-700 no-underline">Services</a>
-  <a href="index.html#portfolio" class="block text-black hover:text-gray-700 no-underline">Portfolio</a>
-  <a href="index.html#testimonial" class="block text-black hover:text-gray-700 no-underline">Testimonial</a>
-  <a href="index.html#certification" class="block text-black hover:text-gray-700 no-underline">Certifications</a>
-  <a href="index.html#team" class="block text-black hover:text-gray-700 no-underline">Team</a>
-  <a href="index.html#contact" class="block text-black hover:text-gray-700 no-underline">Contact</a>
-  <a href="index.html#quote" class="block bg-black text-white px-4 py-2 rounded text-center hover:bg-gray-800 no-underline">Get a Quote</a>
-</nav>
-
+    <nav id="mobile-menu" class="md:hidden hidden flex-col bg-white mt-2 py-2 space-y-2 text-sm font-medium shadow-lg transition-all duration-300 ease-in-out absolute w-full left-0 z-30 px-4">
+      <a href="index.html#home" class="block text-black hover:text-gray-700 no-underline px-2 py-1">Home</a>
+      <a href="index.html#about" class="block text-black hover:text-gray-700 no-underline px-2 py-1">About</a>
+      <a href="index.html#services" class="block text-black hover:text-gray-700 no-underline px-2 py-1">Services</a>
+      <a href="index.html#portfolio" class="block text-black hover:text-gray-700 no-underline px-2 py-1">Portfolio</a>
+      <a href="index.html#testimonial" class="block text-black hover:text-gray-700 no-underline px-2 py-1">Testimonial</a>
+      <a href="index.html#certification" class="block text-black hover:text-gray-700 no-underline px-2 py-1">Certifications</a>
+      <a href="index.html#team" class="block text-black hover:text-gray-700 no-underline px-2 py-1">Team</a>
+      <a href="index.html#contact" class="block text-black hover:text-gray-700 no-underline px-2 py-1">Contact</a>
+      <a href="index.html#quote" class="block bg-black text-white px-4 py-2 rounded text-center hover:bg-gray-800 no-underline mt-2">Get a Quote</a>
+    </nav>
   </header>
 
+<section id="Tata_portfolio" class="py-10">
+  <h2 class="text-3xl font-bold text-center mb-10 text-gray-900">TATA Vehicle Body Portfolio</h2>
 
-<section id="Tata_portfolio">
-  <!-- ASHOK LEYLAND Logo -->
-    <div class="flex justify-center my-10">
-    <div id="carousel" class="flex items-center justify-center gap-2 sm:gap-4 md:gap-6 transition-transform duration-300"></div>
+  <div class="flex justify-center my-10">
+    <div id="carousel" class="flex items-center justify-center gap-2 sm:gap-4 md:gap-6 transition-transform duration-300 overflow-x-auto px-4"></div>
   </div>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-  <!-- CARD TEMPLATE -->
-  <!-- Just duplicate this block and change cardNumber + images for each card -->
-
-  <!-- Card 1 -->
-  <div 
-    onclick="openGallery(1, 'images/Truck_images/TATA/tata_1212/7.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/TATA/tata_1212/7.webp"
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
-      >
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3 gap-6 md:gap-8">
+    
+    <div 
+      onclick="openGallery(1, 'images/Truck_images/TATA/tata_1212/7.webp')" 
+      class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+      data-aos="fade-up" data-aos-delay="100"
+    >
+      <div class="w-full bg-white rounded-t-xl overflow-hidden">
+        <img 
+          src="images/Truck_images/TATA/tata_1212/7.webp"
+          alt="Tata 1212 / 1616 Truck Body" 
+          class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        >
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-sm sm:text-base font-semibold">Tata 1212 / 1616</h3>
+      </div>
     </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">Tata 1212 / 1616 </h3>
+
+    <div 
+      onclick="openGallery(2, 'images/Truck_images/TATA/407_tata/1.webp')" 
+      class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+      data-aos="fade-up" data-aos-delay="200"
+    >
+      <div class="w-full bg-white rounded-t-xl overflow-hidden">
+        <img 
+          src="images/Truck_images/TATA/407_tata/1.webp" 
+          alt="Tata 407 Truck Body" 
+          class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        >
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-sm sm:text-base font-semibold">Tata 407</h3>
+      </div>
     </div>
+
+    <div 
+      onclick="openGallery(3, 'images/Truck_images/TATA/tata_ace/1.webp')" 
+      class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+      data-aos="fade-up" data-aos-delay="300"
+    >
+      <div class="w-full bg-white rounded-t-xl overflow-hidden">
+        <img 
+          src="images/Truck_images/TATA/tata_ace/1.webp" 
+          alt="Tata Ace Truck Body" 
+          class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        >
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-sm sm:text-base font-semibold">Tata Ace</h3>
+      </div>
+    </div>
+
+    <div 
+      onclick="openGallery(4, 'images/Truck_images/TATA/tata_odv_body/1.webp')" 
+      class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+      data-aos="fade-up" data-aos-delay="400"
+    >
+      <div class="w-full bg-white rounded-t-xl overflow-hidden">
+        <img 
+          src="images/Truck_images/TATA/tata_odv_body/1.webp" 
+          alt="Tata ODC Truck Body" 
+          class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        >
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-sm sm:text-base font-semibold">Tata ODC Body</h3>
+      </div>
+    </div>
+
+    <div 
+      onclick="openGallery(5, 'images/Truck_images/TATA/DUMPER/1.webp')" 
+      class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+      data-aos="fade-up" data-aos-delay="100"
+    >
+      <div class="w-full bg-white rounded-t-xl overflow-hidden">
+        <img 
+          src="images/Truck_images/TATA/DUMPER/1.webp" 
+          alt="Tata Dumper Truck Body" 
+          class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        >
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-sm sm:text-base font-semibold">Tata Dumper</h3>
+      </div>
+    </div>
+
+    <div 
+      onclick="openGallery(6, 'images/Truck_images/TATA/tata_1212/4.webp')" 
+      class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+      data-aos="fade-up" data-aos-delay="200"
+    >
+      <div class="w-full bg-white rounded-t-xl overflow-hidden">
+        <img 
+          src="images/Truck_images/TATA/tata_1212/4.webp" 
+          alt="Tata 1816 LPT Truck Body" 
+          class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        >
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-sm sm:text-base font-semibold">Tata 1816 LPT Truck</h3>
+      </div>
+    </div>
+
+    <div 
+      onclick="openGallery(7, 'images/Truck_images/TATA/tata_infra/1.webp')" 
+      class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
+      data-aos="fade-up" data-aos-delay="300"
+    >
+      <div class="w-full bg-white rounded-t-xl overflow-hidden">
+        <img 
+          src="images/Truck_images/TATA/tata_infra/1.webp" 
+          alt="Tata Infra Truck Body" 
+          class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        >
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-sm sm:text-base font-semibold">Tata Infra</h3>
+      </div>
+    </div>
+
+  </section>
+
+  <div id="galleryBackdrop" 
+       class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-40 transition-opacity duration-300 opacity-0"></div>
+
+  <div id="galleryModal" 
+       class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-white rounded-xl shadow-2xl border max-w-lg md:max-w-3xl w-[90%] md:w-full hidden transition-transform duration-300 scale-95 opacity-0">
+
+    <button onclick="closeGallery()" 
+            class="absolute top-3 right-3 text-gray-800 hover:text-red-600 text-3xl font-bold z-50 p-1 bg-white rounded-full leading-none">&times;</button>
+    
+    <div class="relative w-full h-64 sm:h-80 md:h-96 flex items-center justify-center p-4">
+      <img id="galleryImage" src="" 
+           class="max-h-full max-w-full object-contain rounded-lg"
+           loading="lazy">
+    </div>
+    
+    <div id="galleryThumbnails" class="border-t px-4 py-2 overflow-x-auto">
+      </div>
   </div>
-
-  <!-- Card 2 -->
-  <div 
-    onclick="openGallery(2, 'images/Truck_images/TATA/407_tata/1.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/TATA/407_tata/1.webp" 
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
-      >
-    </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">Tata 407</h3>
-    </div>
-  </div>
-
-  <!-- Card 3 -->
-  <div 
-    onclick="openGallery(3, 'images/Truck_images/TATA/tata_ace/1.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/TATA/tata_ace/1.webp" 
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
-      >
-    </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">Tata Ace </h3>
-    </div>
-  </div>
-
-  <!-- Card 4 -->
-  <div 
-    onclick="openGallery(4, 'images/Truck_images/TATA/tata_odv_body/1.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/TATA/tata_odv_body/1.webp" 
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
-      >
-    </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">Tata ODC Body </h3>
-    </div>
-  </div>
-
-  <!-- Card 5 -->
-  <div 
-    onclick="openGallery(5, 'images/Truck_images/TATA/DUMPER/1.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/TATA/DUMPER/1.webp" 
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
-      >
-    </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">Tata Dumper</h3>
-    </div>
-  </div>
-
-  <!-- Card 6 -->
-  <div 
-    onclick="openGallery(6, 'images/Truck_images/TATA/tata_1212/4.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/TATA/tata_1212/4.webp", 
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
-      >
-    </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">Tata 1816 LPT Truck</h3>
-    </div>
-  </div>
-
-  <!-- Card 7 -->
-  <div 
-    onclick="openGallery(7, 'images/Truck_images/TATA/tata_infra/1.webp')" 
-    class="cursor-pointer group bg-white rounded-xl shadow hover:shadow-xl transition duration-300 w-full"
-  >
-    <div class="w-full bg-white rounded-t-xl overflow-hidden">
-      <img 
-        src="images/Truck_images/TATA/tata_infra/1.webp", 
-        alt="Truck Image" 
-        class="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-        loading="lazy"
-      >
-    </div>
-    <div class="p-4 text-center">
-      <h3 class="text-base font-semibold">Tata Infra </h3>
-    </div>
-  </div>
-
 </section>
 
-<!-- Common Backdrop -->
-<div id="galleryBackdrop" 
-     class="fixed inset-0 bg-black/30 backdrop-blur-sm hidden z-40"></div>
+<footer class="bg-gray-900 text-gray-300 py-6 font-poppins">
+  <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div class="col-span-2 md:col-span-1">
+      <h3 class="text-white text-lg font-semibold mb-2">Shree Engineering Works</h3>
+      <address class="not-italic text-gray-400 text-xs leading-snug">
+        Gat no. 326, Opp. Star City, Pandharpur Phata, Shirwal, TAL. Khandala, DIST. Satara, Maharashtra, 412801<br />
+        Phone:  +91 99229 48303 / 70288 07361 <br />
+        Email: info@shreeengineering.com
+      </address>
+    </div>
 
-<!-- Common Gallery Modal -->
-<div id="galleryModal" 
-     class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-white rounded-xl shadow-lg border max-w-3xl w-full hidden">
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2">Quick Links</h3>
+      <ul class="space-y-1 text-xs">
+        <li><a href="index.html#home" class="hover:text-indigo-500 transition-colors">Home</a></li>
+        <li><a href="index.html#about" class="hover:text-indigo-500 transition-colors">About</a></li>
+        <li><a href="index.html#services" class="hover:text-indigo-500 transition-colors">Services</a></li>
+        <li><a href="index.html#portfolio" class="hover:text-indigo-500 transition-colors">Portfolio</a></li>
+      </ul>
+    </div>
+    
+    <div>
+      <h3 class="text-white text-lg font-semibold mb-2">More Info</h3>
+      <ul class="space-y-1 text-xs">
+        <li><a href="index.html#testimonial" class="hover:text-indigo-500 transition-colors">Testimonials</a></li>
+        <li><a href="index.html#certification" class="hover:text-indigo-500 transition-colors">Certifications</a></li>
+        <li><a href="index.html#team" class="hover:text-indigo-500 transition-colors">Team</a></li>
+        <li><a href="index.html#contact" class="hover:text-indigo-500 transition-colors">Contact</a></li>
+      </ul>
+    </div>
 
-  <!-- Close Button -->
-  <button onclick="closeGallery()" 
-          class="absolute top-2 right-2 text-black text-2xl z-50">&times;</button>
-  
-  <!-- Main Image Container -->
-  <div class="relative w-full h-96 flex items-center justify-center p-4">
-    <img id="galleryImage" src="" 
-         class="max-h-full max-w-full object-contain rounded-lg"
-         loading="lazy">
+    <div class="col-span-2 md:col-span-1">
+      <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
+      <div class="flex space-x-4 text-xl">
+        <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="hover:text-indigo-500">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/shreeengineering" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-indigo-500">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" aria-label="Youtube" class="hover:text-indigo-500">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/shreeengineering" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="hover:text-indigo-500">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
   </div>
-  
-  <!-- Thumbnail Navigation -->
-  <div id="galleryThumbnails" class="border-t px-4 py-2">
-    <!-- Thumbnails will be injected here dynamically -->
+
+  <div class="max-w-6xl mx-auto px-6 mt-6 border-t border-gray-700 text-center text-xs text-gray-500 pt-4">
+    &copy; 1990 - <script>document.write(new Date().getFullYear())</script> Shree Engineering Works. All rights reserved.
   </div>
-</div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, // Only animate once
+    duration: 800, // Reduced duration for snappier feel
+  });
+</script>
 
 <script>
+  // Mobile Menu Toggle Logic
+  document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+    // Change icon between 'bars' and 'times'
+    const icon = this.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  });
+
+  // Gallery Data and Functions (Optimized for placement at end of body)
   const galleryData = {
     1: [
       "images/Truck_images/TATA/tata_1212/1.webp",
@@ -306,9 +362,7 @@
     5: [
       "images/Truck_images/TATA/DUMPER/1.webp",
       "images/Truck_images/TATA/DUMPER/2.webp",
-      
       "images/Truck_images/TATA/DUMPER/4.webp",
-     
       "images/Truck_images/TATA/DUMPER/8.webp",
       "images/Truck_images/TATA/DUMPER/9.webp",
     ],
@@ -328,7 +382,6 @@
       "images/Truck_images/TATA/tata_infra/2.webp", 
       "images/Truck_images/TATA/tata_infra/3.webp", 
       "images/Truck_images/TATA/tata_infra/4.webp", 
-   
     ],
   };
 
@@ -343,108 +396,73 @@
 
     // Populate thumbnails dynamically
     thumbnailsContainer.innerHTML = `
-      <div class="flex overflow-x-auto space-x-2 justify-center py-2">
+      <div class="flex overflow-x-auto space-x-2 justify-start py-2">
         ${galleryData[cardNumber].map(src => `
           <img src="${src}" 
                onclick="changeImage('${src}')" 
-               class="h-16 w-auto object-cover border-2 border-transparent hover:border-black cursor-pointer rounded">
+               class="h-16 w-16 object-cover border-2 border-transparent hover:border-indigo-600 cursor-pointer rounded transition duration-200"
+               loading="lazy">
         `).join('')}
       </div>
     `;
 
-    // Show modal and backdrop
-    modal.classList.remove('hidden');
+    // Show modal and backdrop with transitions
     backdrop.classList.remove('hidden');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+        backdrop.classList.add('opacity-100');
+        modal.classList.remove('scale-95', 'opacity-0');
+    }, 10); // Small delay to allow CSS transitions to work
   }
 
   function changeImage(src) {
     document.getElementById('galleryImage').src = src;
+    // Optional: Highlight the selected thumbnail
+    const thumbnails = document.querySelectorAll('#galleryThumbnails img');
+    thumbnails.forEach(img => {
+      img.classList.remove('border-indigo-600');
+      if (img.src.endsWith(src.split('/').pop())) { // Simple check, assuming unique file names
+        img.classList.add('border-indigo-600');
+      }
+    });
   }
 
   function closeGallery() {
-    document.getElementById('galleryModal').classList.add('hidden');
-    document.getElementById('galleryBackdrop').classList.add('hidden');
+    const modal = document.getElementById('galleryModal');
+    const backdrop = document.getElementById('galleryBackdrop');
+
+    // Hide with transitions
+    backdrop.classList.remove('opacity-100');
+    modal.classList.add('scale-95', 'opacity-0');
+
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      backdrop.classList.add('hidden');
+    }, 300); // Wait for transition
   }
 
   // Close modal on Escape key
   document.addEventListener('keydown', function(e) {
-    const modal = document.getElementById('galleryModal');
-    const backdrop = document.getElementById('galleryBackdrop');
-    if (!modal.classList.contains('hidden') && e.key === 'Escape') {
+    if (!document.getElementById('galleryModal').classList.contains('hidden') && e.key === 'Escape') {
       closeGallery();
     }
   });
 
   // Close on backdrop click
   document.getElementById('galleryBackdrop').addEventListener('click', closeGallery);
-</script>
 
-<!-- Compact Footer -->
-<footer class="bg-gray-900 text-gray-300 py-6 font-poppins">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Company Info -->
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-2">Shree Engineering Works</h3>
-      <p class="text-gray-400 text-xs leading-tight">
-        Gat no. 326, Opp. Star City, Pandharpur Phata, Shirwal, TAL. Khandala, DIST. Satara, Maharashtra, 412801<br />
-        Phone:  +91 99229 48303 / 70288 07361 <br />
-        Email: info@shreeengineering.com
-      </p>
-    </div>
 
-    <!-- Quick Links -->
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-2">Quick Links</h3>
-      <ul class="space-y-1 text-xs">
-  <li><a href="index.html#home" class="hover:text-indigo-500 transition-colors">Home</a></li>
-  <li><a href="index.html#about" class="hover:text-indigo-500 transition-colors">About</a></li>
-  <li><a href="index.html#services" class="hover:text-indigo-500 transition-colors">Services</a></li>
-  <li><a href="index.html#portfolio" class="hover:text-indigo-500 transition-colors">Portfolio</a></li>
-  <li><a href="index.html#testimonial" class="hover:text-indigo-500 transition-colors">Testimonials</a></li>
-  <li><a href="index.html#contact" class="hover:text-indigo-500 transition-colors">Contact</a></li>
-</ul>
-
-    </div>
-
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-white text-lg font-semibold mb-2">Follow Us</h3>
-      <div class="flex space-x-4 text-xl">
-        <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://www.linkedin.com/company/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-500">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="max-w-6xl mx-auto px-6 mt-6 border-t border-gray-700 text-center text-xs text-gray-500">
-    &copy; 1990 - <script>document.write(new Date().getFullYear())</script> Shree Engineering Works. All rights reserved.
-  </div>
-</footer>
-<script>
-  // Logo image URLs
+  // Logo Carousel Script (Optimized)
   const logos = [
-    
-    
+    "asset/Company_Logo/BharatBenz-Logo-PNG1.png", // Added to ensure rotation works logically
+    "asset/Company_Logo/ashok-leyland-logo-2.svg",
+    "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
     "asset/Company_Logo/eicher-logo.svg",
     "asset/Company_Logo/mahindra-mahindra-logo.svg",
     "asset/Company_Logo/suzuki-7.svg",
     "asset/Company_Logo/tata-logo.svg",
-    "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
-    "asset/Company_Logo/ashok-leyland-logo-2.svg",    
-    "asset/Company_Logo/BharatBenz-Logo-PNG1.png",
   ];
 
-  // Logo -> Page mapping
   const logoLinks = {
     "ashok-leyland-logo-2.svg": "AshokLeyland_portfoilio.html",
     "BharatBenz-Logo-PNG1.png": "Bharat_benz.html",
@@ -455,68 +473,67 @@
   };
 
   const carousel = document.getElementById('carousel');
+  let currentCenterIndex = logos.findIndex(logo => logo.includes('tata-logo.svg')); // Start with TATA in center
 
-  // Assign logo size classes based on distance from center
-  function getSizeClass(index) {
-    const center = 3;
-    const distance = Math.abs(index - center);
-    if (distance === 0) return 'w-36 sm:w-48';   // Center
+  function getSizeClass(index, isMobile, centerIndex) {
+    if (isMobile) {
+        return index === centerIndex ? 'w-36' : 'hidden';
+    }
+    const distance = Math.abs(index - centerIndex);
+    if (distance === 0) return 'w-36 sm:w-48 shadow-xl border-indigo-500 border-2';   // Center
     if (distance === 1) return 'w-28 sm:w-36';   // Adjacent
     if (distance === 2) return 'w-24 sm:w-28';   // Second neighbors
-    return 'w-16 sm:w-20';                      // Others
+    return 'w-16 sm:w-20 opacity-40';                      // Others
   }
-
-  // Main render function
-  function render() {
+  
+  function renderCarousel() {
     carousel.innerHTML = '';
-    const isMobile = window.innerWidth < 640; // Tailwind 'sm' breakpoint
-    const centerIndex = 3;
+    const isMobile = window.innerWidth < 640; 
+    
+    // Only show logos around the center index for desktop, or only the center for mobile
+    const startIndex = isMobile ? currentCenterIndex : Math.max(0, currentCenterIndex - 3);
+    const endIndex = isMobile ? currentCenterIndex : Math.min(logos.length - 1, currentCenterIndex + 3);
 
-    logos.forEach((logoURL, index) => {
-      const isCenter = index === centerIndex;
+    for (let i = startIndex; i <= endIndex; i++) {
+        const logoURL = logos[i];
+        const sizeClass = getSizeClass(i, isMobile, currentCenterIndex);
+        
+        if(isMobile && i !== currentCenterIndex) continue;
 
-      // Only render the center logo on mobile
-      if (isMobile && !isCenter) return;
+        const container = document.createElement('div');
+        const logoName = logoURL.split('/').pop();
+        const redirectUrl = logoLinks[logoName];
+        
+        container.className = `
+            transition-all duration-500 ease-in-out cursor-pointer 
+            bg-white rounded-lg p-1 sm:p-2 flex justify-center items-center 
+            opacity-80 hover:opacity-100 shadow-md 
+            ${sizeClass}
+        `.trim();
+        
+        // Mobile only show center, desktop show more
+        if (!isMobile || i === currentCenterIndex) {
+            const img = document.createElement('img');
+            img.src = logoURL;
+            img.alt = logoName.replace('-', ' ').split('.')[0] + ' Logo';
+            img.className = "object-contain w-full h-full max-h-12 sm:max-h-20";
 
-      const sizeClass = getSizeClass(index);
-      const container = document.createElement('div');
+            if (redirectUrl) {
+                container.onclick = () => { window.location.href = redirectUrl; };
+            }
 
-      container.className = `
-        transition-all duration-500 ease-in-out cursor-pointer 
-        bg-white rounded-lg p-1 sm:p-2 flex justify-center items-center 
-        opacity-80 hover:opacity-100 shadow-md 
-        ${sizeClass} 
-        ${isCenter ? 'opacity-100 shadow-xl bounce-center' : ''}
-      `.trim();
-
-      const img = document.createElement('img');
-      img.src = logoURL;
-      img.alt = `Logo ${index + 1}`;
-      img.className = "object-contain w-full h-full";
-
-      const logoName = logoURL.split('/').pop();
-      const redirectUrl = logoLinks[logoName];
-
-      if (redirectUrl) {
-        container.onclick = () => {
-          window.location.href = redirectUrl;
-        };
-      } else {
-        container.onclick = () => {
-          moveToCenter(index); // Optional function (not included here)
-        };
-      }
-
-      container.appendChild(img);
-      carousel.appendChild(container);
-    });
+            container.appendChild(img);
+            carousel.appendChild(container);
+        }
+    }
   }
 
   // Initial render on page load
-  document.addEventListener('DOMContentLoaded', render);
+  document.addEventListener('DOMContentLoaded', renderCarousel);
 
   // Re-render on screen resize
-  window.addEventListener('resize', render);
+  window.addEventListener('resize', renderCarousel);
+
 </script>
 </body>
 </html>
