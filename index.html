@@ -9,13 +9,19 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     /* Global Styling */
     html {
       scroll-behavior: smooth;
+    }
+
+    /* FIX: Prevents headings from hiding behind the fixed header on scroll/navigation */
+    section[id] {
+      scroll-margin-top: 100px; /* Adjust this value if your header size changes */
     }
 
     /* Drive-In Logo Animation */
@@ -55,7 +61,7 @@
     .kenburns {
       animation: kenburns 10s ease-in-out infinite alternate;
     }
-    
+
     /* Swiper Slide Duration Bar Animation */
     @keyframes slideDuration {
       from { width: 0%; }
@@ -65,8 +71,6 @@
       animation: slideDuration 10s linear forwards; /* Matches Swiper autoplay delay */
     }
   </style>
-
-  <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 <body class="bg-gray-100">
@@ -103,7 +107,7 @@
       <a href="#contact" class="block text-black hover:text-gray-700 no-underline">Contact</a>
     </nav>
   </header>
-  
+
   <main>
     <section id="home" class="relative bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center text-white pt-24" style="background-image: url('images/logo/Gemini_Generated_Image_j9p175j9p175j9p2.png');">
       <div class="absolute inset-0 bg-black opacity-35"></div>
@@ -384,6 +388,7 @@
               <a href="https://www.facebook.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
               <a href="https://www.instagram.com/shree_engineering_works9/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
               <a href="https://www.youtube.com/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.linkedin.com/company/shreeengineering" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
           <div class="w-full h-64 rounded-md overflow-hidden shadow">
